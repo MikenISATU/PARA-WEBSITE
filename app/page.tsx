@@ -161,10 +161,10 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
                 <a href="#" className="transition hover:scale-105">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1024px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" width={180} height={60} className="h-12 w-auto" />
+                  <Image src="/app-store-badge.svg" alt="App Store" width={180} height={60} className="h-12 w-auto" />
                 </a>
                 <a href="#" className="transition hover:scale-105">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1024px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" width={180} height={60} className="h-12 w-auto" />
+                   <Image src="/google-play-badge.png" alt="Google Play" width={180} height={60} className="h-12 w-auto" />
                 </a>
               </div>
             </div>
@@ -317,12 +317,10 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <a href="#" className="transition hover:scale-105">
-                <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1024px-Download_on_the_App_Store_Badge.svg.png"
-                  alt="App Store" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
+                <Image src="/app-store-badge.svg" alt="App Store" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
               </a>
               <a href="#" className="transition hover:scale-105">
-                <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1024px-Google_Play_Store_badge_EN.svg.png"
-                  alt="Google Play" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
+                <Image src="/google-play-badge.png" alt="Google Play" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
               </a>
             </div>
           </div>
