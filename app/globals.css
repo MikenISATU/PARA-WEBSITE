@@ -1,26 +1,26 @@
+/* 1. Load external fonts FIRST (must be at the very top) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* 2. Then import Tailwind (this is the official v4 way) */
 @import "tailwindcss";
 
+/* 3. Your custom variables & styles (safe here) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --para-blue: #2563eb;
+  --para-dark: #1e40af;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.logo-font {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Optional: Extend theme directly in CSS (v4 preferred over tailwind.config.js) */
+@theme {
+  --color-para-blue: #2563eb;
+  --color-para-dark: #1e40af;
+  /* Add more if needed, e.g. --font-sans: 'Inter', sans-serif; */
 }
