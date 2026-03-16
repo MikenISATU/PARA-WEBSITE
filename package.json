@@ -11,7 +11,7 @@
   "dependencies": {
     "next": "^15.2.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
     "lottie-react": "^2.4.0"
   },
   "devDependencies": {
