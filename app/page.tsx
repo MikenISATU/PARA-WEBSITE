@@ -386,25 +386,26 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
+            <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Six students. One shared frustration. A Hult Prize competition that turned into something real.</p>
           </div>
 
           {/* Story narrative */}
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 mb-12 border border-gray-100 shadow-sm">
             <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
               <p>
-                PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept quickly grew into something more — from late-night brainstorming to internships and building a real solution together.
+                PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept grew into something more, from late night brainstorming to internships and building a real solution together.
               </p>
               <p>
-                It later took shape as a Hult Prize project at West Visayas State University, part of the world&apos;s largest student competition for social entrepreneurship.
+                We were driven by one goal: to create something that solves real world problems.
               </p>
               <p>
-                Our team — from WVSU, Macquarie University, and Ateneo de Manila — shared one frustration: the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.
+                Our team from WVSU, Macquarie University, and Ateneo de Manila shared one frustration, the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.
               </p>
               <p className="text-lg text-gray-800 font-semibold">
                 So we built PARA.
               </p>
               <p>
-                Starting in Iloilo City, we mapped routes, stops, and transfers — turning scattered knowledge into something accessible. What began as a competition entry became a mission to make commuting simpler and more accessible for every Filipino.
+                Starting in Iloilo City, we mapped routes, stops, and transfers, turning scattered knowledge into something accessible. What began as an idea became a mission to make commuting simpler and more accessible for every Filipino.
               </p>
             </div>
           </div>
