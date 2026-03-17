@@ -1,7 +1,5 @@
 'use client';
-
 // components/Navbar.tsx
-
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -17,9 +15,15 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const past = window.scrollY > 60;
+      setScrolled(window.scrollY > 20);
+      setVisible(past);
+      if (!past) setOpen(false); // close mobile drawer when back at top
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -36,20 +40,26 @@ export default function Navbar() {
   };
 
   return (
-    <header className={[
-      'fixed top-0 inset-x-0 z-50 transition-all duration-500',
-      scrolled ? 'bg-white/95 backdrop-blur-lg shadow-[0_1px_0_0_rgba(0,0,0,0.06)]' : 'bg-transparent',
-    ].join(' ')}>
+    <header
+      style={{
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease-in-out',
+      }}
+      className={[
+        'fixed top-0 inset-x-0 z-50',
+        scrolled ? 'bg-white/95 backdrop-blur-lg shadow-[0_1px_0_0_rgba(0,0,0,0.06)]' : 'bg-transparent',
+      ].join(' ')}>
+
       <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 h-[72px] flex items-center justify-between gap-8">
 
-        {/* Logo — bigger: h-10 instead of h-7 */}
+        {/* Logo — h-14 */}
         <button onClick={() => handleNav('#hero')} className="shrink-0">
           <Image
             src="/para-logo.png"
             alt="PARA"
-            width={140}
-            height={46}
-            className="h-10 w-auto object-contain"
+            width={180}
+            height={60}
+            className="h-14 w-auto object-contain"
           />
         </button>
 
