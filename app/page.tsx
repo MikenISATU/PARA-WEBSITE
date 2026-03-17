@@ -289,9 +289,9 @@ export default function Home() {
                     <source src="/para-onboarding.mp4" type="video/mp4" />
                   </video>
                   {/* Mask top status bar */}
-                  <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
+                  <div className="absolute top-0 left-0 right-0 h-[7%] bg-zinc-950 z-10" />
                   {/* Mask bottom nav bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[3%] bg-zinc-950 z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[9%] bg-zinc-950 z-10" />
                 </div>
               </div>
               <div className="absolute -inset-6 bg-gradient-to-br from-[#2563eb]/10 to-transparent blur-3xl -z-10" />
@@ -313,7 +313,7 @@ export default function Home() {
       <section id="features" className="py-24 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">Key Features</span>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Everything you need to commute smarter</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
@@ -330,7 +330,7 @@ export default function Home() {
       <section id="how-it-works" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">How It Works</span>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">How It Works</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Ride in 3 simple steps</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -354,7 +354,7 @@ export default function Home() {
       <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">City Expansion</span>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Coming Soon → Cebu</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
@@ -388,16 +388,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TEAM ── */}
+      {/* ── FOUNDING STORY ── */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">The Team</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Built by commuters, for commuters</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">We&apos;re a passionate team of Filipinos who&apos;ve experienced the chaos of commuting firsthand.</p>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Born from a real commute problem</h2>
+            <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Six students. One shared frustration. A Hult Prize competition that turned into something real.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map(m => <TeamCard key={m.name} {...m} />)}
+
+          {/* Story narrative */}
+          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 mb-12 border border-gray-100 shadow-sm">
+            <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-800 font-medium">
+                &ldquo;We were students who rode jeepneys every single day — and every single day, we got lost.&rdquo;
+              </p>
+              <p>
+                PARA started as a Hult Prize project at West Visayas State University. The Hult Prize is the world&apos;s largest student competition for social entrepreneurship, challenging teams to build ventures that tackle real-world problems. Our team of six — from WVSU, Macquarie University, and Ateneo de Manila — came together around one shared experience: the chaos of commuting by jeepney in the Philippines.
+              </p>
+              <p>
+                There was no reliable way to know which jeepney to board, where it stopped, or how to connect routes across the city. Locals knew by memory. Newcomers just guessed. We asked strangers. Every day, millions of Filipinos wasted time, got stranded, or missed their stops — not because public transit was bad, but because the information simply didn&apos;t exist in any accessible form.
+              </p>
+              <p>
+                So we built PARA. Starting in Iloilo City — our home — we mapped every route, every stop, every transfer point. What began as a competition entry became a mission: give every Filipino commuter the same confidence a local has, no matter where they are.
+              </p>
+              <p className="text-[#2563eb] font-semibold">
+                We didn&apos;t build PARA because it was a good idea. We built it because we needed it ourselves.
+              </p>
+            </div>
+          </div>
+
+          {/* Team members grid */}
+          <div className="mb-8">
+            <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Hult Prize Participating Members</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+              {[
+                { name: 'Alicia Cerrudo',  role: 'Marketing & Business Development', school: 'West Visayas State University' },
+                { name: 'Keannu Torre',    role: 'Project Lead',                      school: 'Macquarie University'          },
+                { name: 'Andre Dorde',     role: 'Analytics & Back-End Developer',    school: 'Ateneo de Manila University'   },
+              ].map(m => (
+                <div key={m.name} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md transition-all duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl shadow-md">
+                    {m.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-base">{m.name}</h3>
+                  <p className="text-[#2563eb] text-sm font-medium mt-0.5">{m.role}</p>
+                  <p className="text-gray-400 text-xs mt-1 italic">{m.school}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Non-Participating Members</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                { name: 'Miken Napilan',    role: 'UI/UX & Front-End Developer', school: '' },
+                { name: 'Eugine Fernandez', role: 'Lead Developer',               school: '' },
+                { name: 'MJ Torre',         role: 'Operations & Compliance',      school: '' },
+              ].map(m => (
+                <div key={m.name} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md transition-all duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl shadow-md">
+                    {m.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-base">{m.name}</h3>
+                  <p className="text-[#2563eb] text-sm font-medium mt-0.5">{m.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hult Prize badge */}
+          <div className="text-center mt-10">
+            <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2563eb] text-sm font-semibold px-5 py-2.5 rounded-full">
+              🏆 Hult Prize Participant — World&apos;s Largest Student Social Enterprise Competition
+            </span>
           </div>
         </div>
       </section>
@@ -406,7 +468,7 @@ export default function Home() {
       <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">Reviews</span>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Reviews</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">What commuters are saying</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
