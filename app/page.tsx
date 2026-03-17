@@ -288,6 +288,10 @@ export default function Home() {
                   <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                     <source src="/para-onboarding.mp4" type="video/mp4" />
                   </video>
+                  {/* Mask top status bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[10%] bg-zinc-950 z-10" />
+                  {/* Mask bottom nav bar */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[12%] bg-zinc-950 z-10" />
                 </div>
               </div>
               <div className="absolute -inset-6 bg-gradient-to-br from-[#2563eb]/10 to-transparent blur-3xl -z-10" />
