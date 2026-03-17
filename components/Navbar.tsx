@@ -40,14 +40,20 @@ export default function Navbar() {
       'fixed top-0 inset-x-0 z-50 transition-all duration-500',
       scrolled ? 'bg-white/95 backdrop-blur-lg shadow-[0_1px_0_0_rgba(0,0,0,0.06)]' : 'bg-transparent',
     ].join(' ')}>
-      <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 h-[68px] flex items-center justify-between gap-8">
+      <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 h-[72px] flex items-center justify-between gap-8">
 
-        {/* Logo */}
+        {/* Logo — bigger: h-10 instead of h-7 */}
         <button onClick={() => handleNav('#hero')} className="shrink-0">
-          <Image src="/para-logo.png" alt="PARA" width={110} height={36} className="h-7 w-auto object-contain" />
+          <Image
+            src="/para-logo.png"
+            alt="PARA"
+            width={140}
+            height={46}
+            className="h-10 w-auto object-contain"
+          />
         </button>
 
-        {/* Desktop nav — sits between logo and CTA, left-aligned not centered */}
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6 flex-1 pl-10">
           {NAV_LINKS.map((link) => (
             <button
@@ -94,7 +100,7 @@ export default function Navbar() {
       >
         <div className="bg-white border-t border-gray-100 shadow-xl px-6 py-5 flex flex-col">
           <nav className="flex flex-col">
-            {NAV_LINKS.map((link, i) => (
+            {NAV_LINKS.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNav(link.href)}
