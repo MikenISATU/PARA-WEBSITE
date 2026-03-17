@@ -21,7 +21,7 @@ const IconLiveLocation = ({ white }: { white?: boolean }) => (
     <circle cx="24" cy="22" r="8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
     <circle cx="24" cy="22" r="3" fill={white ? '#fff' : '#2563eb'}/>
     <path d="M24 8V5M24 39v-3M8 22H5M43 22h-3" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
-    <path d="M24 30c0 0 0 8 0 10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M24 30v10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
     <circle cx="24" cy="42" r="2" fill={white ? '#fff' : '#2563eb'}/>
     <circle cx="24" cy="22" r="12" stroke={white ? 'rgba(255,255,255,0.4)' : 'rgba(37,99,235,0.25)'} strokeWidth="2.5"/>
     <circle cx="24" cy="22" r="17" stroke={white ? 'rgba(255,255,255,0.2)' : 'rgba(37,99,235,0.12)'} strokeWidth="2"/>
@@ -69,11 +69,32 @@ const IconPhilippines = ({ white }: { white?: boolean }) => (
 
 const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, IconCommunity, IconPhilippines];
 
+// ─── App Store badge (inline SVG — apple.svg upload was a corrupt Mac metadata file) ──
+const AppStoreBadge = ({ className = '' }: { className?: string }) => (
+  <svg
+    viewBox="0 0 120 40"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    role="img"
+    aria-label="Download on the App Store"
+  >
+    <rect width="120" height="40" rx="5" fill="#000"/>
+    <rect x=".5" y=".5" width="119" height="39" rx="4.5" stroke="#A6A6A6" strokeWidth=".5" fill="none"/>
+    {/* Apple logo */}
+    <path d="M24.769 20.3c-.028-3.23 2.639-4.795 2.761-4.872-1.507-2.203-3.848-2.504-4.676-2.53-1.975-.201-3.87 1.176-4.873 1.176-1.015 0-2.566-1.153-4.228-1.12-2.155.033-4.149 1.262-5.254 3.186-2.252 3.904-.574 9.668 1.612 12.834 1.071 1.549 2.338 3.284 4.003 3.222 1.617-.066 2.22-1.038 4.172-1.038 1.937 0 2.494 1.038 4.187.999 1.738-.028 2.835-1.567 3.893-3.121 1.24-1.785 1.745-3.532 1.768-3.621-.04-.014-3.35-1.284-3.365-5.115z" fill="#fff"/>
+    <path d="M21.535 11.338c.874-1.073 1.469-2.543 1.304-4.038-1.261.055-2.823.851-3.729 1.9-.806.934-1.522 2.457-1.333 3.892 1.409.105 2.853-.718 3.758-1.754z" fill="#fff"/>
+    {/* "Download on the" text */}
+    <text x="35" y="13" fill="#fff" fontFamily="-apple-system, 'Helvetica Neue', sans-serif" fontSize="7" letterSpacing=".3">Download on the</text>
+    {/* "App Store" text */}
+    <text x="34" y="27" fill="#fff" fontFamily="-apple-system, 'Helvetica Neue', sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.2">App Store</text>
+  </svg>
+);
+
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
-  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: true  },
+  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
-  { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: true  },
+  { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
   { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
 ];
@@ -129,7 +150,6 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
           <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1 backdrop-blur-sm">Featured</span>
         </>
       )}
-      {/* Icon bubble */}
       <div className={[
         'w-14 h-14 rounded-2xl flex items-center justify-center shrink-0',
         highlight ? 'bg-white/20' : 'bg-blue-50',
@@ -182,62 +202,68 @@ function TeamCard({ name, role, bio, photo, gradient }: {
   );
 }
 
-// ─── Navbar with scroll-hide on desktop ──────────────────────────────────────
+// ─── Navbar: hidden on desktop until scroll, always visible on mobile ─────────
 function NavbarWrapper() {
-  const [show, setShow] = useState(false);
+  // Start hidden on desktop; mobile always shows
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth >= 1024) {
-        setShow(window.scrollY > 60);
+    const isMobile = () => window.innerWidth < 1024;
+
+    const update = () => {
+      if (isMobile()) {
+        setVisible(true);
       } else {
-        setShow(true);
+        setVisible(window.scrollY > 60);
       }
     };
-    const handleResize = () => {
-      if (window.innerWidth < 1024) setShow(true);
-      else setShow(window.scrollY > 60);
-    };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize, { passive: true });
+
+    // Set correct initial state
+    update();
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
     };
   }, []);
 
   return (
-    <div className={[
-      'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
-      show ? 'translate-y-0' : '-translate-y-full',
-    ].join(' ')}>
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        // Use style-based transform so the initial server render starts hidden
+        // and client hydration flips it correctly without a class-name flash
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease-in-out',
+      }}
+    >
       <Navbar />
     </div>
   );
 }
 
-// ─── App Store / Google Play Badges ──────────────────────────────────────────
-function AppBadges({ className = '', dark = false }: { className?: string; dark?: boolean }) {
+// ─── App Badges row ───────────────────────────────────────────────────────────
+function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className="flex items-center gap-3">
+      {/* Apple App Store — inline SVG (the apple.svg upload was a corrupt Mac file) */}
       <a href="#" className="transition hover:scale-105 hover:opacity-90">
-        {/* h-[52px] gives a comfortable readable height for both SVG badges */}
-        <Image
-          src="/app.svg"
-          alt="Download on the App Store"
-          width={160}
-          height={54}
-          className={['h-[52px] w-auto', dark ? 'brightness-90 hover:brightness-100' : ''].join(' ').trim()}
-        />
+        <AppStoreBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
       </a>
+      {/* Google Play — using the uploaded SVG */}
       <a href="#" className="transition hover:scale-105 hover:opacity-90">
         <Image
           src="/google-play.svg"
           alt="Get it on Google Play"
-          width={160}
-          height={54}
-          className={['h-[52px] w-auto', dark ? 'brightness-90 hover:brightness-100' : ''].join(' ').trim()}
+          width={155}
+          height={46}
+          className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()}
         />
       </a>
     </div>
@@ -308,13 +334,7 @@ export default function Home() {
             {features.map((f, i) => {
               const IconComponent = FEATURE_ICONS[i];
               return (
-                <FeatureCard
-                  key={f.title}
-                  title={f.title}
-                  desc={f.desc}
-                  IconComponent={IconComponent}
-                  highlight={f.highlight}
-                />
+                <FeatureCard key={f.title} title={f.title} desc={f.desc} IconComponent={IconComponent} highlight={f.highlight} />
               );
             })}
           </div>
@@ -358,14 +378,19 @@ export default function Home() {
               {roadmapItems.map(item => (
                 <div key={item.quarter} className="relative flex gap-6 pl-14">
                   <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
-                    item.status === 'done' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                    item.status === 'done'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                     item.status === 'current' ? 'bg-white border-[#2563eb] text-[#2563eb]' :
-                    'bg-white border-gray-200 text-gray-400'].join(' ')}>
+                                                'bg-white border-gray-200 text-gray-400'].join(' ')}>
                     {item.status === 'done' ? '✓' : item.status === 'current' ? '→' : '·'}
                   </div>
-                  <div className={['bg-white rounded-2xl p-5 border flex-1', item.status === 'current' ? 'border-[#2563eb] shadow-md' : 'border-gray-100 shadow-sm'].join(' ')}>
-                    <span className={['text-xs font-semibold uppercase tracking-wider', item.status !== 'upcoming' ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
-                      {item.quarter}{item.status === 'current' && <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>}
+                  <div className={['bg-white rounded-2xl p-5 border flex-1',
+                    item.status === 'current' ? 'border-[#2563eb] shadow-md' : 'border-gray-100 shadow-sm'].join(' ')}>
+                    <span className={['text-xs font-semibold uppercase tracking-wider',
+                      item.status !== 'upcoming' ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
+                      {item.quarter}
+                      {item.status === 'current' && (
+                        <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
+                      )}
                     </span>
                     <h3 className="text-gray-900 font-semibold mt-1 mb-1">{item.title}</h3>
                     <p className="text-gray-500 text-sm">{item.desc}</p>
@@ -418,7 +443,6 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
-
         {/* Top CTA strip */}
         <div className="border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -433,18 +457,12 @@ export default function Home() {
         {/* Main footer content */}
         <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 pt-14 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/5">
-
-            {/* Brand column — bigger logo */}
+            {/* Brand */}
             <div>
               <a href="#hero" className="inline-block mb-5">
-                <Image
-                  src="/para-logo.png"
-                  alt="PARA"
-                  width={180}
-                  height={60}
+                <Image src="/para-logo.png" alt="PARA" width={180} height={60}
                   className="h-12 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1)' }}
-                />
+                  style={{ filter: 'brightness(0) invert(1)' }} />
               </a>
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">
                 The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.
@@ -452,7 +470,7 @@ export default function Home() {
               <div className="flex gap-2.5">
                 {[
                   { href: 'https://facebook.com',  label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
-                  { href: 'https://x.com',          label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10 hover:border-white/20' },
+                  { href: 'https://x.com',          label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10' },
                   { href: 'https://instagram.com',  label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
                   { href: 'https://linkedin.com',   label: 'LinkedIn',  icon: <LinkedInIcon />,  hover: 'hover:bg-[#0A66C2]' },
                 ].map(s => (
@@ -463,7 +481,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
             {/* Product */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
@@ -473,7 +490,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-
             {/* Company */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Company</p>
@@ -483,7 +499,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-
             {/* Contact */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
@@ -499,7 +514,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-
           {/* Bottom bar */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-white/25 text-xs">© {new Date().getFullYear()} PARA App. All rights reserved.</p>
