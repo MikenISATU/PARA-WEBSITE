@@ -71,21 +71,12 @@ const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, 
 
 // ─── App Store badge (inline SVG — apple.svg upload was a corrupt Mac metadata file) ──
 const AppStoreBadge = ({ className = '' }: { className?: string }) => (
-  <svg
-    viewBox="0 0 120 40"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    role="img"
-    aria-label="Download on the App Store"
-  >
+  <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Download on the App Store">
     <rect width="120" height="40" rx="5" fill="#000"/>
     <rect x=".5" y=".5" width="119" height="39" rx="4.5" stroke="#A6A6A6" strokeWidth=".5" fill="none"/>
-    {/* Apple logo */}
     <path d="M24.769 20.3c-.028-3.23 2.639-4.795 2.761-4.872-1.507-2.203-3.848-2.504-4.676-2.53-1.975-.201-3.87 1.176-4.873 1.176-1.015 0-2.566-1.153-4.228-1.12-2.155.033-4.149 1.262-5.254 3.186-2.252 3.904-.574 9.668 1.612 12.834 1.071 1.549 2.338 3.284 4.003 3.222 1.617-.066 2.22-1.038 4.172-1.038 1.937 0 2.494 1.038 4.187.999 1.738-.028 2.835-1.567 3.893-3.121 1.24-1.785 1.745-3.532 1.768-3.621-.04-.014-3.35-1.284-3.365-5.115z" fill="#fff"/>
     <path d="M21.535 11.338c.874-1.073 1.469-2.543 1.304-4.038-1.261.055-2.823.851-3.729 1.9-.806.934-1.522 2.457-1.333 3.892 1.409.105 2.853-.718 3.758-1.754z" fill="#fff"/>
-    {/* "Download on the" text */}
     <text x="35" y="13" fill="#fff" fontFamily="-apple-system, 'Helvetica Neue', sans-serif" fontSize="7" letterSpacing=".3">Download on the</text>
-    {/* "App Store" text */}
     <text x="34" y="27" fill="#fff" fontFamily="-apple-system, 'Helvetica Neue', sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.2">App Store</text>
   </svg>
 );
@@ -115,12 +106,14 @@ const reviews = [
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
 
+// ─── Roadmap — city expansion timeline ───────────────────────────────────────
 const roadmapItems = [
-  { quarter: 'Q1 2025', title: 'Beta Launch',         desc: 'Core route search, Metro Manila coverage, iOS & Android beta.',   status: 'done'     },
-  { quarter: 'Q2 2025', title: 'Live Updates',         desc: 'Real-time jeepney tracking and crowd-sourced route corrections.',  status: 'done'     },
-  { quarter: 'Q3 2025', title: 'Multi-City Expansion', desc: 'Cebu, Davao, and Iloilo city routes added.',                      status: 'current'  },
-  { quarter: 'Q4 2025', title: 'Offline Mode',         desc: 'Full offline route access for low-connectivity areas.',           status: 'upcoming' },
-  { quarter: 'Q1 2026', title: 'Community Hub',        desc: 'Route contributions, driver ratings, and commuter reports.',      status: 'upcoming' },
+  { city: 'Iloilo',   title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
+  { city: 'Cebu',     title: 'Coming Soon → Cebu',          desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'current' },
+  { city: 'Bacolod',  title: 'Coming Soon → Bacolod',       desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'upcoming'},
+  { city: 'Aklan',    title: 'Coming Soon → Aklan',         desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'},
+  { city: 'Dumaguete',title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'},
+  { city: 'Tacloban', title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'},
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -131,8 +124,7 @@ const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" classNa
 
 // ─── Feature Card ─────────────────────────────────────────────────────────────
 function FeatureCard({ title, desc, IconComponent, highlight }: {
-  title: string;
-  desc: string;
+  title: string; desc: string;
   IconComponent: React.ComponentType<{ white?: boolean }>;
   highlight: boolean;
 }) {
@@ -150,22 +142,14 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
           <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1 backdrop-blur-sm">Featured</span>
         </>
       )}
-      <div className={[
-        'w-14 h-14 rounded-2xl flex items-center justify-center shrink-0',
-        highlight ? 'bg-white/20' : 'bg-blue-50',
-      ].join(' ')}>
-        <div className="w-9 h-9">
-          <IconComponent white={highlight} />
-        </div>
+      <div className={['w-14 h-14 rounded-2xl flex items-center justify-center shrink-0', highlight ? 'bg-white/20' : 'bg-blue-50'].join(' ')}>
+        <div className="w-9 h-9"><IconComponent white={highlight} /></div>
       </div>
       <div>
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      <div className={[
-        'mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
-        highlight ? 'text-white' : 'text-[#2563eb]',
-      ].join(' ')}>
+      <div className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200', highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
         Learn more →
       </div>
     </div>
@@ -204,67 +188,32 @@ function TeamCard({ name, role, bio, photo, gradient }: {
 
 // ─── Navbar: hidden on desktop until scroll, always visible on mobile ─────────
 function NavbarWrapper() {
-  // Start hidden on desktop; mobile always shows
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const isMobile = () => window.innerWidth < 1024;
-
-    const update = () => {
-      if (isMobile()) {
-        setVisible(true);
-      } else {
-        setVisible(window.scrollY > 60);
-      }
-    };
-
-    // Set correct initial state
+    const update = () => { if (isMobile()) setVisible(true); else setVisible(window.scrollY > 60); };
     update();
-
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', update);
-      window.removeEventListener('resize', update);
-    };
+    return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
   }, []);
-
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        // Use style-based transform so the initial server render starts hidden
-        // and client hydration flips it correctly without a class-name flash
-        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-        transition: 'transform 0.3s ease-in-out',
-      }}
-    >
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, transform: visible ? 'translateY(0)' : 'translateY(-100%)', transition: 'transform 0.3s ease-in-out' }}>
       <Navbar />
     </div>
   );
 }
 
-// ─── App Badges row ───────────────────────────────────────────────────────────
+// ─── App Badges ───────────────────────────────────────────────────────────────
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      {/* Apple App Store — inline SVG (the apple.svg upload was a corrupt Mac file) */}
       <a href="#" className="transition hover:scale-105 hover:opacity-90">
         <AppStoreBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
       </a>
-      {/* Google Play — using the uploaded SVG */}
       <a href="#" className="transition hover:scale-105 hover:opacity-90">
-        <Image
-          src="/google-play.svg"
-          alt="Get it on Google Play"
-          width={155}
-          height={46}
-          className={['h-[46px] w-[155px]', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()}
-        />
+        <Image src="/google-play.svg" alt="Get it on Google Play" width={155} height={46}
+          className={['h-[46px] w-[155px]', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
       </a>
     </div>
   );
@@ -333,9 +282,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
               const IconComponent = FEATURE_ICONS[i];
-              return (
-                <FeatureCard key={f.title} title={f.title} desc={f.desc} IconComponent={IconComponent} highlight={f.highlight} />
-              );
+              return <FeatureCard key={f.title} title={f.title} desc={f.desc} IconComponent={IconComponent} highlight={f.highlight} />;
             })}
           </div>
         </div>
@@ -369,14 +316,15 @@ export default function Home() {
       <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">Roadmap</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Where we&apos;re headed</h2>
+            <span className="inline-block text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3">City Expansion</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Coming Soon → Cebu</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
           <div className="relative">
             <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
             <div className="space-y-8">
               {roadmapItems.map(item => (
-                <div key={item.quarter} className="relative flex gap-6 pl-14">
+                <div key={item.city} className="relative flex gap-6 pl-14">
                   <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
                     item.status === 'done'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                     item.status === 'current' ? 'bg-white border-[#2563eb] text-[#2563eb]' :
@@ -387,7 +335,7 @@ export default function Home() {
                     item.status === 'current' ? 'border-[#2563eb] shadow-md' : 'border-gray-100 shadow-sm'].join(' ')}>
                     <span className={['text-xs font-semibold uppercase tracking-wider',
                       item.status !== 'upcoming' ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
-                      {item.quarter}
+                      {item.city}
                       {item.status === 'current' && (
                         <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
                       )}
@@ -443,7 +391,6 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
-        {/* Top CTA strip */}
         <div className="border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
@@ -453,16 +400,11 @@ export default function Home() {
             <AppBadges dark />
           </div>
         </div>
-
-        {/* Main footer content */}
         <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 pt-14 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/5">
-            {/* Brand */}
             <div>
               <a href="#hero" className="inline-block mb-5">
-                <Image src="/para-logo.png" alt="PARA" width={180} height={60}
-                  className="h-12 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1)' }} />
+                <Image src="/para-logo.png" alt="PARA" width={180} height={60} className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
               </a>
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">
                 The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.
@@ -470,7 +412,7 @@ export default function Home() {
               <div className="flex gap-2.5">
                 {[
                   { href: 'https://facebook.com',  label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
-                  { href: 'https://x.com',          label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10' },
+                  { href: 'https://x.com',          label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10'  },
                   { href: 'https://instagram.com',  label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
                   { href: 'https://linkedin.com',   label: 'LinkedIn',  icon: <LinkedInIcon />,  hover: 'hover:bg-[#0A66C2]' },
                 ].map(s => (
@@ -481,7 +423,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            {/* Product */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
               <ul className="space-y-3">
@@ -490,7 +431,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            {/* Company */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Company</p>
               <ul className="space-y-3">
@@ -499,22 +439,20 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            {/* Contact */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
               <ul className="space-y-3">
                 {[
                   { label: 'hello@paraapp.ph', href: 'mailto:hello@paraapp.ph' },
-                  { label: 'Support Center', href: '#' },
+                  { label: 'Support Center',       href: '#' },
                   { label: 'Report a Route Issue', href: '#' },
-                  { label: 'Partner with Us', href: '#' },
+                  { label: 'Partner with Us',      href: '#' },
                 ].map(l => (
                   <li key={l.label}><a href={l.href} className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a></li>
                 ))}
               </ul>
             </div>
           </div>
-          {/* Bottom bar */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-white/25 text-xs">© {new Date().getFullYear()} PARA App. All rights reserved.</p>
             <div className="flex items-center gap-6">
