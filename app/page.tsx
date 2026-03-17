@@ -125,15 +125,6 @@ const features = [
   { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
 ];
 
-const teamMembers = [
-  { name: 'Andi Reyes',        role: 'CEO & Co-Founder',     bio: 'Urban mobility advocate with 8 years in product strategy.',           photo: '/team/andi-reyes.png',        gradient: 'from-blue-500 to-blue-700'   },
-  { name: 'Marco Santos',      role: 'CTO & Co-Founder',     bio: 'Full-stack engineer passionate about scalable systems.',              photo: '/team/marco-santos.png',      gradient: 'from-indigo-500 to-blue-600' },
-  { name: 'Liza Cruz',         role: 'Head of Design',       bio: 'UX designer crafting intuitive experiences for everyday commuters.',  photo: '/team/liza-cruz.png',         gradient: 'from-blue-400 to-cyan-500'   },
-  { name: 'Ryan Dela Torre',   role: 'Lead Developer',       bio: 'Mobile-first developer specializing in React Native & geolocation.', photo: '/team/ryan-dela-torre.png',   gradient: 'from-blue-600 to-indigo-700' },
-  { name: 'Bianca Villanueva', role: 'Community Manager',    bio: 'Bridges PARA with local commuters and route contributors.',          photo: '/team/bianca-villanueva.png', gradient: 'from-cyan-500 to-blue-500'   },
-  { name: 'Jerome Aquino',     role: 'Data & Maps Engineer', bio: 'GIS specialist mapping every route in the Philippines.',             photo: '/team/jerome-aquino.png',     gradient: 'from-indigo-600 to-blue-500' },
-];
-
 const reviews = [
   { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
   { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
@@ -156,6 +147,37 @@ const FacebookIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" classNa
 const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
 const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
+
+// ─── Member Card (Team / Founding Story) ──────────────────────────────────────
+function MemberCard({ name, role, school, photo, grad }: {
+  name: string; role: string; school: string; photo: string; grad: string;
+}) {
+  const [imgError, setImgError] = useState(false);
+  const initials = name.split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase();
+  return (
+    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="relative w-28 h-28 mx-auto mb-5">
+        {!imgError ? (
+          <Image
+            src={photo}
+            alt={name}
+            width={112}
+            height={112}
+            className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className={`w-28 h-28 rounded-full bg-gradient-to-br ${grad} flex items-center justify-center text-white font-bold text-2xl shadow-md border-4 border-white`}>
+            {initials}
+          </div>
+        )}
+      </div>
+      <h3 className="font-bold text-gray-900 text-base leading-tight">{name}</h3>
+      <p className="text-[#2563eb] text-sm font-medium mt-1">{role}</p>
+      {school && <p className="text-gray-400 text-xs mt-1 italic">{school}</p>}
+    </div>
+  );
+}
 
 // ─── Feature Card ─────────────────────────────────────────────────────────────
 function FeatureCard({ title, desc, IconComponent, highlight }: {
@@ -186,36 +208,6 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
       </div>
       <div className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200', highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
         Learn more →
-      </div>
-    </div>
-  );
-}
-
-// ─── Team Card ────────────────────────────────────────────────────────────────
-function TeamCard({ name, role, bio, photo, gradient }: {
-  name: string; role: string; bio: string; photo: string; gradient: string;
-}) {
-  const [imgError, setImgError] = useState(false);
-  const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-  return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      <div className={`relative h-44 bg-gradient-to-br ${gradient} overflow-hidden`}>
-        <div className="absolute -top-6 -right-6 w-28 h-28 bg-white/10 rounded-full pointer-events-none" />
-        <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-white/10 rounded-full pointer-events-none" />
-        <div className="absolute inset-0 flex items-end justify-center translate-y-8">
-          <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white">
-            {!imgError ? (
-              <Image src={photo} alt={name} width={96} height={96} className="w-full h-full object-cover" onError={() => setImgError(true)} />
-            ) : (
-              <div className={`w-full h-full flex items-center justify-center bg-gradient-to-br ${gradient} text-white font-bold text-xl`}>{initials}</div>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="pt-14 pb-6 px-5 text-center">
-        <h3 className="font-bold text-gray-900 text-lg leading-tight">{name}</h3>
-        <span className="inline-block text-[#2563eb] text-sm font-medium mt-0.5">{role}</span>
-        <p className="text-gray-500 text-sm mt-2 leading-relaxed">{bio}</p>
       </div>
     </div>
   );
@@ -314,7 +306,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Everything you need to commute smarter</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -331,7 +323,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">How It Works</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Ride in 3 simple steps</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Ride in 3 simple steps</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
@@ -355,7 +347,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Coming Soon → Cebu</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Coming Soon → Cebu</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
           <div className="relative">
@@ -393,7 +385,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Born from a real commute problem</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
             <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Six students. One shared frustration. A Hult Prize competition that turned into something real.</p>
           </div>
 
@@ -418,48 +410,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Team members grid */}
-          <div className="mb-8">
-            <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Hult Prize Participating Members</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-              {[
-                { name: 'Alicia Cerrudo',  role: 'Marketing & Business Development', school: 'West Visayas State University' },
-                { name: 'Keannu Torre',    role: 'Project Lead',                      school: 'Macquarie University'          },
-                { name: 'Andre Dorde',     role: 'Analytics & Back-End Developer',    school: 'Ateneo de Manila University'   },
-              ].map(m => (
-                <div key={m.name} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md transition-all duration-300">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl shadow-md">
-                    {m.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}
-                  </div>
-                  <h3 className="font-bold text-gray-900 text-base">{m.name}</h3>
-                  <p className="text-[#2563eb] text-sm font-medium mt-0.5">{m.role}</p>
-                  <p className="text-gray-400 text-xs mt-1 italic">{m.school}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Non-Participating Members</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                { name: 'Miken Napilan',    role: 'UI/UX & Front-End Developer', school: '' },
-                { name: 'Eugine Fernandez', role: 'Lead Developer',               school: '' },
-                { name: 'MJ Torre',         role: 'Operations & Compliance',      school: '' },
-              ].map(m => (
-                <div key={m.name} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md transition-all duration-300">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl shadow-md">
-                    {m.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}
-                  </div>
-                  <h3 className="font-bold text-gray-900 text-base">{m.name}</h3>
-                  <p className="text-[#2563eb] text-sm font-medium mt-0.5">{m.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Hult Prize badge */}
-          <div className="text-center mt-10">
-            <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-[#2563eb] text-sm font-semibold px-5 py-2.5 rounded-full">
-              🏆 Hult Prize Participant — World&apos;s Largest Student Social Enterprise Competition
-            </span>
+          {/* Team members — clean 6-person grid, no labels */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { name: 'Alicia Cerrudo',   role: 'Marketing & Business Development', school: 'West Visayas State University', photo: '/team/alicia-cerrudo.png',   grad: 'from-blue-500 to-indigo-600' },
+              { name: 'Keannu Torre',     role: 'Project Lead',                      school: 'Macquarie University',          photo: '/team/keannu-torre.png',     grad: 'from-indigo-500 to-blue-600' },
+              { name: 'Andre Dorde',      role: 'Analytics & Back-End Developer',    school: 'Ateneo de Manila University',   photo: '/team/andre-dorde.png',      grad: 'from-blue-600 to-indigo-700' },
+              { name: 'Miken Napilan',    role: 'UI/UX & Front-End Developer',       school: '',                              photo: '/team/miken-napilan.png',    grad: 'from-slate-500 to-gray-700'  },
+              { name: 'Eugine Fernandez', role: 'Lead Developer',                    school: '',                              photo: '/team/eugine-fernandez.png', grad: 'from-gray-500 to-slate-700'  },
+              { name: 'MJ Torre',         role: 'Operations & Compliance',           school: '',                              photo: '/team/mj-torre.png',         grad: 'from-gray-400 to-slate-600'  },
+            ].map(m => <MemberCard key={m.name} name={m.name} role={m.role} school={m.school} photo={m.photo} grad={m.grad} />)}
           </div>
         </div>
       </section>
@@ -469,7 +429,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Reviews</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">What commuters are saying</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">What commuters are saying</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {reviews.map(r => (
