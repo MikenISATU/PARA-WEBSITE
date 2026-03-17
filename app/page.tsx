@@ -81,6 +81,41 @@ const AppStoreBadge = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 
+// Google Play badge — inline SVG (uploaded file has wrong aspect ratio, unusable as a badge)
+const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Get it on Google Play">
+    <rect width="135" height="40" rx="5" fill="#000"/>
+    <rect x=".5" y=".5" width="134" height="39" rx="4.5" stroke="#A6A6A6" strokeWidth=".5" fill="none"/>
+    {/* Google Play triangle icon */}
+    <path d="M10.4 7.5c-.3.3-.4.8-.4 1.4V31c0 .6.2 1.1.5 1.4l.1.1L23 20.1v-.2L10.4 7.5z" fill="url(#gp1)"/>
+    <path d="M27 24.3l-4.1-4.1V19.9l4.1-4.1.1.1 4.9 2.8c1.4.8 1.4 2.1 0 2.9l-5 2.7z" fill="url(#gp2)"/>
+    <path d="M27.1 24.2L22.9 20 10.4 32.5c.5.5 1.2.5 2.1.1l14.6-8.4" fill="url(#gp3)"/>
+    <path d="M27.1 15.8L12.5 7.5c-.9-.5-1.6-.4-2.1.1L22.9 20l4.2-4.2z" fill="url(#gp4)"/>
+    {/* "GET IT ON" text */}
+    <text x="40" y="13" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="6.5" letterSpacing=".5">GET IT ON</text>
+    {/* "Google Play" text */}
+    <text x="39" y="27" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="14" fontWeight="500" letterSpacing="-.2">Google Play</text>
+    <defs>
+      <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#00a0ff"/>
+        <stop offset="1" stopColor="#00e3ff"/>
+      </linearGradient>
+      <linearGradient id="gp2" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#ffe000"/>
+        <stop offset="1" stopColor="#ff9c00"/>
+      </linearGradient>
+      <linearGradient id="gp3" x1="24.827" y1="19.704" x2="2.069" y2="-3.054" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#ff3a44"/>
+        <stop offset="1" stopColor="#c31162"/>
+      </linearGradient>
+      <linearGradient id="gp4" x1="7.297" y1="41.824" x2="17.46" y2="31.661" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#32a071"/>
+        <stop offset="1" stopColor="#00f076"/>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
   { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
@@ -212,8 +247,7 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
         <AppStoreBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
       </a>
       <a href="#" className="transition hover:scale-105 hover:opacity-90">
-        <Image src="/google-play.svg" alt="Get it on Google Play" width={155} height={46}
-          className={['h-[46px] w-[155px]', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
+        <GooglePlayBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
       </a>
     </div>
   );
