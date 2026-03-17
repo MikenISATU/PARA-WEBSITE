@@ -281,9 +281,9 @@ export default function Home() {
                     <source src="/para-onboarding.mp4" type="video/mp4" />
                   </video>
                   {/* Mask top status bar */}
-                  <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
+                  <div className="absolute top-0 left-0 right-0 h-[7%] bg-zinc-950 z-10" />
                   {/* Mask bottom nav bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-zinc-950 z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[9%] bg-zinc-950 z-10" />
                 </div>
               </div>
               <div className="absolute -inset-6 bg-gradient-to-br from-[#2563eb]/10 to-transparent blur-3xl -z-10" />
@@ -392,20 +392,20 @@ export default function Home() {
           {/* Story narrative */}
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 mb-12 border border-gray-100 shadow-sm">
             <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
-              <p className="text-lg text-gray-800 font-medium">
-                &ldquo;We were students who rode jeepneys every single day — and every single day, we got lost.&rdquo;
+              <p>
+                PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept quickly grew into something more — from late-night brainstorming to internships and building a real solution together.
               </p>
               <p>
-                PARA started as a Hult Prize project at West Visayas State University. The Hult Prize is the world&apos;s largest student competition for social entrepreneurship, challenging teams to build ventures that tackle real-world problems. Our team of six — from WVSU, Macquarie University, and Ateneo de Manila — came together around one shared experience: the chaos of commuting by jeepney in the Philippines.
+                It later took shape as a Hult Prize project at West Visayas State University, part of the world&apos;s largest student competition for social entrepreneurship.
               </p>
               <p>
-                There was no reliable way to know which jeepney to board, where it stopped, or how to connect routes across the city. Locals knew by memory. Newcomers just guessed. We asked strangers. Every day, millions of Filipinos wasted time, got stranded, or missed their stops — not because public transit was bad, but because the information simply didn&apos;t exist in any accessible form.
+                Our team — from WVSU, Macquarie University, and Ateneo de Manila — shared one frustration: the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.
+              </p>
+              <p className="text-lg text-gray-800 font-semibold">
+                So we built PARA.
               </p>
               <p>
-                So we built PARA. Starting in Iloilo City — our home — we mapped every route, every stop, every transfer point. What began as a competition entry became a mission: give every Filipino commuter the same confidence a local has, no matter where they are.
-              </p>
-              <p className="text-[#2563eb] font-semibold">
-                We didn&apos;t build PARA because it was a good idea. We built it because we needed it ourselves.
+                Starting in Iloilo City, we mapped routes, stops, and transfers — turning scattered knowledge into something accessible. What began as a competition entry became a mission to make commuting simpler and more accessible for every Filipino.
               </p>
             </div>
           </div>
