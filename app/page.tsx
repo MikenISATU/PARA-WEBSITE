@@ -23,7 +23,6 @@ const IconLiveLocation = ({ white }: { white?: boolean }) => (
     <path d="M24 8V5M24 39v-3M8 22H5M43 22h-3" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
     <path d="M24 30c0 0 0 8 0 10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
     <circle cx="24" cy="42" r="2" fill={white ? '#fff' : '#2563eb'}/>
-    {/* pulse rings */}
     <circle cx="24" cy="22" r="12" stroke={white ? 'rgba(255,255,255,0.4)' : 'rgba(37,99,235,0.25)'} strokeWidth="2.5"/>
     <circle cx="24" cy="22" r="17" stroke={white ? 'rgba(255,255,255,0.2)' : 'rgba(37,99,235,0.12)'} strokeWidth="2"/>
   </svg>
@@ -76,7 +75,7 @@ const features = [
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: true  },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                              highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
 ];
 
 const teamMembers = [
@@ -120,8 +119,8 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
     <div className={[
       'relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group',
       highlight
-        ? 'bg-[#2563eb] shadow-[0_20px_60px_-10px_rgba(37,99,235,0.55)] scale-[1.02] hover:scale-[1.04]'
-        : 'bg-white shadow-sm border border-gray-100 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-100/80 hover:border-blue-100',
+        ? 'bg-[#2563eb] shadow-[0_24px_80px_-8px_rgba(37,99,235,0.65)] scale-[1.02] hover:scale-[1.04] hover:shadow-[0_32px_100px_-8px_rgba(37,99,235,0.75)]'
+        : 'bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-2 hover:shadow-[0_20px_60px_-8px_rgba(37,99,235,0.18)] hover:border-blue-100',
     ].join(' ')}>
       {highlight && (
         <>
@@ -130,11 +129,12 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
           <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1 backdrop-blur-sm">Featured</span>
         </>
       )}
+      {/* Icon bubble */}
       <div className={[
         'w-14 h-14 rounded-2xl flex items-center justify-center shrink-0',
-        highlight ? 'bg-white/15' : 'bg-blue-50',
+        highlight ? 'bg-white/20' : 'bg-blue-50',
       ].join(' ')}>
-        <div className="w-8 h-8">
+        <div className="w-9 h-9">
           <IconComponent white={highlight} />
         </div>
       </div>
@@ -188,22 +188,17 @@ function NavbarWrapper() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // On desktop (lg), hide until scrolled; on mobile always show
       if (window.innerWidth >= 1024) {
         setShow(window.scrollY > 60);
       } else {
         setShow(true);
       }
     };
-
     const handleResize = () => {
       if (window.innerWidth < 1024) setShow(true);
       else setShow(window.scrollY > 60);
     };
-
-    // Initial state
     handleScroll();
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize, { passive: true });
     return () => {
@@ -213,29 +208,37 @@ function NavbarWrapper() {
   }, []);
 
   return (
-    <div
-      className={[
-        // On mobile: always visible (handled by JS setting show=true)
-        // On desktop: slide in/out from top
-        'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
-        // The transform is only meaningful on lg+ — on mobile show is always true
-        show ? 'translate-y-0' : '-translate-y-full',
-      ].join(' ')}
-    >
+    <div className={[
+      'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
+      show ? 'translate-y-0' : '-translate-y-full',
+    ].join(' ')}>
       <Navbar />
     </div>
   );
 }
 
 // ─── App Store / Google Play Badges ──────────────────────────────────────────
-function AppBadges({ className = '' }: { className?: string }) {
+function AppBadges({ className = '', dark = false }: { className?: string; dark?: boolean }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <a href="#" className="transition hover:scale-105">
-        <Image src="/app.svg" alt="App Store" width={140} height={47} className="h-11 w-auto" />
+      <a href="#" className="transition hover:scale-105 hover:opacity-90">
+        {/* h-[52px] gives a comfortable readable height for both SVG badges */}
+        <Image
+          src="/app.svg"
+          alt="Download on the App Store"
+          width={160}
+          height={54}
+          className={['h-[52px] w-auto', dark ? 'brightness-90 hover:brightness-100' : ''].join(' ').trim()}
+        />
       </a>
-      <a href="#" className="transition hover:scale-105">
-        <Image src="/google-play.svg" alt="Google Play" width={140} height={47} className="h-11 w-auto" />
+      <a href="#" className="transition hover:scale-105 hover:opacity-90">
+        <Image
+          src="/google-play.svg"
+          alt="Get it on Google Play"
+          width={160}
+          height={54}
+          className={['h-[52px] w-auto', dark ? 'brightness-90 hover:brightness-100' : ''].join(' ').trim()}
+        />
       </a>
     </div>
   );
@@ -423,14 +426,7 @@ export default function Home() {
               <p className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-1">Ready to commute smarter?</p>
               <h3 className="text-2xl font-bold text-white">Download PARA for free.</h3>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <a href="#" className="transition hover:scale-105">
-                <Image src="/app.svg" alt="App Store" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
-              </a>
-              <a href="#" className="transition hover:scale-105">
-                <Image src="/google-play.svg" alt="Google Play" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
-              </a>
-            </div>
+            <AppBadges dark />
           </div>
         </div>
 
@@ -438,12 +434,17 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 pt-14 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/5">
 
-            {/* Brand column */}
+            {/* Brand column — bigger logo */}
             <div>
-              <a href="#hero">
-                <Image src="/para-logo.png" alt="PARA" width={130} height={44}
-                  className="h-9 w-auto object-contain mb-5"
-                  style={{ filter: 'brightness(0) invert(1)' }} />
+              <a href="#hero" className="inline-block mb-5">
+                <Image
+                  src="/para-logo.png"
+                  alt="PARA"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto object-contain"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
               </a>
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">
                 The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.
