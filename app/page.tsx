@@ -1,26 +1,74 @@
 'use client';
 
 // app/page.tsx
-// Prerequisites: npm install lottie-react
-//
-// Team photos → /public/team/andi-reyes.png etc.
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+// ─── Feature SVG Icons ────────────────────────────────────────────────────────
 
-const LOTTIE_URLS = [
-  'https://assets6.lottiefiles.com/packages/lf20_UJNc2t.json',
-  'https://assets3.lottiefiles.com/packages/lf20_tykyDQrs9Z.json',
-  'https://assets5.lottiefiles.com/packages/lf20_ysrn2iwp.json',
-  'https://assets9.lottiefiles.com/packages/lf20_jR229p.json',
-  'https://assets4.lottiefiles.com/packages/lf20_xyadoh9h.json',
-  'https://assets2.lottiefiles.com/packages/lf20_touohxv0.json',
-];
-const FALLBACK_EMOJIS = ['🗺️', '📍', '🔄', '📶', '🤝', '🇵🇭'];
+const IconSearch = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <circle cx="21" cy="21" r="13" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M31 31L41 41" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M16 21h10M21 16v10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+  </svg>
+);
+
+const IconLiveLocation = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <circle cx="24" cy="22" r="8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
+    <circle cx="24" cy="22" r="3" fill={white ? '#fff' : '#2563eb'}/>
+    <path d="M24 8V5M24 39v-3M8 22H5M43 22h-3" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <path d="M24 30c0 0 0 8 0 10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <circle cx="24" cy="42" r="2" fill={white ? '#fff' : '#2563eb'}/>
+    {/* pulse rings */}
+    <circle cx="24" cy="22" r="12" stroke={white ? 'rgba(255,255,255,0.4)' : 'rgba(37,99,235,0.25)'} strokeWidth="2.5"/>
+    <circle cx="24" cy="22" r="17" stroke={white ? 'rgba(255,255,255,0.2)' : 'rgba(37,99,235,0.12)'} strokeWidth="2"/>
+  </svg>
+);
+
+const IconTransfer = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <rect x="4" y="28" width="18" height="12" rx="4" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
+    <rect x="26" y="8" width="18" height="12" rx="4" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
+    <path d="M13 28V22a6 6 0 0 1 6-6h10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M26 20l3-4-3-4" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconOffline = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <path d="M34 32H14a8 8 0 0 1-2-15.7A12 12 0 0 1 35.8 22" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M38 26l-6 6 6 6" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M32 32h10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M24 32v8M20 40h8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+  </svg>
+);
+
+const IconCommunity = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <circle cx="24" cy="16" r="6" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
+    <circle cx="10" cy="20" r="4.5" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3"/>
+    <circle cx="38" cy="20" r="4.5" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3"/>
+    <path d="M4 38c0-5.523 2.686-8 6-8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <path d="M44 38c0-5.523-2.686-8-6-8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <path d="M14 38c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const IconPhilippines = ({ white }: { white?: boolean }) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6Z" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
+    <path d="M6 24h36" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <path d="M24 6c-4.418 5.373-7 11.373-7 18s2.582 12.627 7 18" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <path d="M24 6c4.418 5.373 7 11.373 7 18s-2.582 12.627-7 18" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
+    <circle cx="24" cy="24" r="3" fill={white ? '#fff' : '#2563eb'}/>
+  </svg>
+);
+
+const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, IconCommunity, IconPhilippines];
 
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
@@ -61,30 +109,19 @@ const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" classNa
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
 const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
 
-// ─── Lottie loader ────────────────────────────────────────────────────────────
-function LottieIcon({ url, fallback }: { url: string; fallback: string }) {
-  const [animData, setAnimData] = useState<object | null>(null);
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    let cancelled = false;
-    fetch(url).then(r => { if (!r.ok) throw new Error(''); return r.json(); })
-      .then(d => { if (!cancelled) setAnimData(d); })
-      .catch(() => { if (!cancelled) setFailed(true); });
-    return () => { cancelled = true; };
-  }, [url]);
-  if (failed || !animData) return <span className="text-3xl flex items-center justify-center w-full h-full select-none">{fallback}</span>;
-  return <Lottie animationData={animData} loop autoplay style={{ width: '100%', height: '100%' }} />;
-}
-
 // ─── Feature Card ─────────────────────────────────────────────────────────────
-function FeatureCard({ title, desc, lottieUrl, fallbackEmoji, highlight }: {
-  title: string; desc: string; lottieUrl: string; fallbackEmoji: string; highlight: boolean;
+function FeatureCard({ title, desc, IconComponent, highlight }: {
+  title: string;
+  desc: string;
+  IconComponent: React.ComponentType<{ white?: boolean }>;
+  highlight: boolean;
 }) {
   return (
-    <div className={['relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group',
+    <div className={[
+      'relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group',
       highlight
-        ? 'bg-[#2563eb] shadow-2xl shadow-blue-200 scale-[1.02] hover:scale-[1.04]'
-        : 'bg-white shadow-sm border border-gray-100 hover:-translate-y-2 hover:shadow-xl hover:border-blue-100',
+        ? 'bg-[#2563eb] shadow-[0_20px_60px_-10px_rgba(37,99,235,0.55)] scale-[1.02] hover:scale-[1.04]'
+        : 'bg-white shadow-sm border border-gray-100 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-100/80 hover:border-blue-100',
     ].join(' ')}>
       {highlight && (
         <>
@@ -93,14 +130,22 @@ function FeatureCard({ title, desc, lottieUrl, fallbackEmoji, highlight }: {
           <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1 backdrop-blur-sm">Featured</span>
         </>
       )}
-      <div className={['w-16 h-16 rounded-2xl flex items-center justify-center shrink-0', highlight ? 'bg-white/15' : 'bg-blue-50'].join(' ')}>
-        <div className="w-12 h-12"><LottieIcon url={lottieUrl} fallback={fallbackEmoji} /></div>
+      <div className={[
+        'w-14 h-14 rounded-2xl flex items-center justify-center shrink-0',
+        highlight ? 'bg-white/15' : 'bg-blue-50',
+      ].join(' ')}>
+        <div className="w-8 h-8">
+          <IconComponent white={highlight} />
+        </div>
       </div>
       <div>
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      <div className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200', highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
+      <div className={[
+        'mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
+        highlight ? 'text-white' : 'text-[#2563eb]',
+      ].join(' ')}>
         Learn more →
       </div>
     </div>
@@ -137,11 +182,70 @@ function TeamCard({ name, role, bio, photo, gradient }: {
   );
 }
 
+// ─── Navbar with scroll-hide on desktop ──────────────────────────────────────
+function NavbarWrapper() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // On desktop (lg), hide until scrolled; on mobile always show
+      if (window.innerWidth >= 1024) {
+        setShow(window.scrollY > 60);
+      } else {
+        setShow(true);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth < 1024) setShow(true);
+      else setShow(window.scrollY > 60);
+    };
+
+    // Initial state
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <div
+      className={[
+        // On mobile: always visible (handled by JS setting show=true)
+        // On desktop: slide in/out from top
+        'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
+        // The transform is only meaningful on lg+ — on mobile show is always true
+        show ? 'translate-y-0' : '-translate-y-full',
+      ].join(' ')}
+    >
+      <Navbar />
+    </div>
+  );
+}
+
+// ─── App Store / Google Play Badges ──────────────────────────────────────────
+function AppBadges({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      <a href="#" className="transition hover:scale-105">
+        <Image src="/app.svg" alt="App Store" width={140} height={47} className="h-11 w-auto" />
+      </a>
+      <a href="#" className="transition hover:scale-105">
+        <Image src="/google-play.svg" alt="Google Play" width={140} height={47} className="h-11 w-auto" />
+      </a>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
-      <Navbar />
+      <NavbarWrapper />
 
       {/* ── HERO ── */}
       <section id="hero" className="scroll-mt-16">
@@ -159,13 +263,8 @@ export default function Home() {
               <div className="mt-6">
                 <a href="#" className="inline-block bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-medium text-lg px-10 py-4 rounded-2xl shadow-lg active:scale-95">Download the App</a>
               </div>
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
-                <a href="#" className="transition hover:scale-105">
-                  <Image src="/app-store-badge.svg" alt="App Store" width={180} height={60} className="h-12 w-auto" />
-                </a>
-                <a href="#" className="transition hover:scale-105">
-                   <Image src="/google-play-badge.png" alt="Google Play" width={180} height={60} className="h-12 w-auto" />
-                </a>
+              <div className="mt-6 flex justify-center lg:justify-start">
+                <AppBadges />
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[340px]">
@@ -203,9 +302,18 @@ export default function Home() {
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
-            {features.map((f, i) => (
-              <FeatureCard key={f.title} title={f.title} desc={f.desc} lottieUrl={LOTTIE_URLS[i]} fallbackEmoji={FALLBACK_EMOJIS[i]} highlight={f.highlight} />
-            ))}
+            {features.map((f, i) => {
+              const IconComponent = FEATURE_ICONS[i];
+              return (
+                <FeatureCard
+                  key={f.title}
+                  title={f.title}
+                  desc={f.desc}
+                  IconComponent={IconComponent}
+                  highlight={f.highlight}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -317,10 +425,10 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <a href="#" className="transition hover:scale-105">
-                <Image src="/app-store-badge.svg" alt="App Store" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
+                <Image src="/app.svg" alt="App Store" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
               </a>
               <a href="#" className="transition hover:scale-105">
-                <Image src="/google-play-badge.png" alt="Google Play" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
+                <Image src="/google-play.svg" alt="Google Play" width={140} height={47} className="h-10 w-auto brightness-90 hover:brightness-100 transition" />
               </a>
             </div>
           </div>
@@ -330,7 +438,7 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 pt-14 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/5">
 
-            {/* Brand column — wider */}
+            {/* Brand column */}
             <div>
               <a href="#hero">
                 <Image src="/para-logo.png" alt="PARA" width={130} height={44}
@@ -340,7 +448,6 @@ export default function Home() {
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">
                 The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.
               </p>
-              {/* Socials */}
               <div className="flex gap-2.5">
                 {[
                   { href: 'https://facebook.com',  label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
