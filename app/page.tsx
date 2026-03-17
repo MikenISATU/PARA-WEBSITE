@@ -386,7 +386,6 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Six students. One shared frustration. A Hult Prize competition that turned into something real.</p>
           </div>
 
           {/* Story narrative */}
