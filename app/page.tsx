@@ -138,7 +138,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
 }) {
   return (
     <div className={[
-      'relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group',
+      'relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group h-full',
       highlight
         ? 'bg-[#2563eb] shadow-[0_24px_80px_-8px_rgba(37,99,235,0.65)] scale-[1.02] hover:scale-[1.04] hover:shadow-[0_32px_100px_-8px_rgba(37,99,235,0.75)]'
         : 'bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-2 hover:shadow-[0_20px_60px_-8px_rgba(37,99,235,0.18)] hover:border-blue-100',
@@ -263,7 +263,7 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
           alt="Get it on Google Play"
           width={155}
           height={46}
-          className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()}
+          className={['h-[46px] w-[155px]', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()}
         />
       </a>
     </div>
@@ -330,7 +330,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Everything you need to commute smarter</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
               const IconComponent = FEATURE_ICONS[i];
               return (
