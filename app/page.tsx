@@ -141,7 +141,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
       'relative rounded-3xl p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 group h-full',
       highlight
         ? 'bg-[#2563eb] shadow-[0_24px_80px_-8px_rgba(37,99,235,0.65)] scale-[1.02] hover:scale-[1.04] hover:shadow-[0_32px_100px_-8px_rgba(37,99,235,0.75)]'
-        : 'bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-2 hover:shadow-[0_20px_60px_-8px_rgba(37,99,235,0.18)] hover:border-blue-100',
+        : 'bg-white border border-gray-100 shadow-[0_8px_40px_-4px_rgba(0,0,0,0.18)] hover:-translate-y-2 hover:shadow-[0_20px_60px_-8px_rgba(37,99,235,0.18)] hover:border-blue-100',
     ].join(' ')}>
       {highlight && (
         <>
