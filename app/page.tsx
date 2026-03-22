@@ -206,24 +206,21 @@ function NavbarWrapper() {
   );
 }
 
-// ─── App Badges — with "Soon" overlay on both badges ─────────────────────────
+// ─── App Badges — "Soon" overlay on App Store only; Google Play is live ───────
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       {/* App Store — not yet launched, show "Soon" overlay */}
-      <div className="relative group cursor-not-allowed">
+      <div className="relative cursor-not-allowed">
         <AppStoreBadge className={['h-[46px] w-auto opacity-50', dark ? '' : ''].join(' ').trim()} />
         <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
           <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
         </div>
       </div>
-      {/* Google Play — not yet launched, show "Soon" overlay */}
-      <div className="relative group cursor-not-allowed">
-        <GooglePlayBadge className={['h-[46px] w-auto opacity-50', dark ? '' : ''].join(' ').trim()} />
-        <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
-          <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
-        </div>
-      </div>
+      {/* Google Play — live, links to store */}
+      <a href="https://test.com" target="_blank" rel="noopener noreferrer" className="transition hover:scale-105 hover:opacity-90">
+        <GooglePlayBadge className="h-[46px] w-auto" />
+      </a>
     </div>
   );
 }
