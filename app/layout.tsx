@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PARA WEBSITE",
+  title: "P A R A",
   description: "PARA TEAM 2026",
 };
 
