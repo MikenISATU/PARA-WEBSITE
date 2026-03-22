@@ -69,7 +69,7 @@ const IconPhilippines = ({ white }: { white?: boolean }) => (
 
 const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, IconCommunity, IconPhilippines];
 
-// ─── App Store badge (inline SVG — apple.svg upload was a corrupt Mac metadata file) ──
+// ─── App Store badge ──────────────────────────────────────────────────────────
 const AppStoreBadge = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Download on the App Store">
     <rect width="120" height="40" rx="5" fill="#000"/>
@@ -81,19 +81,16 @@ const AppStoreBadge = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 
-// Google Play badge — inline SVG (uploaded file has wrong aspect ratio, unusable as a badge)
+// ─── Google Play badge ────────────────────────────────────────────────────────
 const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Get it on Google Play">
     <rect width="135" height="40" rx="5" fill="#000"/>
     <rect x=".5" y=".5" width="134" height="39" rx="4.5" stroke="#A6A6A6" strokeWidth=".5" fill="none"/>
-    {/* Google Play triangle icon */}
     <path d="M10.4 7.5c-.3.3-.4.8-.4 1.4V31c0 .6.2 1.1.5 1.4l.1.1L23 20.1v-.2L10.4 7.5z" fill="url(#gp1)"/>
     <path d="M27 24.3l-4.1-4.1V19.9l4.1-4.1.1.1 4.9 2.8c1.4.8 1.4 2.1 0 2.9l-5 2.7z" fill="url(#gp2)"/>
     <path d="M27.1 24.2L22.9 20 10.4 32.5c.5.5 1.2.5 2.1.1l14.6-8.4" fill="url(#gp3)"/>
     <path d="M27.1 15.8L12.5 7.5c-.9-.5-1.6-.4-2.1.1L22.9 20l4.2-4.2z" fill="url(#gp4)"/>
-    {/* "GET IT ON" text */}
     <text x="40" y="13" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="6.5" letterSpacing=".5">GET IT ON</text>
-    {/* "Google Play" text */}
     <text x="39" y="27" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="14" fontWeight="500" letterSpacing="-.2">Google Play</text>
     <defs>
       <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
@@ -132,14 +129,14 @@ const reviews = [
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
 
-// ─── Roadmap — city expansion timeline ───────────────────────────────────────
+// ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
-  { city: 'Iloilo',   title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
-  { city: 'Cebu',     title: 'Coming Soon → Cebu',          desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'current' },
-  { city: 'Bacolod',  title: 'Coming Soon → Bacolod',       desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'upcoming'},
-  { city: 'Aklan',    title: 'Coming Soon → Aklan',         desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'},
-  { city: 'Dumaguete',title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'},
-  { city: 'Tacloban', title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'},
+  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
+  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'current' },
+  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'upcoming'},
+  { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'},
+  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'},
+  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',    desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'},
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -147,37 +144,6 @@ const FacebookIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" classNa
 const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
 const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
-
-// ─── Member Card (Team / Founding Story) ──────────────────────────────────────
-function MemberCard({ name, role, school, photo, grad }: {
-  name: string; role: string; school: string; photo: string; grad: string;
-}) {
-  const [imgError, setImgError] = useState(false);
-  const initials = name.split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase();
-  return (
-    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-      <div className="relative w-28 h-28 mx-auto mb-5">
-        {!imgError ? (
-          <Image
-            src={photo}
-            alt={name}
-            width={112}
-            height={112}
-            className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className={`w-28 h-28 rounded-full bg-gradient-to-br ${grad} flex items-center justify-center text-white font-bold text-2xl shadow-md border-4 border-white`}>
-            {initials}
-          </div>
-        )}
-      </div>
-      <h3 className="font-bold text-gray-900 text-base leading-tight">{name}</h3>
-      <p className="text-[#2563eb] text-sm font-medium mt-1">{role}</p>
-      {school && <p className="text-gray-400 text-xs mt-1 italic">{school}</p>}
-    </div>
-  );
-}
 
 // ─── Feature Card ─────────────────────────────────────────────────────────────
 function FeatureCard({ title, desc, IconComponent, highlight }: {
@@ -206,14 +172,23 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      <div className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200', highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
+      {/* Learn more → links to https://test.com */}
+      <a
+        href="https://test.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={[
+          'mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
+          highlight ? 'text-white' : 'text-[#2563eb]',
+        ].join(' ')}
+      >
         Learn more →
-      </div>
+      </a>
     </div>
   );
 }
 
-// ─── Navbar: hidden on desktop until scroll, always visible on mobile ─────────
+// ─── Navbar wrapper ───────────────────────────────────────────────────────────
 function NavbarWrapper() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -231,18 +206,32 @@ function NavbarWrapper() {
   );
 }
 
-// ─── App Badges ───────────────────────────────────────────────────────────────
+// ─── App Badges — with "Soon" overlay on both badges ─────────────────────────
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      <a href="#" className="transition hover:scale-105 hover:opacity-90">
-        <AppStoreBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
-      </a>
-      <a href="#" className="transition hover:scale-105 hover:opacity-90">
-        <GooglePlayBadge className={['h-[46px] w-auto', dark ? 'opacity-90 hover:opacity-100' : ''].join(' ').trim()} />
-      </a>
+      {/* App Store — not yet launched, show "Soon" overlay */}
+      <div className="relative group cursor-not-allowed">
+        <AppStoreBadge className={['h-[46px] w-auto opacity-50', dark ? '' : ''].join(' ').trim()} />
+        <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
+          <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
+        </div>
+      </div>
+      {/* Google Play — not yet launched, show "Soon" overlay */}
+      <div className="relative group cursor-not-allowed">
+        <GooglePlayBadge className={['h-[46px] w-auto opacity-50', dark ? '' : ''].join(' ').trim()} />
+        <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
+          <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
+        </div>
+      </div>
     </div>
   );
+}
+
+// ─── Smooth scroll helper ─────────────────────────────────────────────────────
+function scrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -280,9 +269,7 @@ export default function Home() {
                   <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                     <source src="/para-onboarding.mp4" type="video/mp4" />
                   </video>
-                  {/* Mask top status bar */}
                   <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
-                  {/* Mask bottom nav bar */}
                   <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-zinc-950 z-10" />
                 </div>
               </div>
@@ -389,7 +376,7 @@ export default function Home() {
           </div>
 
           {/* Story narrative */}
-          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 mb-12 border border-gray-100 shadow-sm">
+          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-sm">
             <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
               <p>
                 PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept grew into something more, from late night brainstorming to internships and building a real solution together.
@@ -409,8 +396,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Team members — clean 6-person grid, no labels */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Team member profiles — hidden for now, re-enable when ready */}
+          {/*
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[
               { name: 'Alicia Cerrudo',   role: 'Marketing & Business Development', school: 'West Visayas State University', photo: '/team/alicia-cerrudo.png',   grad: 'from-blue-500 to-indigo-600' },
               { name: 'Keannu Torre',     role: 'Project Lead',                      school: 'Macquarie University',          photo: '/team/keannu-torre.png',     grad: 'from-indigo-500 to-blue-600' },
@@ -418,8 +406,9 @@ export default function Home() {
               { name: 'Miken Napilan',    role: 'UI/UX & Front-End Developer',       school: '',                              photo: '/team/miken-napilan.png',    grad: 'from-slate-500 to-gray-700'  },
               { name: 'Eugine Fernandez', role: 'Lead Developer',                    school: '',                              photo: '/team/eugine-fernandez.png', grad: 'from-gray-500 to-slate-700'  },
               { name: 'MJ Torre',         role: 'Operations & Compliance',           school: '',                              photo: '/team/mj-torre.png',         grad: 'from-gray-400 to-slate-600'  },
-            ].map(m => <MemberCard key={m.name} name={m.name} role={m.role} school={m.school} photo={m.photo} grad={m.grad} />)}
+            ].map(m => <MemberCard key={m.name} {...m} />)}
           </div>
+          */}
         </div>
       </section>
 
@@ -482,27 +471,61 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            {/* Product links — scroll to sections */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
               <ul className="space-y-3">
-                {['Features', 'How It Works', 'Roadmap', 'Download'].map(l => (
-                  <li key={l}><a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l}</a></li>
+                {[
+                  { label: 'Features',     id: 'features'      },
+                  { label: 'How It Works', id: 'how-it-works'  },
+                  { label: 'Roadmap',      id: 'roadmap'       },
+                  { label: 'Download',     id: 'hero'          },
+                ].map(l => (
+                  <li key={l.label}>
+                    <button
+                      onClick={() => scrollTo(l.id)}
+                      className="text-white/55 hover:text-white text-sm transition-colors text-left"
+                    >
+                      {l.label}
+                    </button>
+                  </li>
                 ))}
               </ul>
             </div>
+
+            {/* Company links — scroll to sections; Team hidden for now */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Company</p>
               <ul className="space-y-3">
-                {['Our Mission', 'Team', 'Blog', 'Careers'].map(l => (
-                  <li key={l}><a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l}</a></li>
+                {[
+                  { label: 'Our Mission', id: 'mission' },
+                  // Team profiles hidden — uncomment when ready:
+                  // { label: 'Team', id: 'team' },
+                  { label: 'Blog',        id: null      },
+                  { label: 'Careers',     id: null      },
+                ].map(l => (
+                  <li key={l.label}>
+                    {l.id ? (
+                      <button
+                        onClick={() => scrollTo(l.id)}
+                        className="text-white/55 hover:text-white text-sm transition-colors text-left"
+                      >
+                        {l.label}
+                      </button>
+                    ) : (
+                      <a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a>
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>
+
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
               <ul className="space-y-3">
                 {[
-                  { label: 'hello@paraapp.ph', href: 'mailto:hello@paraapp.ph' },
+                  { label: 'hello@paraapp.ph',    href: 'mailto:hello@paraapp.ph' },
                   { label: 'Support Center',       href: '#' },
                   { label: 'Report a Route Issue', href: '#' },
                   { label: 'Partner with Us',      href: '#' },
