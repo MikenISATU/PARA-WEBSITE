@@ -329,12 +329,13 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>       
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight flex justify-center">
-              <span className="inline-flex items-center gap-2 bg-[#2563eb] text-white px-6 py-3 rounded-full shadow-md whitespace-nowrap">
-                Coming Soon →
-                <span className="w-2 h-2 rounded-full bg-white/60 inline-block animate-pulse" />
-                Bacolod
-              </span>
-            </h2>
+              <h2 className="font-extrabold tracking-tight flex justify-center">
+                <span className="inline-flex items-center gap-2 bg-[#2563eb] text-white text-xl sm:text-3xl lg:text-4xl px-5 py-2.5 sm:px-6 sm:py-3 rounded-full shadow-md whitespace-nowrap">
+                  Coming Soon →
+                  <span className="w-2 h-2 rounded-full bg-white/60 inline-block animate-pulse shrink-0" />
+                  Bacolod
+                </span>
+              </h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
           <div className="relative">
