@@ -132,11 +132,11 @@ const reviews = [
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
   { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
-  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'current' },
-  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'upcoming'},
-  { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'},
-  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'},
-  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',    desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'},
+  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming' },
+  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'current'  },
+  { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming' },
+  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming' },
+  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',    desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming' },
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -172,7 +172,6 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      {/* Learn more → links to https://test.com */}
       <a
         href="https://test.com"
         target="_blank"
@@ -206,18 +205,16 @@ function NavbarWrapper() {
   );
 }
 
-// ─── App Badges — "Soon" overlay on App Store only; Google Play is live ───────
+// ─── App Badges ───────────────────────────────────────────────────────────────
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      {/* App Store — not yet launched, show "Soon" overlay */}
       <div className="relative cursor-not-allowed">
         <AppStoreBadge className={['h-[46px] w-auto opacity-50', dark ? '' : ''].join(' ').trim()} />
         <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
           <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
         </div>
       </div>
-      {/* Google Play — live, links to store */}
       <a href="https://test.com" target="_blank" rel="noopener noreferrer" className="transition hover:scale-105 hover:opacity-90">
         <GooglePlayBadge className="h-[46px] w-auto" />
       </a>
@@ -331,7 +328,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Coming Soon → Cebu</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Coming Soon → Bacolod</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
           <div className="relative">
@@ -341,21 +338,26 @@ export default function Home() {
                 <div key={item.city} className="relative flex gap-6 pl-14">
                   <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
                     item.status === 'done'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                    item.status === 'current' ? 'bg-white border-[#2563eb] text-[#2563eb]' :
+                    item.status === 'current' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                                                 'bg-white border-gray-200 text-gray-400'].join(' ')}>
                     {item.status === 'done' ? '✓' : item.status === 'current' ? '→' : '·'}
                   </div>
-                  <div className={['bg-white rounded-2xl p-5 border flex-1',
-                    item.status === 'current' ? 'border-[#2563eb] shadow-md' : 'border-gray-100 shadow-sm'].join(' ')}>
+                  <div className={['rounded-2xl p-5 border flex-1',
+                    item.status === 'current'
+                      ? 'bg-[#2563eb] border-[#2563eb] shadow-lg'
+                      : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
                     <span className={['text-xs font-semibold uppercase tracking-wider',
-                      item.status !== 'upcoming' ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
+                      item.status === 'current' ? 'text-blue-200' :
+                      item.status === 'done'    ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
                       {item.city}
                       {item.status === 'current' && (
-                        <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
+                        <span className="ml-2 bg-white/20 text-white rounded-full px-2 py-0.5 text-xs">In Progress</span>
                       )}
                     </span>
-                    <h3 className="text-gray-900 font-semibold mt-1 mb-1">{item.title}</h3>
-                    <p className="text-gray-500 text-sm">{item.desc}</p>
+                    <h3 className={['font-semibold mt-1 mb-1',
+                      item.status === 'current' ? 'text-white' : 'text-gray-900'].join(' ')}>{item.title}</h3>
+                    <p className={['text-sm',
+                      item.status === 'current' ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -372,7 +374,6 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
           </div>
 
-          {/* Story narrative */}
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-sm">
             <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
               <p>
@@ -392,20 +393,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          {/* Team member profiles — hidden for now, re-enable when ready */}
-          {/*
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {[
-              { name: 'Alicia Cerrudo',   role: 'Marketing & Business Development', school: 'West Visayas State University', photo: '/team/alicia-cerrudo.png',   grad: 'from-blue-500 to-indigo-600' },
-              { name: 'Keannu Torre',     role: 'Project Lead',                      school: 'Macquarie University',          photo: '/team/keannu-torre.png',     grad: 'from-indigo-500 to-blue-600' },
-              { name: 'Andre Dorde',      role: 'Analytics & Back-End Developer',    school: 'Ateneo de Manila University',   photo: '/team/andre-dorde.png',      grad: 'from-blue-600 to-indigo-700' },
-              { name: 'Miken Napilan',    role: 'UI/UX & Front-End Developer',       school: '',                              photo: '/team/miken-napilan.png',    grad: 'from-slate-500 to-gray-700'  },
-              { name: 'Eugine Fernandez', role: 'Lead Developer',                    school: '',                              photo: '/team/eugine-fernandez.png', grad: 'from-gray-500 to-slate-700'  },
-              { name: 'MJ Torre',         role: 'Operations & Compliance',           school: '',                              photo: '/team/mj-torre.png',         grad: 'from-gray-400 to-slate-600'  },
-            ].map(m => <MemberCard key={m.name} {...m} />)}
-          </div>
-          */}
         </div>
       </section>
 
@@ -469,7 +456,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Product links — scroll to sections */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
               <ul className="space-y-3">
@@ -491,14 +477,11 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Company links — scroll to sections; Team hidden for now */}
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Company</p>
               <ul className="space-y-3">
                 {[
                   { label: 'Our Mission', id: 'mission' },
-                  // Team profiles hidden — uncomment when ready:
-                  // { label: 'Team', id: 'team' },
                   { label: 'Blog',        id: null      },
                   { label: 'Careers',     id: null      },
                 ].map(l => (
