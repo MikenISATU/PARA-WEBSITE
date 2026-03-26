@@ -335,7 +335,6 @@ export default function Home() {
                 Bacolod
               </span>
             </h2>
-          </h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
           </div>
           <div className="relative">
