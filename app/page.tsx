@@ -327,9 +327,7 @@ export default function Home() {
       <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-4 px-4 py-1.5 rounded-full">City Expansion</span>
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>       
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight flex justify-center">
               <span className="inline-flex items-center gap-2 bg-[#2563eb] text-white px-6 py-3 rounded-full shadow-md whitespace-nowrap">
                 Coming Soon →
