@@ -132,8 +132,8 @@ const reviews = [
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
   { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
-  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming' },
   { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'current'  },
+  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming' },
   { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming' },
   { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming' },
   { city: 'Tacloban',  title: 'Coming Soon → Tacloban',    desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming' },
