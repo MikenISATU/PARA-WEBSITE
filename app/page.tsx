@@ -132,7 +132,7 @@ const reviews = [
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
   { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
-  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'upcoming' },
+  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'current'  },
   { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming' },
   { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming' },
   { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming' },
@@ -324,17 +324,52 @@ export default function Home() {
       </section>
 
       {/* ── ROADMAP ── */}
-      <section id="roadmap" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
-            City Expansion Road Map
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            Now Available in Iloilo
-          </h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-            We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
-          </p>
+      <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>       
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight flex justify-center">
+              <h2 className="font-extrabold tracking-tight flex justify-center">
+                <span className="inline-flex items-center gap-2 bg-[#2563eb] text-white text-xl sm:text-3xl lg:text-4xl px-5 py-2.5 sm:px-6 sm:py-3 rounded-full shadow-md whitespace-nowrap">
+                  Coming Soon →
+                  <span className="w-2 h-2 rounded-full bg-white/60 inline-block animate-pulse shrink-0" />
+                  Bacolod
+                </span>
+              </h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
+          </div>
+          <div className="relative">
+            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
+            <div className="space-y-8">
+              {roadmapItems.map(item => (
+                <div key={item.city} className="relative flex gap-6 pl-14">
+                  <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
+                    item.status === 'done'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                    item.status === 'current' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                                                'bg-white border-gray-200 text-gray-400'].join(' ')}>
+                    {item.status === 'done' ? '✓' : item.status === 'current' ? '→' : '·'}
+                  </div>
+                  <div className={['rounded-2xl p-5 border flex-1',
+                    item.status === 'current'
+                      ? 'bg-[#2563eb] border-[#2563eb] shadow-lg'
+                      : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
+                    <span className={['text-xs font-semibold uppercase tracking-wider',
+                      item.status === 'current' ? 'text-blue-200' :
+                      item.status === 'done'    ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
+                      {item.city}
+                      {item.status === 'current' && (
+                        <span className="ml-2 bg-white/20 text-white rounded-full px-2 py-0.5 text-xs">In Progress</span>
+                      )}
+                    </span>
+                    <h3 className={['font-semibold mt-1 mb-1',
+                      item.status === 'current' ? 'text-white' : 'text-gray-900'].join(' ')}>{item.title}</h3>
+                    <p className={['text-sm',
+                      item.status === 'current' ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
