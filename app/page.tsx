@@ -119,24 +119,26 @@ const features = [
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute \u2014 from Luzon to Mindanao.',                        highlight: false },
 ];
 
 const reviews = [
   { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
-  { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
+  { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take \u2014 not anymore.' },
   { name: 'Sarah M.',  location: 'Cebu City',   rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
 
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
+// CHANGE 1: Iloilo 'done' -> 'current'  (blue card)
+// CHANGE 2: Bacolod 'current' -> 'inprogress'  (white card + In Progress badge)
 const roadmapItems = [
-  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'done'    },
-  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',     desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'current'  },
-  { city: 'Cebu',      title: 'Coming Soon → Cebu',        desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming' },
-  { city: 'Aklan',     title: 'Coming Soon → Aklan',       desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming' },
-  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',   desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming' },
-  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',    desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming' },
+  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City \u2014 full jeepney route coverage across all major corridors.',  status: 'current'    },
+  { city: 'Bacolod',   title: 'Coming Soon \u2192 Bacolod', desc: 'The City of Smiles is next \u2014 complete jeepney route mapping underway.',                   status: 'inprogress' },
+  { city: 'Cebu',      title: 'Coming Soon \u2192 Cebu',    desc: 'Expanding to Cebu City and Metro Cebu \u2014 the heart of the Visayas.',                       status: 'upcoming'   },
+  { city: 'Aklan',     title: 'Coming Soon \u2192 Aklan',   desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                    status: 'upcoming'   },
+  { city: 'Dumaguete', title: 'Coming Soon \u2192 Dumaguete', desc: 'Route data collection begins in the City of Gentle People.',                                 status: 'upcoming'   },
+  { city: 'Tacloban',  title: 'Coming Soon \u2192 Tacloban', desc: 'Bringing PARA to Eastern Visayas \u2014 Tacloban and surrounding areas.',                     status: 'upcoming'   },
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -181,7 +183,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
           highlight ? 'text-white' : 'text-[#2563eb]',
         ].join(' ')}
       >
-        Learn more →
+        Learn more \u2192
       </a>
     </div>
   );
@@ -234,7 +236,7 @@ export default function Home() {
     <main className="min-h-screen bg-white overflow-hidden">
       <NavbarWrapper />
 
-      {/* ── HERO ── */}
+      {/* \u2500\u2500 HERO \u2500\u2500 */}
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
@@ -273,22 +275,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MISSION ── */}
+      {/* \u2500\u2500 MISSION \u2500\u2500 */}
       <section id="mission" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">Our Mission</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Making every commute smarter, faster, and less stressful</h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day — yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day \u2014 yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
         </div>
       </section>
 
-      {/* ── KEY FEATURES ── */}
+      {/* \u2500\u2500 KEY FEATURES \u2500\u2500 */}
       <section id="features" className="py-24 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads \u2014 not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
@@ -299,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
+      {/* \u2500\u2500 HOW IT WORKS \u2500\u2500 */}
       <section id="how-it-works" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -309,7 +311,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
-              { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
+              { step: '01', title: 'Enter your destination', desc: "Type where you're headed \u2014 street, landmark, or barangay." },
               { step: '02', title: 'Get your route',         desc: 'PARA shows the best jeepney combinations with fares and stops.' },
               { step: '03', title: 'Ride with confidence',   desc: 'Track your ride live and know exactly when to get off.' },
             ].map(s => (
@@ -323,42 +325,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ROADMAP ── */}
+      {/* \u2500\u2500 ROADMAP \u2500\u2500 */}
+      {/* CHANGE 3: Blue banner header replacing broken nested h2 pill */}
       <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">City Expansion</span>       
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight flex justify-center">
-              <h2 className="font-extrabold tracking-tight flex justify-center">
-                <span className="inline-flex items-center gap-2 bg-[#2563eb] text-white text-xl sm:text-3xl lg:text-4xl px-5 py-2.5 sm:px-6 sm:py-3 rounded-full shadow-md whitespace-nowrap">
-                  Coming Soon →
-                  <span className="w-2 h-2 rounded-full bg-white/60 inline-block animate-pulse shrink-0" />
-                  Bacolod
-                </span>
-              </h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">We started in Iloilo. Now we&apos;re expanding across the Visayas — one city at a time.</p>
+          <div className="bg-[#2563eb] -mx-6 px-6 py-14 text-center mb-14">
+            <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
+              City Expansion Road Map
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Now Available in Iloilo
+            </h2>
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+              We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
+            </p>
           </div>
           <div className="relative">
             <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
             <div className="space-y-8">
               {roadmapItems.map(item => (
                 <div key={item.city} className="relative flex gap-6 pl-14">
+                  {/* Dot: current=blue filled, inprogress=blue filled w/ arrow, upcoming=white */}
                   <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
-                    item.status === 'done'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                    item.status === 'current' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                                                'bg-white border-gray-200 text-gray-400'].join(' ')}>
-                    {item.status === 'done' ? '✓' : item.status === 'current' ? '→' : '·'}
+                    item.status === 'current'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                    item.status === 'inprogress' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                                                   'bg-white border-gray-200 text-gray-400'].join(' ')}>
+                    {item.status === 'current' ? '\u2713' : item.status === 'inprogress' ? '\u2192' : '\u00b7'}
                   </div>
+                  {/* Card: current=blue, inprogress=white with blue border + badge, upcoming=plain white */}
                   <div className={['rounded-2xl p-5 border flex-1',
                     item.status === 'current'
                       ? 'bg-[#2563eb] border-[#2563eb] shadow-lg'
-                      : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
+                      : item.status === 'inprogress'
+                        ? 'bg-white border-[#2563eb] shadow-md'
+                        : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
                     <span className={['text-xs font-semibold uppercase tracking-wider',
-                      item.status === 'current' ? 'text-blue-200' :
-                      item.status === 'done'    ? 'text-[#2563eb]' : 'text-gray-400'].join(' ')}>
+                      item.status === 'current'    ? 'text-blue-200' :
+                      item.status === 'inprogress' ? 'text-[#2563eb]' :
+                                                     'text-gray-400'].join(' ')}>
                       {item.city}
-                      {item.status === 'current' && (
-                        <span className="ml-2 bg-white/20 text-white rounded-full px-2 py-0.5 text-xs">In Progress</span>
+                      {item.status === 'inprogress' && (
+                        <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
                       )}
                     </span>
                     <h3 className={['font-semibold mt-1 mb-1',
@@ -373,37 +380,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOUNDING STORY ── */}
+      {/* \u2500\u2500 FOUNDING STORY \u2500\u2500 */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
           </div>
-
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-sm">
             <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
-              <p>
-                PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept grew into something more, from late night brainstorming to internships and building a real solution together.
-              </p>
-              <p>
-                We were driven by one goal: to create something that solves real world problems.
-              </p>
-              <p>
-                Our team from WVSU, Macquarie University, and Ateneo de Manila shared one frustration, the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.
-              </p>
-              <p className="text-lg text-gray-800 font-semibold">
-                So we built PARA.
-              </p>
-              <p>
-                Starting in Iloilo City, we mapped routes, stops, and transfers, turning scattered knowledge into something accessible. What began as an idea became a mission to make commuting simpler and more accessible for every Filipino.
-              </p>
+              <p>PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept grew into something more, from late night brainstorming to internships and building a real solution together.</p>
+              <p>We were driven by one goal: to create something that solves real world problems.</p>
+              <p>Our team from WVSU, Macquarie University, and Ateneo de Manila shared one frustration, the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.</p>
+              <p className="text-lg text-gray-800 font-semibold">So we built PARA.</p>
+              <p>Starting in Iloilo City, we mapped routes, stops, and transfers, turning scattered knowledge into something accessible. What began as an idea became a mission to make commuting simpler and more accessible for every Filipino.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── REVIEWS ── */}
+      {/* \u2500\u2500 REVIEWS \u2500\u2500 */}
       <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -414,8 +410,8 @@ export default function Home() {
             {reviews.map(r => (
               <div key={r.name} className="bg-white rounded-2xl p-6 shadow-sm border border-blue-50 flex flex-col gap-3">
                 <div className="flex gap-0.5">
-                  {Array.from({ length: r.rating }).map((_, i) => <span key={i} className="text-yellow-400 text-sm">★</span>)}
-                  {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={i} className="text-gray-200 text-sm">★</span>)}
+                  {Array.from({ length: r.rating }).map((_, i) => <span key={i} className="text-yellow-400 text-sm">\u2605</span>)}
+                  {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={i} className="text-gray-200 text-sm">\u2605</span>)}
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed flex-1">&ldquo;{r.text}&rdquo;</p>
                 <div>
@@ -428,7 +424,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* \u2500\u2500 FOOTER \u2500\u2500 */}
       <footer className="bg-[#0f172a] text-white">
         <div className="border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -445,9 +441,7 @@ export default function Home() {
               <a href="#hero" className="inline-block mb-5">
                 <Image src="/para-logo.png" alt="PARA" width={180} height={60} className="h-12 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
               </a>
-              <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">
-                The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.
-              </p>
+              <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.</p>
               <div className="flex gap-2.5">
                 {[
                   { href: 'https://facebook.com',  label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
@@ -462,28 +456,19 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
               <ul className="space-y-3">
                 {[
-                  { label: 'Features',     id: 'features'      },
-                  { label: 'How It Works', id: 'how-it-works'  },
-                  { label: 'Roadmap',      id: 'roadmap'       },
-                  { label: 'Download',     id: 'hero'          },
+                  { label: 'Features',     id: 'features'     },
+                  { label: 'How It Works', id: 'how-it-works' },
+                  { label: 'Roadmap',      id: 'roadmap'      },
+                  { label: 'Download',     id: 'hero'         },
                 ].map(l => (
-                  <li key={l.label}>
-                    <button
-                      onClick={() => scrollTo(l.id)}
-                      className="text-white/55 hover:text-white text-sm transition-colors text-left"
-                    >
-                      {l.label}
-                    </button>
-                  </li>
+                  <li key={l.label}><button onClick={() => scrollTo(l.id)} className="text-white/55 hover:text-white text-sm transition-colors text-left">{l.label}</button></li>
                 ))}
               </ul>
             </div>
-
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Company</p>
               <ul className="space-y-3">
@@ -493,21 +478,14 @@ export default function Home() {
                   { label: 'Careers',     id: null      },
                 ].map(l => (
                   <li key={l.label}>
-                    {l.id ? (
-                      <button
-                        onClick={() => scrollTo(l.id)}
-                        className="text-white/55 hover:text-white text-sm transition-colors text-left"
-                      >
-                        {l.label}
-                      </button>
-                    ) : (
-                      <a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a>
-                    )}
+                    {l.id
+                      ? <button onClick={() => scrollTo(l.id!)} className="text-white/55 hover:text-white text-sm transition-colors text-left">{l.label}</button>
+                      : <a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a>
+                    }
                   </li>
                 ))}
               </ul>
             </div>
-
             <div>
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
               <ul className="space-y-3">
@@ -523,7 +501,7 @@ export default function Home() {
             </div>
           </div>
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-white/25 text-xs">© {new Date().getFullYear()} PARA App. All rights reserved.</p>
+            <p className="text-white/25 text-xs">\u00a9 {new Date().getFullYear()} PARA App. All rights reserved.</p>
             <div className="flex items-center gap-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
                 <a key={l} href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">{l}</a>
