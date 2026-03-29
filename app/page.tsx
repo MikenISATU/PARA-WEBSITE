@@ -326,20 +326,22 @@ export default function Home() {
       </section>
 
       {/* \u2500\u2500 ROADMAP \u2500\u2500 */}
-      {/* CHANGE 3: Blue banner header replacing broken nested h2 pill */}
-      <section id="roadmap" className="py-20 px-6 bg-gray-50 scroll-mt-16">
+      {/* ROADMAP — full-width blue banner header */}
+      <section id="roadmap" className="bg-gray-50 scroll-mt-16">
+        {/* Full-width blue banner — breaks out of any container */}
+        <div className="bg-[#2563eb] w-full py-16 px-6 text-center mb-14">
+          <p className="text-blue-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">
+            City Expansion Road Map
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            Now Available in Iloilo
+          </h2>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+            We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
+          </p>
+        </div>
+        <div className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-[#2563eb] -mx-6 px-6 py-14 text-center mb-14">
-            <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
-              City Expansion Road Map
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Now Available in Iloilo
-            </h2>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
-              We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
-            </p>
-          </div>
           <div className="relative">
             <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
             <div className="space-y-8">
@@ -377,6 +379,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </section>
 
