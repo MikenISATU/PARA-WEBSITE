@@ -325,73 +325,16 @@ export default function Home() {
 
       {/* ── ROADMAP ── */}
       <section id="roadmap" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
-        <div className="max-w-3xl mx-auto">
-
-          {/* Header — matches the image exactly */}
-          <div className="text-center mb-14">
-            <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
-              City Expansion Road Map
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Now Available in Iloilo
-            </h2>
-            <p className="text-blue-100 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
-            </p>
-          </div>
-
-          {/* Timeline */}
-          <div className="relative">
-            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-white/20" />
-            <div className="space-y-5">
-              {roadmapItems.map(item => (
-                <div key={item.city} className="relative flex gap-6 pl-14">
-                  {/* Dot */}
-                  <div className={[
-                    'absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
-                    item.status === 'done'
-                      ? 'bg-white border-white text-[#2563eb]'
-                      : 'bg-white/10 border-white/30 text-white/50',
-                  ].join(' ')}>
-                    {item.status === 'done' ? '✓' : '·'}
-                  </div>
-
-                  {/* Card */}
-                  <div className={[
-                    'rounded-2xl p-5 border flex-1 transition-all duration-200',
-                    item.status === 'done'
-                      ? 'bg-white shadow-xl border-white'
-                      : 'bg-white/10 border-white/15 backdrop-blur-sm',
-                  ].join(' ')}>
-                    <span className={[
-                      'text-xs font-bold uppercase tracking-widest',
-                      item.status === 'done' ? 'text-[#2563eb]' : 'text-blue-200/70',
-                    ].join(' ')}>
-                      {item.city}
-                      {item.status === 'done' && (
-                        <span className="ml-2 inline-flex items-center gap-1 bg-blue-50 text-[#2563eb] rounded-full px-2 py-0.5 text-[10px]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] animate-pulse inline-block" />
-                          Live
-                        </span>
-                      )}
-                    </span>
-                    <h3 className={[
-                      'font-semibold mt-1 mb-1',
-                      item.status === 'done' ? 'text-gray-900' : 'text-white/70',
-                    ].join(' ')}>
-                      {item.title}
-                    </h3>
-                    <p className={[
-                      'text-sm',
-                      item.status === 'done' ? 'text-gray-500' : 'text-blue-200/60',
-                    ].join(' ')}>
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
+            City Expansion Road Map
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            Now Available in Iloilo
+          </h2>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+            We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
+          </p>
         </div>
       </section>
 
