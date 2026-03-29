@@ -119,12 +119,12 @@ const features = [
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute \u2014 from Luzon to Mindanao.',                        highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                        highlight: false },
 ];
 
 const reviews = [
   { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
-  { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take \u2014 not anymore.' },
+  { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
   { name: 'Sarah M.',  location: 'Cebu City',   rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
@@ -133,12 +133,12 @@ const reviews = [
 // CHANGE 1: Iloilo 'done' -> 'current'  (blue card)
 // CHANGE 2: Bacolod 'current' -> 'inprogress'  (white card + In Progress badge)
 const roadmapItems = [
-  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City \u2014 full jeepney route coverage across all major corridors.',  status: 'current'    },
-  { city: 'Bacolod',   title: 'Coming Soon \u2192 Bacolod', desc: 'The City of Smiles is next \u2014 complete jeepney route mapping underway.',                   status: 'inprogress' },
-  { city: 'Cebu',      title: 'Coming Soon \u2192 Cebu',    desc: 'Expanding to Cebu City and Metro Cebu \u2014 the heart of the Visayas.',                       status: 'upcoming'   },
-  { city: 'Aklan',     title: 'Coming Soon \u2192 Aklan',   desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                    status: 'upcoming'   },
-  { city: 'Dumaguete', title: 'Coming Soon \u2192 Dumaguete', desc: 'Route data collection begins in the City of Gentle People.',                                 status: 'upcoming'   },
-  { city: 'Tacloban',  title: 'Coming Soon \u2192 Tacloban', desc: 'Bringing PARA to Eastern Visayas \u2014 Tacloban and surrounding areas.',                     status: 'upcoming'   },
+  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
+  { city: 'Bacolod',   title: 'Coming Soon → Bacolod', desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                   status: 'inprogress' },
+  { city: 'Cebu',      title: 'Coming Soon → Cebu',    desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                       status: 'upcoming'   },
+  { city: 'Aklan',     title: 'Coming Soon → Aklan',   desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                    status: 'upcoming'   },
+  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete', desc: 'Route data collection begins in the City of Gentle People.',                                 status: 'upcoming'   },
+  { city: 'Tacloban',  title: 'Coming Soon → Tacloban', desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                     status: 'upcoming'   },
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -183,7 +183,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
           highlight ? 'text-white' : 'text-[#2563eb]',
         ].join(' ')}
       >
-        Learn more \u2192
+        Learn more →
       </a>
     </div>
   );
@@ -236,7 +236,7 @@ export default function Home() {
     <main className="min-h-screen bg-white overflow-hidden">
       <NavbarWrapper />
 
-      {/* \u2500\u2500 HERO \u2500\u2500 */}
+      {/* ── HERO ── */}
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
@@ -275,22 +275,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 MISSION \u2500\u2500 */}
+      {/* ── MISSION ── */}
       <section id="mission" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">Our Mission</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Making every commute smarter, faster, and less stressful</h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day \u2014 yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day — yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
         </div>
       </section>
 
-      {/* \u2500\u2500 KEY FEATURES \u2500\u2500 */}
+      {/* ── KEY FEATURES ── */}
       <section id="features" className="py-24 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads \u2014 not some idealized transit system.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 HOW IT WORKS \u2500\u2500 */}
+      {/* ── HOW IT WORKS ── */}
       <section id="how-it-works" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -311,7 +311,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
-              { step: '01', title: 'Enter your destination', desc: "Type where you're headed \u2014 street, landmark, or barangay." },
+              { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
               { step: '02', title: 'Get your route',         desc: 'PARA shows the best jeepney combinations with fares and stops.' },
               { step: '03', title: 'Ride with confidence',   desc: 'Track your ride live and know exactly when to get off.' },
             ].map(s => (
@@ -325,7 +325,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 ROADMAP \u2500\u2500 */}
+      {/* ── ROADMAP ── */}
       {/* ROADMAP — full-width blue banner header */}
       <section id="roadmap" className="bg-gray-50 scroll-mt-16">
         {/* Full-width blue banner — breaks out of any container */}
@@ -352,7 +352,7 @@ export default function Home() {
                     item.status === 'current'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                     item.status === 'inprogress' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                                                    'bg-white border-gray-200 text-gray-400'].join(' ')}>
-                    {item.status === 'current' ? '\u2713' : item.status === 'inprogress' ? '\u2192' : '\u00b7'}
+                    {item.status === 'current' ? '✓' : item.status === 'inprogress' ? '→' : '·'}
                   </div>
                   {/* Card: current=blue, inprogress=white with blue border + badge, upcoming=plain white */}
                   <div className={['rounded-2xl p-5 border flex-1',
@@ -383,7 +383,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 FOUNDING STORY \u2500\u2500 */}
+      {/* ── FOUNDING STORY ── */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -402,7 +402,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 REVIEWS \u2500\u2500 */}
+      {/* ── REVIEWS ── */}
       <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -413,8 +413,8 @@ export default function Home() {
             {reviews.map(r => (
               <div key={r.name} className="bg-white rounded-2xl p-6 shadow-sm border border-blue-50 flex flex-col gap-3">
                 <div className="flex gap-0.5">
-                  {Array.from({ length: r.rating }).map((_, i) => <span key={i} className="text-yellow-400 text-sm">\u2605</span>)}
-                  {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={i} className="text-gray-200 text-sm">\u2605</span>)}
+                  {Array.from({ length: r.rating }).map((_, i) => <span key={i} className="text-yellow-400 text-sm">★</span>)}
+                  {Array.from({ length: 5 - r.rating }).map((_, i) => <span key={i} className="text-gray-200 text-sm">★</span>)}
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed flex-1">&ldquo;{r.text}&rdquo;</p>
                 <div>
@@ -427,7 +427,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* \u2500\u2500 FOOTER \u2500\u2500 */}
+      {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
         <div className="border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -504,7 +504,7 @@ export default function Home() {
             </div>
           </div>
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-white/25 text-xs">\u00a9 {new Date().getFullYear()} PARA App. All rights reserved.</p>
+            <p className="text-white/25 text-xs">© {new Date().getFullYear()} PARA App. All rights reserved.</p>
             <div className="flex items-center gap-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
                 <a key={l} href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">{l}</a>
