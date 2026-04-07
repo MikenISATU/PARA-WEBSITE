@@ -6,8 +6,6 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
-// ─── Feature SVG Icons ────────────────────────────────────────────────────────
-
 const IconSearch = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <circle cx="21" cy="21" r="13" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
@@ -15,7 +13,6 @@ const IconSearch = ({ white }: { white?: boolean }) => (
     <path d="M16 21h10M21 16v10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
   </svg>
 );
-
 const IconLiveLocation = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <circle cx="24" cy="22" r="8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
@@ -27,7 +24,6 @@ const IconLiveLocation = ({ white }: { white?: boolean }) => (
     <circle cx="24" cy="22" r="17" stroke={white ? 'rgba(255,255,255,0.2)' : 'rgba(37,99,235,0.12)'} strokeWidth="2"/>
   </svg>
 );
-
 const IconTransfer = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <rect x="4" y="28" width="18" height="12" rx="4" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
@@ -36,7 +32,6 @@ const IconTransfer = ({ white }: { white?: boolean }) => (
     <path d="M26 20l3-4-3-4" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-
 const IconOffline = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <path d="M34 32H14a8 8 0 0 1-2-15.7A12 12 0 0 1 35.8 22" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -45,7 +40,6 @@ const IconOffline = ({ white }: { white?: boolean }) => (
     <path d="M24 32v8M20 40h8" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3" strokeLinecap="round"/>
   </svg>
 );
-
 const IconCommunity = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <circle cx="24" cy="16" r="6" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
@@ -56,7 +50,6 @@ const IconCommunity = ({ white }: { white?: boolean }) => (
     <path d="M14 38c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
   </svg>
 );
-
 const IconPhilippines = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18 18-8.059 18-18S33.941 6 24 6Z" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5"/>
@@ -66,10 +59,8 @@ const IconPhilippines = ({ white }: { white?: boolean }) => (
     <circle cx="24" cy="24" r="3" fill={white ? '#fff' : '#2563eb'}/>
   </svg>
 );
-
 const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, IconCommunity, IconPhilippines];
 
-// ─── App Store badge ──────────────────────────────────────────────────────────
 const AppStoreBadge = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Download on the App Store">
     <rect width="120" height="40" rx="5" fill="#000"/>
@@ -80,8 +71,6 @@ const AppStoreBadge = ({ className = '' }: { className?: string }) => (
     <text x="34" y="27" fill="#fff" fontFamily="-apple-system, 'Helvetica Neue', sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.2">App Store</text>
   </svg>
 );
-
-// ─── Google Play badge ────────────────────────────────────────────────────────
 const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Get it on Google Play">
     <rect width="135" height="40" rx="5" fill="#000"/>
@@ -93,22 +82,10 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
     <text x="40" y="13" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="6.5" letterSpacing=".5">GET IT ON</text>
     <text x="39" y="27" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="14" fontWeight="500" letterSpacing="-.2">Google Play</text>
     <defs>
-      <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
-        <stop offset="0" stopColor="#00a0ff"/>
-        <stop offset="1" stopColor="#00e3ff"/>
-      </linearGradient>
-      <linearGradient id="gp2" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
-        <stop offset="0" stopColor="#ffe000"/>
-        <stop offset="1" stopColor="#ff9c00"/>
-      </linearGradient>
-      <linearGradient id="gp3" x1="24.827" y1="19.704" x2="2.069" y2="-3.054" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
-        <stop offset="0" stopColor="#ff3a44"/>
-        <stop offset="1" stopColor="#c31162"/>
-      </linearGradient>
-      <linearGradient id="gp4" x1="7.297" y1="41.824" x2="17.46" y2="31.661" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
-        <stop offset="0" stopColor="#32a071"/>
-        <stop offset="1" stopColor="#00f076"/>
-      </linearGradient>
+      <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#00a0ff"/><stop offset="1" stopColor="#00e3ff"/></linearGradient>
+      <linearGradient id="gp2" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#ffe000"/><stop offset="1" stopColor="#ff9c00"/></linearGradient>
+      <linearGradient id="gp3" x1="24.827" y1="19.704" x2="2.069" y2="-3.054" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#ff3a44"/><stop offset="1" stopColor="#c31162"/></linearGradient>
+      <linearGradient id="gp4" x1="7.297" y1="41.824" x2="17.46" y2="31.661" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#32a071"/><stop offset="1" stopColor="#00f076"/></linearGradient>
     </defs>
   </svg>
 );
@@ -119,7 +96,7 @@ const features = [
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                        highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
 ];
 
 const reviews = [
@@ -130,15 +107,52 @@ const reviews = [
 ];
 
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
-// CHANGE 1: Iloilo 'done' -> 'current'  (blue card)
-// CHANGE 2: Bacolod 'current' -> 'inprogress'  (white card + In Progress badge)
 const roadmapItems = [
-  { city: 'Iloilo',    title: 'Now Available in Iloilo',   desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
-  { city: 'Bacolod',   title: 'Coming Soon → Bacolod', desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                   status: 'inprogress' },
-  { city: 'Cebu',      title: 'Coming Soon → Cebu',    desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                       status: 'upcoming'   },
-  { city: 'Aklan',     title: 'Coming Soon → Aklan',   desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                    status: 'upcoming'   },
-  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete', desc: 'Route data collection begins in the City of Gentle People.',                                 status: 'upcoming'   },
-  { city: 'Tacloban',  title: 'Coming Soon → Tacloban', desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                     status: 'upcoming'   },
+  { city: 'Iloilo',    title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
+  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',       desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'inprogress' },
+  { city: 'Cebu',      title: 'Coming Soon → Cebu',          desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming'   },
+  { city: 'Aklan',     title: 'Coming Soon → Aklan',         desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'   },
+  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'   },
+  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'   },
+];
+
+// ─── Iloilo Route Lists — ADD OR REMOVE ROUTES HERE FREELY ───────────────────
+
+// 🟢 Green dot = route is live and available in the app
+const iloiloAvailable = [
+  'Bo. Obrero–Iloilo City Proper Loop',
+  'Calaparan Calumpang–Iloilo City Proper',
+  'Ungka–Iloilo City Proper via CPU',
+  'Ungka–Iloilo City via Diversion/Festive Walk',
+  'Festive Walk–Iloilo City Proper via SM City',
+  'Compania–Iloilo City Proper Loop',
+  'Mohon–Infante Loop (Mohon)',
+  'Jaro Liko–Tagbak Link from ICTTMO',
+  'Jaro Liko NFA',
+  'Hibao-an–Iloilo City Proper via Tabucan',
+  'Hibao-an–Jaro via Abeto/Western/Festive',
+  'Molo–Iloilo City Proper via Baluarte Loop',
+  'Villa Baybay–City Proper via Bonifacio',
+  'Tagbak–Festive Walk via SM City/Atria',
+  'La Paz–Festive Walk via Nabitasan Loop',
+  'Jaro CPU',
+  'San Miguel (San Mig B to Festive)',
+  'Hibao-an Mandurriao via Jaro',
+];
+
+// 🔴 Red dot = route not yet available
+const iloiloUnavailable = [
+  'Timawa–Fundador',
+  'Molo Timawa',
+  'Mohon–Mandurriao Business District',
+  'Ungka–La Paz via CPU-ISATU Loop',
+  'Bito-on–La Paz via Coastal',
+  'Tagbak–Lapuz via Coastal Loop',
+  'Bito-on–Jaro via Balabago Loop',
+  'Mandurriao–Molo',
+  'La Paz–Iloilo City Proper via ISATU',
+  'Parola–Infante via Super Loop',
+  'Lanit–SM City via NIA/Jalandoni',
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -174,17 +188,65 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      <a
-        href="https://test.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={[
-          'mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
-          highlight ? 'text-white' : 'text-[#2563eb]',
-        ].join(' ')}
-      >
+      <a href="https://test.com" target="_blank" rel="noopener noreferrer"
+        className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
+          highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
         Learn more →
       </a>
+    </div>
+  );
+}
+
+// ─── Iloilo Route Dropdown ────────────────────────────────────────────────────
+function IloiloRouteDropdown() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="mt-4">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 hover:text-white bg-white/10 hover:bg-white/20 transition-all duration-200 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20"
+      >
+        <span>{open ? 'Hide routes' : `View ${iloiloAvailable.length} available routes`}</span>
+        <svg
+          className={['w-3.5 h-3.5 transition-transform duration-200', open ? 'rotate-180' : ''].join(' ')}
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
+        >
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+
+      {open && (
+        <div className="mt-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 overflow-hidden">
+          {/* Available */}
+          <div className="p-4 border-b border-white/10">
+            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">
+              Available Routes
+            </p>
+            <ul className="space-y-2">
+              {iloiloAvailable.map(route => (
+                <li key={route} className="flex items-start gap-2.5 text-xs text-white/90 leading-snug">
+                  <span className="mt-[3px] shrink-0 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+                  {route}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Unavailable */}
+          <div className="p-4">
+            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">
+              Not Yet Available
+            </p>
+            <ul className="space-y-2">
+              {iloiloUnavailable.map(route => (
+                <li key={route} className="flex items-start gap-2.5 text-xs text-white/60 leading-snug">
+                  <span className="mt-[3px] shrink-0 w-2 h-2 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.8)]" />
+                  {route}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -224,13 +286,11 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
   );
 }
 
-// ─── Smooth scroll helper ─────────────────────────────────────────────────────
 function scrollTo(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
@@ -242,8 +302,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
             <div className="lg:w-1/2 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start -mb-10 lg:-mb-14">
-                <Image src="/para-logo.png" alt="PARA Logo" width={600} height={200} priority
-                  className="w-auto max-w-full h-56 sm:h-64 lg:h-72 object-contain object-left lg:-ml-20" />
+                <Image src="/para-logo.png" alt="PARA Logo" width={600} height={200} priority className="w-auto max-w-full h-56 sm:h-64 lg:h-72 object-contain object-left lg:-ml-20" />
               </div>
               <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 leading-tight">
                 Find the best<br />Jeepney Route<br /><span className="text-[#2563eb]">Instantly</span>
@@ -252,9 +311,7 @@ export default function Home() {
               <div className="mt-6">
                 <a href="#" className="inline-block bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-medium text-lg px-10 py-4 rounded-2xl shadow-lg active:scale-95">Download the App</a>
               </div>
-              <div className="mt-6 flex justify-center lg:justify-start">
-                <AppBadges />
-              </div>
+              <div className="mt-6 flex justify-center lg:justify-start"><AppBadges /></div>
             </div>
             <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[340px]">
               <div className="relative bg-black rounded-[52px] border-[14px] border-black shadow-2xl overflow-hidden aspect-[9/19]">
@@ -326,60 +383,59 @@ export default function Home() {
       </section>
 
       {/* ── ROADMAP ── */}
-      {/* ROADMAP — full-width blue banner header */}
       <section id="roadmap" className="bg-gray-50 scroll-mt-16">
-        {/* Full-width blue banner — breaks out of any container */}
+        {/* Full-width blue banner */}
         <div className="bg-[#2563eb] w-full py-16 px-6 text-center mb-14">
-          <p className="text-blue-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">
-            City Expansion Road Map
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-            Now Available in Iloilo
-          </h2>
+          <p className="text-blue-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">City Expansion Road Map</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">Now Available in Iloilo</h2>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
             We started in Iloilo. Now we&apos;re expanding across Visayas, one city at a time.
           </p>
         </div>
         <div className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
-            <div className="space-y-8">
-              {roadmapItems.map(item => (
-                <div key={item.city} className="relative flex gap-6 pl-14">
-                  {/* Dot: current=blue filled, inprogress=blue filled w/ arrow, upcoming=white */}
-                  <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
-                    item.status === 'current'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                    item.status === 'inprogress' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                                                   'bg-white border-gray-200 text-gray-400'].join(' ')}>
-                    {item.status === 'current' ? '✓' : item.status === 'inprogress' ? '→' : '·'}
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-100" />
+              <div className="space-y-8">
+                {roadmapItems.map(item => (
+                  <div key={item.city} className="relative flex gap-6 pl-14">
+                    {/* Dot */}
+                    <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
+                      item.status === 'current'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                      item.status === 'inprogress' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                                                     'bg-white border-gray-200 text-gray-400'].join(' ')}>
+                      {item.status === 'current' ? '✓' : item.status === 'inprogress' ? '→' : '·'}
+                    </div>
+                    {/* Card */}
+                    <div className={['rounded-2xl border flex-1 overflow-hidden',
+                      item.status === 'current'
+                        ? 'bg-[#2563eb] border-[#2563eb] shadow-lg'
+                        : item.status === 'inprogress'
+                          ? 'bg-white border-[#2563eb] shadow-md'
+                          : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
+                      <div className="p-5">
+                        <span className={['text-xs font-semibold uppercase tracking-wider',
+                          item.status === 'current'    ? 'text-blue-200' :
+                          item.status === 'inprogress' ? 'text-[#2563eb]' :
+                                                         'text-gray-400'].join(' ')}>
+                          {item.city}
+                          {item.status === 'inprogress' && (
+                            <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
+                          )}
+                        </span>
+                        <h3 className={['font-semibold mt-1 mb-1',
+                          item.status === 'current' ? 'text-white' : 'text-gray-900'].join(' ')}>{item.title}</h3>
+                        <p className={['text-sm',
+                          item.status === 'current' ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{item.desc}</p>
+                        {/* Route dropdown — Iloilo only */}
+                        {item.status === 'current' && <IloiloRouteDropdown />}
+                      </div>
+                    </div>
                   </div>
-                  {/* Card: current=blue, inprogress=white with blue border + badge, upcoming=plain white */}
-                  <div className={['rounded-2xl p-5 border flex-1',
-                    item.status === 'current'
-                      ? 'bg-[#2563eb] border-[#2563eb] shadow-lg'
-                      : item.status === 'inprogress'
-                        ? 'bg-white border-[#2563eb] shadow-md'
-                        : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
-                    <span className={['text-xs font-semibold uppercase tracking-wider',
-                      item.status === 'current'    ? 'text-blue-200' :
-                      item.status === 'inprogress' ? 'text-[#2563eb]' :
-                                                     'text-gray-400'].join(' ')}>
-                      {item.city}
-                      {item.status === 'inprogress' && (
-                        <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
-                      )}
-                    </span>
-                    <h3 className={['font-semibold mt-1 mb-1',
-                      item.status === 'current' ? 'text-white' : 'text-gray-900'].join(' ')}>{item.title}</h3>
-                    <p className={['text-sm',
-                      item.status === 'current' ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
 
@@ -447,10 +503,10 @@ export default function Home() {
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.</p>
               <div className="flex gap-2.5">
                 {[
-                  { href: 'https://facebook.com',  label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
-                  { href: 'https://x.com',          label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10'  },
-                  { href: 'https://instagram.com',  label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
-                  { href: 'https://linkedin.com',   label: 'LinkedIn',  icon: <LinkedInIcon />,  hover: 'hover:bg-[#0A66C2]' },
+                  { href: 'https://facebook.com', label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
+                  { href: 'https://x.com',         label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10'  },
+                  { href: 'https://instagram.com', label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
+                  { href: 'https://linkedin.com',  label: 'LinkedIn',  icon: <LinkedInIcon />,  hover: 'hover:bg-[#0A66C2]' },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                     className={`w-8 h-8 rounded-md border border-white/10 bg-white/5 ${s.hover} text-white/50 hover:text-white flex items-center justify-center transition-all duration-200`}>
@@ -483,8 +539,7 @@ export default function Home() {
                   <li key={l.label}>
                     {l.id
                       ? <button onClick={() => scrollTo(l.id!)} className="text-white/55 hover:text-white text-sm transition-colors text-left">{l.label}</button>
-                      : <a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a>
-                    }
+                      : <a href="#" className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a>}
                   </li>
                 ))}
               </ul>
