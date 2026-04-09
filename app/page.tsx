@@ -251,6 +251,182 @@ function IloiloRouteDropdown() {
   );
 }
 
+// ─── Team Data ───────────────────────────────────────────────────────────────
+const teamMembers = [
+  {
+    name: 'Andi Reyes',
+    role: 'CEO & Co-Founder',
+    school: 'WVSU',
+    emoji: '👩‍💼',
+    gradient: 'from-blue-500 to-blue-700',
+    short: 'Urban mobility advocate and the vision behind PARA.',
+    story: `Andi grew up riding jeepneys across Iloilo every day to get to school. She watched tourists and newcomers get lost, confused by a system with no map, no guide, no app. That frustration never left her.
+
+When she joined a startup competition in 2024, she pitched a simple idea: what if finding a jeepney route was as easy as checking Google Maps? The room was quiet for a second — then everyone nodded. They had all felt the same thing.
+
+She's been driving PARA forward ever since, turning a whiteboard sketch into a real product used by real commuters.`,
+  },
+  {
+    name: 'Marco Santos',
+    role: 'CTO & Co-Founder',
+    school: 'Ateneo de Manila',
+    emoji: '👨‍💻',
+    gradient: 'from-indigo-500 to-blue-600',
+    short: 'The engineer who turned the idea into a working app.',
+    story: `Marco had been building side projects since high school — none of them stuck. When Andi pitched PARA at the competition, he stayed after the session to talk. Two hours later, they were still at it.
+
+He flew to Iloilo that month to start mapping routes on foot. He rode every jeepney line he could find, logging stops, timing routes, building the data layer that everything else runs on.
+
+He believes great software should be invisible — you shouldn't notice the tech, just the result. That's the standard he holds every line of code to.`,
+  },
+  {
+    name: 'Liza Cruz',
+    role: 'Head of Design',
+    school: 'WVSU',
+    emoji: '🎨',
+    gradient: 'from-blue-400 to-cyan-500',
+    short: 'The reason PARA looks and feels effortless to use.',
+    story: `Liza almost turned down the internship. She'd heard too many stories about startup ideas that looked good on slides but went nowhere. But something about PARA felt different — it was solving something real.
+
+She redesigned the app interface three times before she was happy with it. Each iteration started with the same question: if my lola had to use this, could she figure it out in 30 seconds?
+
+That question became the team's design north star. Simple, clear, and built for everyone — not just tech-savvy users.`,
+  },
+  {
+    name: 'Ryan Dela Torre',
+    role: 'Lead Developer',
+    school: 'WVSU',
+    emoji: '⚙️',
+    gradient: 'from-blue-600 to-indigo-700',
+    short: 'The developer who made real-time tracking actually work.',
+    story: `Ryan joined the team three months in, when the live location feature was broken and the launch date was two weeks away. He stayed up four nights straight to rebuild it from scratch.
+
+He doesn't talk much in meetings, but he's the one everyone goes to when something breaks. He has an uncanny ability to read error logs the way other people read text messages — fast, intuitive, always finding the root cause.
+
+Outside of code, he collects old jeepney photos. He says it keeps him grounded in why the app matters.`,
+  },
+  {
+    name: 'Bianca Villanueva',
+    role: 'Community Manager',
+    school: 'Macquarie University',
+    emoji: '🌏',
+    gradient: 'from-cyan-500 to-blue-500',
+    short: 'The bridge between PARA and the people who use it.',
+    story: `Bianca was studying in Sydney when Andi reached out. She'd grown up in Iloilo and moved abroad for her degree — but she still remembered the exact routes she used to take, and exactly how confusing they were for anyone who didn't grow up there.
+
+She started managing PARA's community remotely, coordinating with local drivers and commuters to verify route data. She built the feedback system that lets users report wrong stops directly in the app.
+
+She'll be back in the Philippines for good next year. She's already mapped three new routes from memory.`,
+  },
+  {
+    name: 'Jerome Aquino',
+    role: 'Data & Maps Engineer',
+    school: 'WVSU',
+    emoji: '🗺️',
+    gradient: 'from-indigo-600 to-blue-500',
+    short: 'The person who literally mapped every route in Iloilo.',
+    story: `Jerome spent six months riding jeepneys with a GPS tracker in his bag and a notebook in his hand. He logged every stop, every shortcut, every route variation by time of day.
+
+When the team asked him how he managed it, he shrugged and said he just really liked maps. That's true — but what he didn't say is that he also talked to hundreds of drivers along the way, learning routes that weren't written down anywhere.
+
+His data is the backbone of everything PARA does. Without his obsession with accuracy, the app would just be a guess.`,
+  },
+];
+
+// ─── Team Modal ───────────────────────────────────────────────────────────────
+function TeamModal({ member, onClose }: {
+  member: typeof teamMembers[0];
+  onClose: () => void;
+}) {
+  // Close on Escape
+  React.useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      {/* Blurred backdrop */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
+
+      {/* Modal card */}
+      <div
+        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header gradient */}
+        <div className={`bg-gradient-to-br ${member.gradient} px-8 pt-8 pb-16 rounded-t-3xl relative overflow-hidden`}>
+          <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full" />
+          <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-white/10 rounded-full" />
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center text-white"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <div className="text-5xl mb-3">{member.emoji}</div>
+          <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+          <p className="text-white/80 text-sm mt-1">{member.role}</p>
+          <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1">{member.school}</span>
+        </div>
+
+        {/* Content — pulled up over gradient */}
+        <div className="-mt-10 mx-6 bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <p className="text-[#2563eb] text-sm font-semibold mb-4">{member.short}</p>
+          <div className="space-y-3">
+            {member.story.trim().split('\n\n').map((para, i) => (
+              <p key={i} className="text-gray-600 text-sm leading-relaxed">{para}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Team Section ─────────────────────────────────────────────────────────────
+function TeamSection() {
+  const [selected, setSelected] = useState<typeof teamMembers[0] | null>(null);
+
+  return (
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {teamMembers.map(member => (
+          <button
+            key={member.name}
+            onClick={() => setSelected(member)}
+            className="group text-left rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2"
+          >
+            {/* Gradient header */}
+            <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-10 relative overflow-hidden`}>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
+              <div className="text-4xl">{member.emoji}</div>
+            </div>
+            {/* Card body — pulls up */}
+            <div className="-mt-6 mx-4 bg-white rounded-xl shadow-md px-5 py-4 mb-4 group-hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
+              <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
+              <p className="text-gray-500 text-xs mt-2 leading-relaxed line-clamp-2">{member.short}</p>
+              <p className="text-[#2563eb] text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                Read story →
+              </p>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      {/* Modal */}
+      {selected && <TeamModal member={selected} onClose={() => setSelected(null)} />}
+    </>
+  );
+}
+
 // ─── Navbar wrapper ───────────────────────────────────────────────────────────
 function NavbarWrapper() {
   const [visible, setVisible] = useState(false);
@@ -439,22 +615,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOUNDING STORY ── */}
+      {/* ── TEAM / OUR STORY ── */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Born from a real commute problem</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Meet the team behind PARA</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Click on any card to read their full story.</p>
           </div>
-          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-sm">
-            <div className="max-w-3xl mx-auto space-y-5 text-gray-600 leading-relaxed">
-              <p>PARA began in 2024 as an idea between a group of students who met through a startup competition. What started as a simple concept grew into something more, from late night brainstorming to internships and building a real solution together.</p>
-              <p>We were driven by one goal: to create something that solves real world problems.</p>
-              <p>Our team from WVSU, Macquarie University, and Ateneo de Manila shared one frustration, the chaos of commuting by jeepney in the Philippines. There was no clear system or reliable guide. Locals relied on memory, while newcomers were left guessing or asking strangers.</p>
-              <p className="text-lg text-gray-800 font-semibold">So we built PARA.</p>
-              <p>Starting in Iloilo City, we mapped routes, stops, and transfers, turning scattered knowledge into something accessible. What began as an idea became a mission to make commuting simpler and more accessible for every Filipino.</p>
-            </div>
-          </div>
+          <TeamSection />
         </div>
       </section>
 
