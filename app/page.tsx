@@ -357,7 +357,7 @@ function TeamModal({ member, onClose }: {
 
       {/* Modal card */}
       <div
-        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[95vw] sm:max-w-xl md:max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* Header gradient */}
@@ -384,12 +384,12 @@ function TeamModal({ member, onClose }: {
           </div>
         </div>
 
-        {/* Content — pulled up over gradient */}
-        <div className="-mt-10 mx-5 sm:mx-8 bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-6">
-          <p className="text-[#2563eb] text-sm font-semibold mb-5 leading-relaxed">{member.short}</p>
-          <div className="space-y-4">
+        {/* Content — no pull-up, sits cleanly below gradient */}
+        <div className="mx-5 sm:mx-8 bg-white rounded-2xl shadow-lg p-6 mb-6 -mt-4">
+          <p className="text-[#2563eb] text-sm font-semibold mb-4 leading-relaxed">{member.short}</p>
+          <div className="space-y-3">
             {member.story.trim().split('\n\n').map((para, i) => (
-              <p key={i} className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal">{para}</p>
+              <p key={i} className="text-gray-600 text-sm leading-relaxed font-normal">{para}</p>
             ))}
           </div>
         </div>
