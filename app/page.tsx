@@ -357,11 +357,11 @@ function TeamModal({ member, onClose }: {
 
       {/* Modal card */}
       <div
-        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto"
+        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[95vw] sm:max-w-xl md:max-w-2xl max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* Header gradient */}
-        <div className={`bg-gradient-to-br ${member.gradient} px-8 pt-8 pb-16 rounded-t-3xl relative overflow-hidden`}>
+        <div className={`bg-gradient-to-br ${member.gradient} px-8 sm:px-12 pt-8 sm:pt-10 pb-16 rounded-t-3xl relative overflow-hidden`}>
           <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full" />
           <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-white/10 rounded-full" />
           <button
@@ -385,11 +385,11 @@ function TeamModal({ member, onClose }: {
         </div>
 
         {/* Content — pulled up over gradient */}
-        <div className="-mt-10 mx-6 bg-white rounded-2xl shadow-lg p-6 mb-6">
-          <p className="text-[#2563eb] text-sm font-semibold mb-4">{member.short}</p>
-          <div className="space-y-3">
+        <div className="-mt-10 mx-5 sm:mx-8 bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-6">
+          <p className="text-[#2563eb] text-sm font-semibold mb-5 leading-relaxed">{member.short}</p>
+          <div className="space-y-4">
             {member.story.trim().split('\n\n').map((para, i) => (
-              <p key={i} className="text-gray-600 text-sm leading-relaxed">{para}</p>
+              <p key={i} className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal">{para}</p>
             ))}
           </div>
         </div>
