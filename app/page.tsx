@@ -252,12 +252,14 @@ function IloiloRouteDropdown() {
 }
 
 // ─── Team Data ───────────────────────────────────────────────────────────────
+// Avatar URLs — replace with real photo URLs when available e.g. '/team/andi.jpg'
+// Currently using UI Avatars as placeholder (generates initials-based avatars)
 const teamMembers = [
   {
     name: 'Andi Reyes',
     role: 'CEO & Co-Founder',
     school: 'WVSU',
-    emoji: '👩‍💼',
+    avatar: 'https://ui-avatars.com/api/?name=Andi+Reyes&background=2563eb&color=fff&size=200&bold=true',
     gradient: 'from-blue-500 to-blue-700',
     short: 'Urban mobility advocate and the vision behind PARA.',
     story: `Andi grew up riding jeepneys across Iloilo every day to get to school. She watched tourists and newcomers get lost, confused by a system with no map, no guide, no app. That frustration never left her.
@@ -270,7 +272,7 @@ She's been driving PARA forward ever since, turning a whiteboard sketch into a r
     name: 'Marco Santos',
     role: 'CTO & Co-Founder',
     school: 'Ateneo de Manila',
-    emoji: '👨‍💻',
+    avatar: 'https://ui-avatars.com/api/?name=Marco+Santos&background=4f46e5&color=fff&size=200&bold=true',
     gradient: 'from-indigo-500 to-blue-600',
     short: 'The engineer who turned the idea into a working app.',
     story: `Marco had been building side projects since high school — none of them stuck. When Andi pitched PARA at the competition, he stayed after the session to talk. Two hours later, they were still at it.
@@ -283,7 +285,7 @@ He believes great software should be invisible — you shouldn't notice the tech
     name: 'Liza Cruz',
     role: 'Head of Design',
     school: 'WVSU',
-    emoji: '🎨',
+    avatar: 'https://ui-avatars.com/api/?name=Liza+Cruz&background=0ea5e9&color=fff&size=200&bold=true',
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The reason PARA looks and feels effortless to use.',
     story: `Liza almost turned down the internship. She'd heard too many stories about startup ideas that looked good on slides but went nowhere. But something about PARA felt different — it was solving something real.
@@ -296,7 +298,7 @@ That question became the team's design north star. Simple, clear, and built for 
     name: 'Ryan Dela Torre',
     role: 'Lead Developer',
     school: 'WVSU',
-    emoji: '⚙️',
+    avatar: 'https://ui-avatars.com/api/?name=Ryan+Dela+Torre&background=1d4ed8&color=fff&size=200&bold=true',
     gradient: 'from-blue-600 to-indigo-700',
     short: 'The developer who made real-time tracking actually work.',
     story: `Ryan joined the team three months in, when the live location feature was broken and the launch date was two weeks away. He stayed up four nights straight to rebuild it from scratch.
@@ -309,7 +311,7 @@ Outside of code, he collects old jeepney photos. He says it keeps him grounded i
     name: 'Bianca Villanueva',
     role: 'Community Manager',
     school: 'Macquarie University',
-    emoji: '🌏',
+    avatar: 'https://ui-avatars.com/api/?name=Bianca+Villanueva&background=06b6d4&color=fff&size=200&bold=true',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'The bridge between PARA and the people who use it.',
     story: `Bianca was studying in Sydney when Andi reached out. She'd grown up in Iloilo and moved abroad for her degree — but she still remembered the exact routes she used to take, and exactly how confusing they were for anyone who didn't grow up there.
@@ -322,7 +324,7 @@ She'll be back in the Philippines for good next year. She's already mapped three
     name: 'Jerome Aquino',
     role: 'Data & Maps Engineer',
     school: 'WVSU',
-    emoji: '🗺️',
+    avatar: 'https://ui-avatars.com/api/?name=Jerome+Aquino&background=3730a3&color=fff&size=200&bold=true',
     gradient: 'from-indigo-600 to-blue-500',
     short: 'The person who literally mapped every route in Iloilo.',
     story: `Jerome spent six months riding jeepneys with a GPS tracker in his bag and a notebook in his hand. He logged every stop, every shortcut, every route variation by time of day.
@@ -370,10 +372,16 @@ function TeamModal({ member, onClose }: {
               <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
           </button>
-          <div className="text-5xl mb-3">{member.emoji}</div>
-          <h3 className="text-2xl font-bold text-white">{member.name}</h3>
-          <p className="text-white/80 text-sm mt-1">{member.role}</p>
-          <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1">{member.school}</span>
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full border-4 border-white/30 overflow-hidden shadow-lg bg-white/20">
+              <img src={member.avatar} alt={member.name} className="w-full h-full object-cover" />
+            </div>
+          </div>
+          <h3 className="text-2xl font-bold text-white text-center">{member.name}</h3>
+          <p className="text-white/80 text-sm mt-1 text-center">{member.role}</p>
+          <div className="flex justify-center mt-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1">{member.school}</span>
+          </div>
         </div>
 
         {/* Content — pulled up over gradient */}
@@ -396,24 +404,42 @@ function TeamSection() {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {teamMembers.map(member => (
           <button
             key={member.name}
             onClick={() => setSelected(member)}
-            className="group text-left rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2"
+            className="group text-left rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 bg-white"
           >
-            {/* Gradient header */}
-            <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-10 relative overflow-hidden`}>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
-              <div className="text-4xl">{member.emoji}</div>
+            {/* Gradient banner */}
+            <div className={`bg-gradient-to-br ${member.gradient} h-24 relative overflow-hidden`}>
+              <div className="absolute -top-6 -right-6 w-28 h-28 bg-white/10 rounded-full" />
+              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-white/10 rounded-full" />
             </div>
-            {/* Card body — pulls up */}
-            <div className="-mt-6 mx-4 bg-white rounded-xl shadow-md px-5 py-4 mb-4 group-hover:shadow-lg transition-shadow">
+            {/* Avatar — centered, overlapping banner */}
+            <div className="flex justify-center -mt-10 relative z-10">
+              <div className="w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-100">
+                <img
+                  src={member.avatar}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    t.style.display = 'none';
+                    const parent = t.parentElement!;
+                    parent.style.background = 'linear-gradient(135deg,#2563eb,#1d4ed8)';
+                    parent.innerHTML = `<span style="color:white;font-weight:700;font-size:1.25rem;display:flex;align-items:center;justify-content:center;height:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
+                  }}
+                />
+              </div>
+            </div>
+            {/* Card body */}
+            <div className="px-5 pt-3 pb-5 text-center">
               <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
               <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
-              <p className="text-gray-500 text-xs mt-2 leading-relaxed line-clamp-2">{member.short}</p>
-              <p className="text-[#2563eb] text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="inline-block mt-1.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-50 text-blue-500 rounded-full px-2.5 py-0.5">{member.school}</span>
+              <p className="text-gray-500 text-xs mt-3 leading-relaxed">{member.short}</p>
+              <p className="text-[#2563eb] text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 Read story →
               </p>
             </div>
@@ -475,7 +501,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="lg:w-1/2 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start -mb-10 lg:-mb-14">
                 <Image src="/para-logo.png" alt="PARA Logo" width={600} height={200} priority className="w-auto max-w-full h-56 sm:h-64 lg:h-72 object-contain object-left lg:-ml-20" />
@@ -489,7 +515,7 @@ export default function Home() {
               </div>
               <div className="mt-6 flex justify-center lg:justify-start"><AppBadges /></div>
             </div>
-            <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[340px]">
+            <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px] lg:ml-auto lg:pl-8 xl:pl-16">
               <div className="relative bg-black rounded-[52px] border-[14px] border-black shadow-2xl overflow-hidden aspect-[9/19]">
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-5 bg-black rounded-full z-30 flex items-center justify-center">
                   <div className="w-4 h-4 bg-zinc-900 rounded-full" />
