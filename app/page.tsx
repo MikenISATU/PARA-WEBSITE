@@ -719,7 +719,7 @@ export default function Home() {
                 {[
                   { label: 'hello@paraapp.ph',    href: 'mailto:hello@paraapp.ph' },
                   { label: 'Support Center',       href: '#' },
-                  { label: 'Report a Route Issue', href: '#' },
+                  { label: 'Report a Route Issue', href: 'https://forms.gle/1nnmYjyXAJ2Qb9b6A' },
                   { label: 'Partner with Us',      href: '#' },
                 ].map(l => (
                   <li key={l.label}><a href={l.href} className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a></li>
