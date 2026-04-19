@@ -238,7 +238,7 @@ const teamMembers = [
     gradient: 'from-indigo-500 to-blue-600',
     short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
-      'My name is Eugine, and I am the programmer behind PARA.',
+      'My name is Eugine, and I am the lead developer behind PARA.',
       'PARA did not start in a boardroom or a business plan — it started from a question that comes up in the minds of everyday commuters: "What ride do I take to get there?" That simple but frustrating question became the seed of what PARA is today — a digital travel guide that helps people navigate Iloilo\'s jeepney route system with confidence.',
       'I joined PARA because I\'ve experienced that problem firsthand, and I\'ve always been drawn to building systems that make confusing things simpler and more accessible for everyone.',
     ],
