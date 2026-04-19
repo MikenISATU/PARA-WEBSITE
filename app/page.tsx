@@ -269,7 +269,7 @@ const teamMembers = [
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
-      'Back in 2024, I was actively joining startup initiatives when I met Jezreel and Alicia. Around the same time, I teamed up with Eugine, who was my classmate. We all shared the same drive to build something meaningful and that solves a real problem.',
+      'Back in 2024, I was actively joining startup initiatives when I met Keannu and Alicia. Around the same time, I teamed up with Eugine, who was my classmate. We all shared the same drive to build something meaningful and that solves a real problem.',
       'Currently, I\'m part of the UI/UX team, where I handle design, website development, and deployment. I also support other technical tasks whenever needed. My background in development allows me to contribute both creatively and technically to PARA.',
     ],
     theProblem: [
@@ -314,7 +314,7 @@ const teamMembers = [
     ],
   },
   {
-    name: 'Alicia Amor',
+    name: 'Alicia Cerrudo',
     role: 'Marketing & Business Development',
     linkedin: 'https://www.linkedin.com/in/aliciaamorc-alisseroma/',
     avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
