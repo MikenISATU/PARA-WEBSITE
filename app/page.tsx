@@ -383,12 +383,12 @@ function TeamModal({ member, onClose }: {
         onClick={e => e.stopPropagation()}
       >
         {/* ── Header — full-width photo hero ── */}
-        <div className="relative w-full shrink-0 overflow-hidden" style={{ aspectRatio: '16/9' }}>
+        <div className="relative w-full shrink-0 overflow-hidden" style={{ aspectRatio: '4/3' }}>
           {/* Photo */}
           <img
             src={member.avatar}
             alt={member.name}
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-[center_20%]"
             onError={(e) => {
               const t = e.currentTarget;
               t.style.display = 'none';
@@ -488,7 +488,7 @@ function TeamSection() {
                 rel="noopener noreferrer"
                 aria-label={`${member.name} on LinkedIn`}
                 onClick={e => e.stopPropagation()}
-                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/30 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 backdrop-blur-sm"
+                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
               >
                 <LinkedInIcon />
               </a>
