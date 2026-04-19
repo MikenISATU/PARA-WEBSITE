@@ -326,7 +326,7 @@ const teamMembers = [
     name: 'Alicia Amor',
     role: 'Marketing & Networking Head',
     linkedin: 'https://linkedin.com/in/alicia-amor',
-    avatar: 'https://ui-avatars.com/api/?name=Alicia+Amor&background=db2777&color=fff&size=200&bold=true',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578233/PARA_m6hhjw.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
@@ -493,9 +493,21 @@ function TeamSection() {
               <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
               <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
               <p className="text-gray-500 text-xs mt-3 leading-relaxed">{member.short}</p>
-              <p className="text-[#2563eb] text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                Read story →
-              </p>
+              <div className="flex items-center justify-center gap-3 mt-3">
+                <p className="text-[#2563eb] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  Read story →
+                </p>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                  onClick={e => e.stopPropagation()}
+                  className="w-6 h-6 rounded-md bg-blue-50 hover:bg-[#2563eb] text-[#2563eb] hover:text-white flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100"
+                >
+                  <LinkedInIcon />
+                </a>
+              </div>
             </div>
           </button>
         ))}
