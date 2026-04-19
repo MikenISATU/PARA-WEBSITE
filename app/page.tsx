@@ -220,84 +220,156 @@ function IloiloRouteDropdown() {
 }
 
 // ─── Team Data ────────────────────────────────────────────────────────────────
+// Each section field accepts a string (single paragraph) or string[] (multiple paragraphs).
 const teamMembers = [
   {
     name: 'Andi Reyes',
     role: 'CEO & Co-Founder',
-    school: 'WVSU',
     linkedin: 'https://linkedin.com/in/andi-reyes',
     avatar: 'https://ui-avatars.com/api/?name=Andi+Reyes&background=2563eb&color=fff&size=200&bold=true',
     gradient: 'from-blue-500 to-blue-700',
     short: 'Urban mobility advocate and the vision behind PARA.',
-    whyJoined: 'Growing up in Iloilo, I rode jeepneys every day to school. I watched tourists and newcomers get completely lost — confused by a system with no map, no guide, no app. That frustration never left me.',
-    theProblem: 'Millions of Filipinos depend on jeepneys daily, yet there\'s no simple way to know which one to take. That gap felt like a glaring blind spot for a country this connected.',
-    myRole: 'I pitched the idea at a startup competition in 2024, then spent the next year turning a whiteboard sketch into a real product — recruiting the team, setting strategy, and driving every major decision.',
-    whyItMatters: 'This isn\'t just a navigation app. It\'s infrastructure that never existed. When we get it right, it changes how an entire country moves.',
+    whyJoined: [
+      'Growing up in Iloilo, I rode jeepneys every day to school. I watched tourists and newcomers get completely lost — confused by a system with no map, no guide, no app. That frustration never left me.',
+    ],
+    theProblem: [
+      'Millions of Filipinos depend on jeepneys daily, yet there\'s no simple way to know which one to take. That gap felt like a glaring blind spot for a country this connected.',
+    ],
+    myRole: [
+      'I pitched the idea at a startup competition in 2024, then spent the next year turning a whiteboard sketch into a real product — recruiting the team, setting strategy, and driving every major decision.',
+    ],
+    whyItMatters: [
+      'This isn\'t just a navigation app. It\'s infrastructure that never existed. When we get it right, it changes how an entire country moves.',
+    ],
   },
   {
     name: 'Marco Santos',
     role: 'CTO & Co-Founder',
-    school: 'Ateneo de Manila',
     linkedin: 'https://linkedin.com/in/marco-santos',
     avatar: 'https://ui-avatars.com/api/?name=Marco+Santos&background=4f46e5&color=fff&size=200&bold=true',
     gradient: 'from-indigo-500 to-blue-600',
     short: 'The engineer who turned the idea into a working app.',
-    whyJoined: 'When Andi pitched PARA at the competition, I stayed after the session to talk. Two hours later, we were still at it. I flew to Iloilo that same month.',
-    theProblem: 'The jeepney system had no data layer — no stops, no routes, no source of truth. Before we could build anything, we had to map everything from scratch.',
-    myRole: 'I built the technical foundation: rode every route to log stops and timing, architected the data layer, and lead all engineering decisions from day one.',
-    whyItMatters: 'Great software should be invisible — you shouldn\'t notice the tech, just the result. That\'s the standard I hold every line of code to.',
+    whyJoined: [
+      'When Andi pitched PARA at the competition, I stayed after the session to talk. Two hours later, we were still at it. I flew to Iloilo that same month.',
+    ],
+    theProblem: [
+      'The jeepney system had no data layer — no stops, no routes, no source of truth. Before we could build anything, we had to map everything from scratch.',
+    ],
+    myRole: [
+      'I built the technical foundation: rode every route to log stops and timing, architected the data layer, and lead all engineering decisions from day one.',
+    ],
+    whyItMatters: [
+      'Great software should be invisible — you shouldn\'t notice the tech, just the result. That\'s the standard I hold every line of code to.',
+    ],
   },
   {
     name: 'Liza Cruz',
     role: 'Head of Design',
-    school: 'WVSU',
     linkedin: 'https://linkedin.com/in/liza-cruz',
     avatar: 'https://ui-avatars.com/api/?name=Liza+Cruz&background=0ea5e9&color=fff&size=200&bold=true',
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The reason PARA looks and feels effortless to use.',
-    whyJoined: 'I almost turned down the internship — too many startup ideas go nowhere. But PARA was solving something real and I knew I could make it feel that way too.',
-    theProblem: 'Most transit apps are built for tech-savvy users. The people who need PARA most are everyday commuters — lolas, students, tricycle drivers — and the design had to work for all of them.',
-    myRole: 'I redesigned the interface three times before I was satisfied. Every iteration started with the same question: if my lola had to use this, could she figure it out in 30 seconds?',
-    whyItMatters: 'That question became our design north star. Simple, clear, and built for everyone — not just people who are comfortable with apps.',
+    whyJoined: [
+      'I almost turned down the internship — too many startup ideas go nowhere. But PARA was solving something real and I knew I could make it feel that way too.',
+    ],
+    theProblem: [
+      'Most transit apps are built for tech-savvy users. The people who need PARA most are everyday commuters — lolas, students, tricycle drivers — and the design had to work for all of them.',
+    ],
+    myRole: [
+      'I redesigned the interface three times before I was satisfied. Every iteration started with the same question: if my lola had to use this, could she figure it out in 30 seconds?',
+    ],
+    whyItMatters: [
+      'That question became our design north star. Simple, clear, and built for everyone — not just people who are comfortable with apps.',
+    ],
   },
   {
     name: 'Ryan Dela Torre',
     role: 'Lead Developer',
-    school: 'WVSU',
     linkedin: 'https://linkedin.com/in/ryan-dela-torre',
     avatar: 'https://ui-avatars.com/api/?name=Ryan+Dela+Torre&background=1d4ed8&color=fff&size=200&bold=true',
     gradient: 'from-blue-600 to-indigo-700',
     short: 'The developer who made real-time tracking actually work.',
-    whyJoined: 'I joined three months in, when the live location feature was broken and the launch was two weeks away. I stayed up four nights straight to rebuild it from scratch.',
-    theProblem: 'Real-time location tracking sounds simple until you\'re dealing with inconsistent GPS signals, low-end devices, and spotty mobile data — which describes most commuter hardware in the Philippines.',
-    myRole: 'I own the live tracking system and core app performance. When something breaks, I\'m the one everyone comes to — not because I said so, but because I usually find the root cause fastest.',
-    whyItMatters: 'Outside of code, I collect old jeepney photos. It keeps me grounded in why the app matters — these aren\'t just data points, they\'re how people get to work every day.',
+    whyJoined: [
+      'I joined three months in, when the live location feature was broken and the launch was two weeks away. I stayed up four nights straight to rebuild it from scratch.',
+    ],
+    theProblem: [
+      'Real-time location tracking sounds simple until you\'re dealing with inconsistent GPS signals, low-end devices, and spotty mobile data — which describes most commuter hardware in the Philippines.',
+    ],
+    myRole: [
+      'I own the live tracking system and core app performance. When something breaks, I\'m the one everyone comes to — not because I said so, but because I usually find the root cause fastest.',
+    ],
+    whyItMatters: [
+      'Outside of code, I collect old jeepney photos. It keeps me grounded in why the app matters — these aren\'t just data points, they\'re how people get to work every day.',
+    ],
   },
   {
     name: 'Bianca Villanueva',
     role: 'Community Manager',
-    school: 'Macquarie University',
     linkedin: 'https://linkedin.com/in/bianca-villanueva',
     avatar: 'https://ui-avatars.com/api/?name=Bianca+Villanueva&background=06b6d4&color=fff&size=200&bold=true',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'The bridge between PARA and the people who use it.',
-    whyJoined: 'I was studying in Sydney when Andi reached out. I\'d grown up in Iloilo and still remembered the exact routes I used to take — and exactly how confusing they were for anyone who didn\'t grow up there.',
-    theProblem: 'Route data goes stale fast. Jeepneys reroute, stops move, new lines appear — without a community constantly verifying the data, the app becomes unreliable within months.',
-    myRole: 'I manage PARA\'s community remotely, coordinate with local drivers and commuters to verify routes, and built the in-app feedback system that lets users report wrong stops directly.',
-    whyItMatters: 'I\'ll be back in the Philippines for good next year. I\'ve already mapped three new routes from memory. This is the app I wish I\'d had when I was commuting every day.',
+    whyJoined: [
+      'I was studying in Sydney when Andi reached out. I\'d grown up in Iloilo and still remembered the exact routes I used to take — and exactly how confusing they were for anyone who didn\'t grow up there.',
+    ],
+    theProblem: [
+      'Route data goes stale fast. Jeepneys reroute, stops move, new lines appear — without a community constantly verifying the data, the app becomes unreliable within months.',
+    ],
+    myRole: [
+      'I manage PARA\'s community remotely, coordinate with local drivers and commuters to verify routes, and built the in-app feedback system that lets users report wrong stops directly.',
+    ],
+    whyItMatters: [
+      'I\'ll be back in the Philippines for good next year. I\'ve already mapped three new routes from memory. This is the app I wish I\'d had when I was commuting every day.',
+    ],
   },
   {
     name: 'Jerome Aquino',
     role: 'Data & Maps Engineer',
-    school: 'WVSU',
     linkedin: 'https://linkedin.com/in/jerome-aquino',
     avatar: 'https://ui-avatars.com/api/?name=Jerome+Aquino&background=3730a3&color=fff&size=200&bold=true',
     gradient: 'from-indigo-600 to-blue-500',
     short: 'The person who literally mapped every route in Iloilo.',
-    whyJoined: 'I just really like maps. When I heard PARA needed someone to build the route database from nothing, I signed up immediately.',
-    theProblem: 'Jeepney routes in the Philippines exist mostly in drivers\' heads — passed down informally, never formally documented. Creating accurate digital maps meant going out and riding every single line.',
-    myRole: 'I spent six months riding jeepneys with a GPS tracker and a notebook, logging every stop, shortcut, and time-of-day variation. I also talked to hundreds of drivers to capture routes that weren\'t written down anywhere.',
-    whyItMatters: 'My data is the backbone of everything PARA does. Without obsessive accuracy at this layer, the whole app is just a guess.',
+    whyJoined: [
+      'I just really like maps. When I heard PARA needed someone to build the route database from nothing, I signed up immediately.',
+    ],
+    theProblem: [
+      'Jeepney routes in the Philippines exist mostly in drivers\' heads — passed down informally, never formally documented. Creating accurate digital maps meant going out and riding every single line.',
+    ],
+    myRole: [
+      'I spent six months riding jeepneys with a GPS tracker and a notebook, logging every stop, shortcut, and time-of-day variation. I also talked to hundreds of drivers to capture routes that weren\'t written down anywhere.',
+    ],
+    whyItMatters: [
+      'My data is the backbone of everything PARA does. Without obsessive accuracy at this layer, the whole app is just a guess.',
+    ],
+  },
+  {
+    name: 'Alicia Amor',
+    role: 'Marketing & Networking Head',
+    linkedin: 'https://linkedin.com/in/alicia-amor',
+    avatar: 'https://ui-avatars.com/api/?name=Alicia+Amor&background=db2777&color=fff&size=200&bold=true',
+    gradient: 'from-pink-500 to-rose-600',
+    short: 'Connecting PARA to the people and communities who need it most.',
+    whyJoined: [
+      'I am currently the Marketing and Networking Head of the PARA team.',
+      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication — when people are heard, understood, and connected, they\'re also able to help each other better.',
+      'That\'s what drew me to PARA. I wanted to be part of building something that comes from real commuter experiences and turns them into something meaningful. A system that doesn\'t just function, but actually understands the struggles of the people using it.',
+    ],
+    theProblem: [
+      'One of my worst commute experiences was when what was supposed to be a 10–15 minute ride turned into almost two hours.',
+      'It was rush hour, and I was with friends coming from Iloilo Doctors College, heading to SM City Iloilo for a simple celebratory dinner. But everything became stressful quickly. We were trying to find jeepneys going our way, but most were already packed, and we weren\'t even sure if they were the right ones.',
+      'We felt uncomfortable asking around because everyone was also in a rush. So we kept moving from one side of the road to another, waiting and hoping for the right ride. The sun was setting. We were hungry and exhausted.',
+      'What should have been a happy celebration turned into frustration and even arguments because of the stress and confusion. We arrived an hour late, and everyone else had already started eating.',
+      'That experience made me realize how much time and energy commuters lose not just because of traffic, but because of the lack of clear and accessible information.',
+    ],
+    myRole: [
+      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
+    ],
+    whyItMatters: [
+      'I hope that as this system grows within Iloilo City and eventually expands across the Philippines, PARA becomes a way to make everyday commuting clearer, more efficient, and less stressful.',
+      'It is built from real experiences — moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
+      'A system that saves time, reduces stress, and truly works for the people.',
+      'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
+    ],
   },
 ];
 
@@ -312,7 +384,7 @@ function TeamModal({ member, onClose }: {
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const sections = [
+  const sections: { label: string; text: string[] }[] = [
     { label: 'Why I Joined PARA', text: member.whyJoined },
     { label: 'The Problem',       text: member.theProblem },
     { label: 'My Role',           text: member.myRole },
@@ -390,10 +462,14 @@ function TeamModal({ member, onClose }: {
             <React.Fragment key={section.label}>
               {i > 0 && <div className="border-t border-gray-100 my-4" />}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-1.5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">
                   {section.label}
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed">{section.text}</p>
+                <div className="space-y-2.5">
+                  {section.text.map((para, j) => (
+                    <p key={j} className="text-gray-500 text-sm leading-relaxed">{para}</p>
+                  ))}
+                </div>
               </div>
             </React.Fragment>
           ))}
