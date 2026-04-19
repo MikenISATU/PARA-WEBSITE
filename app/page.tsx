@@ -695,17 +695,17 @@ export default function Home() {
       </section>
 
       {/* ── STATS BAR ── */}
-      <section className="bg-white border-y border-gray-100 py-10 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      <section className="bg-white border-y border-gray-100 py-16 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           {[
-            { value: '18+',    label: 'Active Routes in Iloilo',         sub: 'and growing'              },
-            { value: '100%',   label: 'Community-Verified Data',         sub: 'by real commuters'        },
-            { value: 'Beta',   label: 'Currently in Beta',              sub: 'free during early access'  },
+            { value: '18+',   label: 'Active Routes',       sub: 'in Iloilo City — and growing'    },
+            { value: '100%',  label: 'Verified Route Data', sub: 'by real commuters on the ground' },
+            { value: 'Beta',  label: 'Early Access',        sub: 'free to use during beta'         },
           ].map(s => (
-            <div key={s.label} className="flex flex-col items-center gap-1">
-              <span className="text-4xl font-extrabold text-[#2563eb] tracking-tight">{s.value}</span>
-              <span className="text-gray-900 font-semibold text-sm">{s.label}</span>
-              <span className="text-gray-400 text-xs">{s.sub}</span>
+            <div key={s.label} className="flex flex-col items-center gap-2 py-8 sm:py-0 sm:px-10 text-center">
+              <span className="text-6xl sm:text-7xl font-black text-[#2563eb] tracking-tight leading-none">{s.value}</span>
+              <span className="text-gray-900 font-bold text-lg mt-1">{s.label}</span>
+              <span className="text-gray-400 text-sm leading-snug max-w-[160px]">{s.sub}</span>
             </div>
           ))}
         </div>
