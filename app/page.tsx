@@ -453,8 +453,8 @@ function TeamModal({ member, onClose }: {
           </div>
         </div>
 
-        {/* ── Content panel — fixed height, no scroll ── */}
-        <div className="px-6 py-5 sm:px-8 sm:py-6 h-52 overflow-y-auto">
+        {/* ── Content panel — fixed height, scrollable but no visible scrollbar ── */}
+        <div className="px-6 py-5 sm:px-8 sm:py-6 h-52 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="space-y-2.5">
             {tabs[activeTab].text.map((para, i) => (
               <p key={i} className="text-gray-500 text-sm leading-relaxed">{para}</p>
