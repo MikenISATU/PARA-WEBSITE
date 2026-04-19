@@ -92,7 +92,7 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
 
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
-  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
+  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: true  },
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
@@ -236,9 +236,9 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/john-eugine-fernandez-9a99a8331/',
     avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609384/3_w7rbbn.png',
     gradient: 'from-indigo-500 to-blue-600',
-    short: 'The Lead Developer of PARA.',
+    short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
-      'My name is Eugine, and I am the lead developer behind PARA.',
+      'My name is Eugine, and I am the programmer behind PARA.',
       'PARA did not start in a boardroom or a business plan — it started from a question that comes up in the minds of everyday commuters: "What ride do I take to get there?" That simple but frustrating question became the seed of what PARA is today — a digital travel guide that helps people navigate Iloilo\'s jeepney route system with confidence.',
       'I joined PARA because I\'ve experienced that problem firsthand, and I\'ve always been drawn to building systems that make confusing things simpler and more accessible for everyone.',
     ],
@@ -269,7 +269,7 @@ const teamMembers = [
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
-      'Back in 2024, I was actively joining startup initiatives when I met Keannu and Alicia. Around the same time, I teamed up with Eugine, who was my classmate. We all shared the same drive to build something meaningful and that solves a real problem.',
+      'Back in 2024, I was actively joining startup initiatives when I met Jezreel and Alicia. Around the same time, I teamed up with Eugine, who was my classmate. We all shared the same drive to build something meaningful and that solves a real problem.',
       'Currently, I\'m part of the UI/UX team, where I handle design, website development, and deployment. I also support other technical tasks whenever needed. My background in development allows me to contribute both creatively and technically to PARA.',
     ],
     theProblem: [
@@ -314,7 +314,7 @@ const teamMembers = [
     ],
   },
   {
-    name: 'Alicia Cerrudo',
+    name: 'Alicia Amor',
     role: 'Marketing & Business Development',
     linkedin: 'https://www.linkedin.com/in/aliciaamorc-alisseroma/',
     avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
@@ -369,6 +369,80 @@ const teamMembers = [
     ],
   },
 ];
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+const faqs = [
+  {
+    q: 'Is PARA free to use?',
+    a: 'Yes — PARA is completely free. No subscription, no in-app purchases, no hidden fees. We believe every commuter deserves access to clear route information regardless of their budget.',
+  },
+  {
+    q: 'Which cities does PARA currently cover?',
+    a: 'PARA is currently live in Iloilo City with 18 active jeepney routes. We\'re actively mapping Bacolod next, followed by Cebu, Aklan, Dumaguete, and Tacloban.',
+  },
+  {
+    q: 'How accurate is the route data?',
+    a: 'All routes are field-verified by our team — we physically rode every jeepney line to log stops, timing, and route variations. The data is further maintained by our community of local commuters and drivers who report changes in real time.',
+  },
+  {
+    q: 'Can I use PARA without an internet connection?',
+    a: 'Yes. PARA includes an offline mode that lets you download route data in advance. Once downloaded, you can search and navigate routes even with no signal — which matters most when you\'re in areas with weak connectivity.',
+  },
+  {
+    q: 'How do I report a wrong stop or route change?',
+    a: 'Inside the app, you can flag any stop or route directly. There\'s also a "Report a Route Issue" link in our footer that takes you to a quick form. Our team reviews all submissions and updates the data usually within 48 hours.',
+  },
+  {
+    q: 'When will PARA be available on iOS?',
+    a: 'PARA is currently available on Android via Google Play. iOS is in development and we\'re targeting a release later this year. You can sign up for updates via our social channels.',
+  },
+];
+
+function FaqSection() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section id="faq" className="py-20 px-6 bg-white scroll-mt-16">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">FAQ</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Common questions</h2>
+          <p className="text-gray-500 mt-3 max-w-xl mx-auto">Everything you need to know before your first ride with PARA.</p>
+        </div>
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <div
+              key={i}
+              className={['rounded-2xl border transition-all duration-200 overflow-hidden',
+                open === i ? 'border-[#2563eb] shadow-sm' : 'border-gray-100',
+              ].join(' ')}
+            >
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left"
+              >
+                <span className={['text-sm font-semibold transition-colors', open === i ? 'text-[#2563eb]' : 'text-gray-900'].join(' ')}>
+                  {faq.q}
+                </span>
+                <span className={['shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200',
+                  open === i ? 'bg-[#2563eb] text-white rotate-45' : 'bg-gray-100 text-gray-400',
+                ].join(' ')}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5">
+                    <path d="M12 5v14M5 12h14"/>
+                  </svg>
+                </span>
+              </button>
+              {open === i && (
+                <div className="px-6 pb-5">
+                  <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // ─── Team Modal ───────────────────────────────────────────────────────────────
 function TeamModal({ member, onClose }: {
@@ -598,7 +672,7 @@ export default function Home() {
                   <div className="w-4 h-4 bg-zinc-900 rounded-full" />
                 </div>
                 <div className="absolute inset-[6px] bg-zinc-950 rounded-[38px] overflow-hidden">
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                  <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover">
                     <source src="/para-onboarding.mp4" type="video/mp4" />
                   </video>
                   <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
@@ -617,6 +691,23 @@ export default function Home() {
           <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">Our Mission</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Making every commute smarter, faster, and less stressful</h2>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day — yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
+        </div>
+      </section>
+
+      {/* ── STATS BAR ── */}
+      <section className="bg-white border-y border-gray-100 py-10 px-6">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          {[
+            { value: '18+',    label: 'Active Routes in Iloilo',         sub: 'and growing'              },
+            { value: '100%',   label: 'Community-Verified Data',         sub: 'by real commuters'        },
+            { value: 'Free',   label: 'Always Free to Use',              sub: 'no subscriptions'         },
+          ].map(s => (
+            <div key={s.label} className="flex flex-col items-center gap-1">
+              <span className="text-4xl font-extrabold text-[#2563eb] tracking-tight">{s.value}</span>
+              <span className="text-gray-900 font-semibold text-sm">{s.label}</span>
+              <span className="text-gray-400 text-xs">{s.sub}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -644,15 +735,20 @@ export default function Home() {
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">How It Works</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Ride in 3 simple steps</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 relative">
+            {/* Desktop horizontal connector */}
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
               { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
               { step: '02', title: 'Get your route',         desc: 'PARA shows the best jeepney combinations with fares and stops.' },
               { step: '03', title: 'Ride with confidence',   desc: 'Track your ride live and know exactly when to get off.' },
-            ].map(s => (
+            ].map((s, i) => (
               <div key={s.step} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full bg-[#2563eb] text-white text-2xl font-bold flex items-center justify-center shadow-lg mb-5">{s.step}</div>
+                {/* Mobile vertical connector */}
+                {i > 0 && (
+                  <div className="md:hidden w-0.5 h-8 bg-blue-100 mb-0" />
+                )}
+                <div className="w-20 h-20 rounded-full bg-[#2563eb] text-white text-2xl font-bold flex items-center justify-center shadow-lg mb-5 mt-5 md:mt-0">{s.step}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{s.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{s.desc}</p>
               </div>
@@ -720,7 +816,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Our Story</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Meet the team behind PARA</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Click on any card to read their full story.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Click on any card to read their story.</p>
           </div>
           <TeamSection />
         </div>
@@ -750,6 +846,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      <FaqSection />
 
       {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
@@ -790,6 +889,7 @@ export default function Home() {
                   { label: 'Features',     id: 'features'     },
                   { label: 'How It Works', id: 'how-it-works' },
                   { label: 'Roadmap',      id: 'roadmap'      },
+                  { label: 'FAQ',          id: 'faq'          },
                   { label: 'Download',     id: 'hero'         },
                 ].map(l => (
                   <li key={l.label}><button onClick={() => scrollTo(l.id)} className="text-white/55 hover:text-white text-sm transition-colors text-left">{l.label}</button></li>
