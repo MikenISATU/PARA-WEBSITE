@@ -326,7 +326,7 @@ const teamMembers = [
     name: 'Alicia Amor',
     role: 'Marketing & Networking Head',
     linkedin: 'https://linkedin.com/in/alicia-amor',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578233/PARA_m6hhjw.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
@@ -382,39 +382,38 @@ function TeamModal({ member, onClose }: {
         className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* ── Header — sticky, never scrolls ── */}
-        <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-5 relative overflow-hidden shrink-0`}>
-          <div className="absolute -top-8 -right-8 w-36 h-36 bg-white/10 rounded-full" />
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full" />
+        {/* ── Header — full-width photo hero ── */}
+        <div className="relative w-full shrink-0 overflow-hidden" style={{ aspectRatio: '16/9' }}>
+          {/* Photo */}
+          <img
+            src={member.avatar}
+            alt={member.name}
+            className="w-full h-full object-cover object-top"
+            onError={(e) => {
+              const t = e.currentTarget;
+              t.style.display = 'none';
+              const parent = t.parentElement!;
+              parent.className += ` bg-gradient-to-br ${member.gradient}`;
+              parent.innerHTML = `<span style="color:white;font-weight:700;font-size:3rem;display:flex;align-items:center;justify-content:center;height:100%;width:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
+            }}
+          />
+          {/* Dark gradient overlay at bottom for text legibility */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent" />
 
-          {/* Close */}
+          {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center text-white"
+            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm transition flex items-center justify-center text-white"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
               <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
           </button>
 
-          {/* Identity row */}
-          <div className="flex items-center gap-4 relative z-10">
-            <div className="w-16 h-16 shrink-0 rounded-2xl border-2 border-white/30 overflow-hidden bg-white/20 shadow-lg">
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  const t = e.currentTarget;
-                  t.style.display = 'none';
-                  const parent = t.parentElement!;
-                  parent.style.background = 'rgba(255,255,255,0.2)';
-                  parent.innerHTML = `<span style="color:white;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;height:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
-                }}
-              />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold text-white leading-tight">{member.name}</h3>
+          {/* Name, role + LinkedIn over photo */}
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-4 flex items-end justify-between gap-3">
+            <div>
+              <h3 className="text-xl font-bold text-white leading-tight">{member.name}</h3>
               <p className="text-white/70 text-xs mt-0.5">{member.role}</p>
             </div>
             <a
@@ -422,7 +421,7 @@ function TeamModal({ member, onClose }: {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View LinkedIn Profile"
-              className="shrink-0 w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 transition-all flex items-center justify-center text-white/80 hover:text-white"
+              className="shrink-0 w-8 h-8 rounded-full bg-white/20 hover:bg-[#0A66C2] backdrop-blur-sm transition-all flex items-center justify-center text-white/80 hover:text-white"
               onClick={e => e.stopPropagation()}
             >
               <LinkedInIcon />
@@ -466,48 +465,42 @@ function TeamSection() {
             onClick={() => setSelected(member)}
             className="group text-left rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 bg-white"
           >
-            {/* Gradient banner */}
-            <div className={`bg-gradient-to-br ${member.gradient} h-24 relative overflow-hidden`}>
-              <div className="absolute -top-6 -right-6 w-28 h-28 bg-white/10 rounded-full" />
-              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-white/10 rounded-full" />
-            </div>
-            {/* Avatar — centered, overlapping banner */}
-            <div className="flex justify-center -mt-10 relative z-10">
-              <div className="w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-100">
-                <img
-                  src={member.avatar}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const t = e.currentTarget;
-                    t.style.display = 'none';
-                    const parent = t.parentElement!;
-                    parent.style.background = 'linear-gradient(135deg,#2563eb,#1d4ed8)';
-                    parent.innerHTML = `<span style="color:white;font-weight:700;font-size:1.25rem;display:flex;align-items:center;justify-content:center;height:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
-                  }}
-                />
-              </div>
+            {/* Full-width photo */}
+            <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
+              <img
+                src={member.avatar}
+                alt={member.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const t = e.currentTarget;
+                  t.style.display = 'none';
+                  const parent = t.parentElement!;
+                  parent.className += ` bg-gradient-to-br ${member.gradient}`;
+                  parent.innerHTML = `<span style="color:white;font-weight:700;font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%;width:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
+                }}
+              />
+              {/* Gradient overlay at bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
+              {/* LinkedIn icon over photo */}
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} on LinkedIn`}
+                onClick={e => e.stopPropagation()}
+                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/30 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100 backdrop-blur-sm"
+              >
+                <LinkedInIcon />
+              </a>
             </div>
             {/* Card body */}
-            <div className="px-5 pt-3 pb-5 text-center">
+            <div className="px-5 pt-3 pb-4 text-center">
               <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
               <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
-              <p className="text-gray-500 text-xs mt-3 leading-relaxed">{member.short}</p>
-              <div className="flex items-center justify-center gap-3 mt-3">
-                <p className="text-[#2563eb] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  Read story →
-                </p>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${member.name} on LinkedIn`}
-                  onClick={e => e.stopPropagation()}
-                  className="w-6 h-6 rounded-md bg-blue-50 hover:bg-[#2563eb] text-[#2563eb] hover:text-white flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100"
-                >
-                  <LinkedInIcon />
-                </a>
-              </div>
+              <p className="text-gray-500 text-xs mt-2 leading-relaxed">{member.short}</p>
+              <p className="text-[#2563eb] text-xs font-semibold mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                Read story →
+              </p>
             </div>
           </button>
         ))}
