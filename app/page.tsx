@@ -116,26 +116,26 @@ const roadmapItems = [
   { city: 'Tacloban',  title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'   },
 ];
 
-// ─── Iloilo Route Lists ───────────────────────────────────────────────────────
+// ─── Iloilo Active Routes ─────────────────────────────────────────────────────
 const iloiloAvailable = [
-  'Bo. Obrero–Iloilo City Proper Loop',
-  'Calaparan Calumpang–Iloilo City Proper',
-  'Ungka–Iloilo City Proper via CPU',
-  'Ungka–Iloilo City via Diversion/Festive Walk',
-  'Festive Walk–Iloilo City Proper via SM City',
-  'Compania–Iloilo City Proper Loop',
-  'Mohon–Infante Loop (Mohon)',
-  'Jaro Liko–Tagbak Link from ICTTMO',
-  'Jaro Liko NFA',
-  'Hibao-an–Iloilo City Proper via Tabucan',
-  'Hibao-an–Jaro via Abeto/Western/Festive',
-  'Molo–Iloilo City Proper via Baluarte Loop',
-  'Villa Baybay–City Proper via Bonifacio',
-  'Tagbak–Festive Walk via SM City/Atria',
-  'La Paz–Festive Walk via Nabitasan Loop',
-  'Jaro CPU',
-  'San Miguel (San Mig B to Festive)',
-  'Hibao-an Mandurriao via Jaro',
+  'Bo. Obrero to Iloilo City Proper Loop',
+  'Villa Plaza to City Proper via Calumpang',
+  'Ungka via Jaro CPU',
+  'Ungka via Diversion | Festive',
+  'Festive Walk to Iloilo City Proper via SM City',
+  'Lanit to SM City via NIA/Jalandoni',
+  'Compania to City Proper',
+  'Mohon to City Proper',
+  'Buntatala to Tagbak to Festive Walk via SM City/Atria',
+  'Ticud to City Proper',
+  'Hibao-an to City Proper via Tabucan',
+  'Hibao-an to Jaro via Festive',
+  'Hibao-an to Jaro via B. Aquino Ave./Festive Walk',
+  'Bito-on to Jaro via Balabago',
+  'Mohon to Jaro via So-oc/Festive Walk/ISATU',
+  'Ungka to La Paz via CPU-ISATU',
+  'Mohon to Mandurriao Business District',
+  'La Paz to Festive Walk via Nabitasan Loop',
 ];
 
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
@@ -189,7 +189,7 @@ function IloiloRouteDropdown() {
         onClick={() => setOpen(o => !o)}
         className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 hover:text-white bg-white/10 hover:bg-white/20 transition-all duration-200 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20"
       >
-        <span>{open ? 'Hide routes' : `View ${iloiloAvailable.length} available routes`}</span>
+        <span>{open ? 'Hide routes' : `View ${iloiloAvailable.length} active routes`}</span>
         <svg
           className={['w-3.5 h-3.5 transition-transform duration-200', open ? 'rotate-180' : ''].join(' ')}
           viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
@@ -197,13 +197,10 @@ function IloiloRouteDropdown() {
           <path d="M6 9l6 6 6-6"/>
         </svg>
       </button>
-
       {open && (
         <div className="mt-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 overflow-hidden">
           <div className="p-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">
-              Available Routes
-            </p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">Active Routes</p>
             <ul className="space-y-2">
               {iloiloAvailable.map(route => (
                 <li key={route} className="flex items-start gap-2.5 text-xs text-white/90 leading-snug">
@@ -220,117 +217,111 @@ function IloiloRouteDropdown() {
 }
 
 // ─── Team Data ────────────────────────────────────────────────────────────────
-// Each section field accepts a string (single paragraph) or string[] (multiple paragraphs).
 const teamMembers = [
   {
-    name: 'Andi Reyes',
-    role: 'CEO & Co-Founder',
-    linkedin: 'https://linkedin.com/in/andi-reyes',
-    avatar: 'https://ui-avatars.com/api/?name=Andi+Reyes&background=2563eb&color=fff&size=200&bold=true',
+    name: 'Keannu Torre',
+    role: 'Project Lead',
+    linkedin: 'https://www.linkedin.com/in/keannu-torre/',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/2_h2w8sn.png',
     gradient: 'from-blue-500 to-blue-700',
-    short: 'Urban mobility advocate and the vision behind PARA.',
-    whyJoined: [
-      'Growing up in Iloilo, I rode jeepneys every day to school. I watched tourists and newcomers get completely lost — confused by a system with no map, no guide, no app. That frustration never left me.',
-    ],
-    theProblem: [
-      'Millions of Filipinos depend on jeepneys daily, yet there\'s no simple way to know which one to take. That gap felt like a glaring blind spot for a country this connected.',
-    ],
-    myRole: [
-      'I pitched the idea at a startup competition in 2024, then spent the next year turning a whiteboard sketch into a real product — recruiting the team, setting strategy, and driving every major decision.',
-    ],
-    whyItMatters: [
-      'This isn\'t just a navigation app. It\'s infrastructure that never existed. When we get it right, it changes how an entire country moves.',
-    ],
+    short: 'The project lead driving PARA from idea to reality.',
+    whyJoined: [''],
+    theProblem: [''],
+    myRole: [''],
+    whyItMatters: [''],
   },
   {
-    name: 'Marco Santos',
-    role: 'CTO & Co-Founder',
-    linkedin: 'https://linkedin.com/in/marco-santos',
-    avatar: 'https://ui-avatars.com/api/?name=Marco+Santos&background=4f46e5&color=fff&size=200&bold=true',
-    gradient: 'from-indigo-500 to-blue-600',
-    short: 'The engineer who turned the idea into a working app.',
-    whyJoined: [
-      'When Andi pitched PARA at the competition, I stayed after the session to talk. Two hours later, we were still at it. I flew to Iloilo that same month.',
-    ],
-    theProblem: [
-      'The jeepney system had no data layer — no stops, no routes, no source of truth. Before we could build anything, we had to map everything from scratch.',
-    ],
-    myRole: [
-      'I built the technical foundation: rode every route to log stops and timing, architected the data layer, and lead all engineering decisions from day one.',
-    ],
-    whyItMatters: [
-      'Great software should be invisible — you shouldn\'t notice the tech, just the result. That\'s the standard I hold every line of code to.',
-    ],
-  },
-  {
-    name: 'Liza Cruz',
-    role: 'Head of Design',
-    linkedin: 'https://linkedin.com/in/liza-cruz',
-    avatar: 'https://ui-avatars.com/api/?name=Liza+Cruz&background=0ea5e9&color=fff&size=200&bold=true',
-    gradient: 'from-blue-400 to-cyan-500',
-    short: 'The reason PARA looks and feels effortless to use.',
-    whyJoined: [
-      'I almost turned down the internship — too many startup ideas go nowhere. But PARA was solving something real and I knew I could make it feel that way too.',
-    ],
-    theProblem: [
-      'Most transit apps are built for tech-savvy users. The people who need PARA most are everyday commuters — lolas, students, tricycle drivers — and the design had to work for all of them.',
-    ],
-    myRole: [
-      'I redesigned the interface three times before I was satisfied. Every iteration started with the same question: if my lola had to use this, could she figure it out in 30 seconds?',
-    ],
-    whyItMatters: [
-      'That question became our design north star. Simple, clear, and built for everyone — not just people who are comfortable with apps.',
-    ],
-  },
-  {
-    name: 'Ryan Dela Torre',
+    name: 'John Eugine Fernandez',
     role: 'Lead Developer',
-    linkedin: 'https://linkedin.com/in/ryan-dela-torre',
-    avatar: 'https://ui-avatars.com/api/?name=Ryan+Dela+Torre&background=1d4ed8&color=fff&size=200&bold=true',
-    gradient: 'from-blue-600 to-indigo-700',
-    short: 'The developer who made real-time tracking actually work.',
+    linkedin: 'https://www.linkedin.com/in/john-eugine-fernandez-9a99a8331/',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609384/3_w7rbbn.png',
+    gradient: 'from-indigo-500 to-blue-600',
+    short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
-      'I joined three months in, when the live location feature was broken and the launch was two weeks away. I stayed up four nights straight to rebuild it from scratch.',
+      'My name is Eugine, and I am the programmer behind PARA.',
+      'PARA did not start in a boardroom or a business plan — it started from a question that comes up in the minds of everyday commuters: "What ride do I take to get there?" That simple but frustrating question became the seed of what PARA is today — a digital travel guide that helps people navigate Iloilo\'s jeepney route system with confidence.',
+      'I joined PARA because I\'ve experienced that problem firsthand, and I\'ve always been drawn to building systems that make confusing things simpler and more accessible for everyone.',
     ],
     theProblem: [
-      'Real-time location tracking sounds simple until you\'re dealing with inconsistent GPS signals, low-end devices, and spotty mobile data — which describes most commuter hardware in the Philippines.',
+      'I know that frustration personally.',
+      'When I was in junior high, we had a half-day of school. My classmates and I went to the city to spend the afternoon, but later I decided to head home alone. It was my first time commuting home on my own.',
+      'I knew one thing: a jeepney taking the Ungka route could get me to Westwoods Subdivision in Dungon B. Simple enough.',
+      'Then I saw it — Jaro - CPU - Ungka — and I hopped on. That was the mistake.',
+      'The jeep took a different path than I expected, and before I knew it, I was already at the Sambag stoplight — far past Westwood. That\'s when I realized there was another Ungka jeep that follows a different route entirely. Same name. Different path.',
+      'Confused and panicked, I had to take another ride just to get back toward Westwood via Sta. Barbara. What should have been one ride became two. What should have been one fare became two.',
+      'When I got home, my parents explained something I didn\'t know at the time: there are two Ungka routes, and unless you already know the system, there\'s no clear way to tell the difference.',
+      'That moment stayed with me — not because I made a mistake, but because I realized how easy it is to get lost in a system that assumes prior knowledge.',
     ],
-    myRole: [
-      'I own the live tracking system and core app performance. When something breaks, I\'m the one everyone comes to — not because I said so, but because I usually find the root cause fastest.',
-    ],
+    myRole: [''],
     whyItMatters: [
-      'Outside of code, I collect old jeepney photos. It keeps me grounded in why the app matters — these aren\'t just data points, they\'re how people get to work every day.',
+      'PARA exists for that version of me — the confused kid at the stoplight who just wanted to get home.',
+      'It exists for every first-time commuter, every student adjusting to a new route, every person who has ever passed their stop because the system didn\'t clearly explain itself.',
+      'Our city\'s jeepney network works — but it works best only if you already memorize it. That gap between knowing and not knowing is what costs people time, money, and confidence.',
+      'PARA is our way of closing that gap. It is not built for tech-savvy users or people with time to figure things out. It is built para sa masa — the everyday commuter who just needs a clear, honest answer to one question: "What ride do I take to get there?"',
+      'That is what PARA is for me. And that is who we are building it for.',
     ],
   },
   {
-    name: 'Bianca Villanueva',
-    role: 'Community Manager',
-    linkedin: 'https://linkedin.com/in/bianca-villanueva',
-    avatar: 'https://ui-avatars.com/api/?name=Bianca+Villanueva&background=06b6d4&color=fff&size=200&bold=true',
-    gradient: 'from-cyan-500 to-blue-500',
-    short: 'The bridge between PARA and the people who use it.',
+    name: 'Miles Kenneth Napilan',
+    role: 'UI/UX & Front-end Developer',
+    linkedin: 'https://www.linkedin.com/in/miles-kenneth-napilan-62b1a31b8/',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/5_ikxojp.png',
+    gradient: 'from-blue-400 to-cyan-500',
+    short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
-      'I was studying in Sydney when Andi reached out. I\'d grown up in Iloilo and still remembered the exact routes I used to take — and exactly how confusing they were for anyone who didn\'t grow up there.',
+      'Back in 2024, I was actively joining startup initiatives when I met Jezreel and Alicia. Around the same time, I teamed up with Eugine, who was my classmate. We all shared the same drive to build something meaningful and that solves a real problem.',
+      'Currently, I\'m part of the UI/UX team, where I handle design, website development, and deployment. I also support other technical tasks whenever needed. My background in development allows me to contribute both creatively and technically to PARA.',
     ],
     theProblem: [
-      'Route data goes stale fast. Jeepneys reroute, stops move, new lines appear — without a community constantly verifying the data, the app becomes unreliable within months.',
+      'As a public commuter, commuting has always been challenging for me — especially during my student days and even now.',
+      'There were times I had to wait a long time for a ride, deal with unpredictable routes, or struggle during peak hours just to get home.',
+      'It\'s tiring, inefficient, and sometimes even stressful not knowing when or how you\'ll reach your destination. Those everyday struggles really stuck with me.',
     ],
-    myRole: [
-      'I manage PARA\'s community remotely, coordinate with local drivers and commuters to verify routes, and built the in-app feedback system that lets users report wrong stops directly.',
-    ],
+    myRole: [''],
     whyItMatters: [
-      'I\'ll be back in the Philippines for good next year. I\'ve already mapped three new routes from memory. This is the app I wish I\'d had when I was commuting every day.',
+      'For me, PARA is a solution built from real experiences.',
+      'When Keannu introduced the idea to us, we were immediately excited because it directly addressed problems we personally face.',
+      'PARA is about making commuting easier, more efficient, and more reliable for people like us. It\'s something that can genuinely improve daily life, especially for commuters who deal with these challenges every day.',
+    ],
+  },
+  {
+    name: 'MJ Torre',
+    role: 'Operations & Compliance',
+    linkedin: '',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/4_qcg3ek.png',
+    gradient: 'from-cyan-500 to-blue-500',
+    short: 'Making sure everything PARA builds is functional, credible, and reliable.',
+    whyJoined: [
+      'I\'ve always been drawn to organizing systems, setting processes, and making sure things are actually followed properly. In past leadership roles, I learned that vision alone isn\'t enough. Without discipline, risk management, and alignment with real-world standards, nothing scales.',
+      'Being part of PARA exposed me to how confusing and unpredictable public transportation really is. That made me realize that if we were serious about solving this problem, we needed to ensure that everything works — not just in concept, but in execution.',
+      'So I took on Operations and Compliance as both a responsibility and a necessity. For me, it\'s about making sure what we\'re building is not only meaningful, but also simple, functional, credible, and something people can actually rely on in their everyday lives.',
+    ],
+    theProblem: [
+      'In all honesty, the entire experience of commuting during fieldwork was uncomfortable, confusing, and frustrating.',
+      'I had not really used public transportation for most of my life, with the exception of taxis. So when I took on my role in PARA, I had to manually record routes — meaning I had to ride every jeepney and bus in Iloilo and document their full routes, which took about an hour per route.',
+      'During one of these trips, I fell asleep out of fatigue. When I woke up, I realized I had ended up somewhere unfamiliar. It was already dark, I had no idea where I was, the area felt unsafe, and there were no nearby jeepneys or buses that could take me back. I had to end the day with an incomplete recording and take a taxi home.',
+      'As I continued doing route recordings, I found myself thinking how useful it would be if there was something that could show where a bus is, where it will pass, when it will arrive, and where it is in real time.',
+      'Then I realized — this was exactly what we were building.',
+      'That uncertainty is not just inconvenient; it is genuinely stressful. And most of what I experienced — confusion, fatigue, and frustration — is something many commuters, especially beginners, go through every day.',
+      'What made it even more meaningful was talking to jeepney and bus drivers and understanding their side as well — their realities, challenges, and the uncertainty they also operate under. That experience deepened my sense of responsibility and service.',
+    ],
+    myRole: [''],
+    whyItMatters: [
+      'Through all of this, I became even more motivated to solve these problems because PARA, at its core, is my response to that need.',
+      'For me, PARA is not just a system — it is a way of bringing clarity to something that is currently uncertain, messy, and difficult to navigate.',
+      'It represents structure in a system that often feels unstructured. It represents reliability in an environment where people are often left guessing.',
+      'That is what PARA is for me.',
     ],
   },
   {
     name: 'Alicia Amor',
-    role: 'Marketing & Networking Head',
-    linkedin: 'https://linkedin.com/in/alicia-amor',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578233/PARA_m6hhjw.png',
+    role: 'Marketing & Business Development',
+    linkedin: 'https://www.linkedin.com/in/aliciaamorc-alisseroma/',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
-      'I am currently the Marketing and Networking Head of the PARA team.',
+      'I am currently the Marketing and Business Development Head of the PARA team.',
       'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication — when people are heard, understood, and connected, they\'re also able to help each other better.',
       'That\'s what drew me to PARA. I wanted to be part of building something that comes from real commuter experiences and turns them into something meaningful. A system that doesn\'t just function, but actually understands the struggles of the people using it.',
     ],
@@ -341,14 +332,40 @@ const teamMembers = [
       'What should have been a happy celebration turned into frustration and even arguments because of the stress and confusion. We arrived an hour late, and everyone else had already started eating.',
       'That experience made me realize how much time and energy commuters lose not just because of traffic, but because of the lack of clear and accessible information.',
     ],
-    myRole: [
-      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
-    ],
+    myRole: [''],
     whyItMatters: [
+      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
       'I hope that as this system grows within Iloilo City and eventually expands across the Philippines, PARA becomes a way to make everyday commuting clearer, more efficient, and less stressful.',
       'It is built from real experiences — moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
       'A system that saves time, reduces stress, and truly works for the people.',
       'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
+    ],
+  },
+  {
+    name: 'Andre Dorde',
+    role: 'Analytics & Back-end Developer',
+    linkedin: 'https://www.linkedin.com/in/andre-benedict-dorde/',
+    avatar: '',
+    gradient: 'from-violet-500 to-indigo-600',
+    short: 'Building the data and back-end systems that make PARA reliable.',
+    whyJoined: [
+      'I am a 3rd-year BS Computer Science student specializing in Data Science and Analytics at Ateneo de Manila University (ADMU).',
+      'I\'ve always been the type to strive for efficiency and automation. I would rather spend 10 hours building something that automates a process than spend 2 hours doing it manually. Even in the teams and projects I\'ve been part of, I\'ve always tried to make workflows easier, faster, and more efficient.',
+      'I\'m passionate about creating software and solutions that make user experiences more comfortable and hassle-free.',
+      'Currently, I serve as the Associate Vice President for Community Relations of the Computer Society of Ateneo, and as a Deputy for Administration of the Ateneo Resident Students Association. In both roles, I\'ve built systems that reduce manual workload and help people focus on more important tasks.',
+    ],
+    theProblem: [
+      'As a student living away from home in Iloilo and studying in Manila, commuting has become a regular part of my life — but it hasn\'t always been smooth.',
+      'Back when I was still unfamiliar with the routes in Metro Manila, I had to travel from BGC back to ADMU. I took buses, jeepneys, asked people for directions, and even relied on commuting guide apps — but I still couldn\'t find a clear route.',
+      'Out of frustration, I ended up walking from Anonas to ADMU in the rain. By the time I arrived, I was completely soaked, exhausted, and had wasted almost two hours on a stressful journey.',
+      'Later on, I found out there was actually a bus route from near BGC that could have taken me to ADMU in a little over 30 minutes. If I had known that earlier, it would have saved me so much time, effort, and money.',
+      'Even now, there are still many routes I\'m unfamiliar with — not just in Metro Manila, but also back in Iloilo.',
+    ],
+    myRole: [''],
+    whyItMatters: [
+      'That\'s why I\'m helping build PARA.',
+      'For me, PARA is a companion that grows with you — helping make your journeys easier and hassle-free. Instead of asking multiple sources or guessing your way through routes, you can rely on one platform that gives you what you need quickly and accurately.',
+      'It\'s built for people like me who commute often and just want to get to their destination without unnecessary stress or confusion.',
     ],
   },
 ];
@@ -364,43 +381,41 @@ function TeamModal({ member, onClose }: {
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const sections: { label: string; text: string[] }[] = [
-    { label: 'Why I Joined PARA', text: member.whyJoined },
-    { label: 'The Problem',       text: member.theProblem },
-    { label: 'My Role',           text: member.myRole },
-    { label: 'Why PARA Matters',  text: member.whyItMatters },
+  const allSections: { label: string; text: string[] }[] = [
+    { label: 'Why I Joined PARA',             text: member.whyJoined },
+    { label: 'The Problem We Want To Solve',   text: member.theProblem },
+    { label: 'My Role',                        text: member.myRole },
+    { label: 'Why PARA Matters',               text: member.whyItMatters },
   ];
+  const sections = allSections.filter(s => s.text.some(p => p.trim() !== ''));
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
-
       <div
         className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* ── Header — full-width photo hero ── */}
+        {/* Header photo */}
         <div className="relative w-full shrink-0 overflow-hidden" style={{ aspectRatio: '4/3' }}>
-          {/* Photo */}
-          <img
-            src={member.avatar}
-            alt={member.name}
-            className="w-full h-full object-cover object-[center_20%]"
-            onError={(e) => {
-              const t = e.currentTarget;
-              t.style.display = 'none';
-              const parent = t.parentElement!;
-              parent.className += ` bg-gradient-to-br ${member.gradient}`;
-              parent.innerHTML = `<span style="color:white;font-weight:700;font-size:3rem;display:flex;align-items:center;justify-content:center;height:100%;width:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
-            }}
-          />
-          {/* Dark gradient overlay at bottom for text legibility */}
+          {member.avatar ? (
+            <img
+              src={member.avatar}
+              alt={member.name}
+              className="w-full h-full object-cover object-[center_20%]"
+              onError={(e) => {
+                const t = e.currentTarget;
+                t.style.display = 'none';
+                const parent = t.parentElement!;
+                parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center"><span style="color:white;font-weight:700;font-size:3rem">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span></div>`;
+              }}
+            />
+          ) : (
+            <div className={`w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center`}>
+              <span className="text-white font-bold text-5xl">{member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>
+            </div>
+          )}
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent" />
-
-          {/* Close button */}
           <button
             onClick={onClose}
             className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm transition flex items-center justify-center text-white"
@@ -409,42 +424,42 @@ function TeamModal({ member, onClose }: {
               <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
           </button>
-
-          {/* Name, role + LinkedIn over photo */}
           <div className="absolute inset-x-0 bottom-0 px-5 pb-4 flex items-end justify-between gap-3">
             <div>
               <h3 className="text-xl font-bold text-white leading-tight">{member.name}</h3>
               <p className="text-white/70 text-xs mt-0.5">{member.role}</p>
             </div>
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View LinkedIn Profile"
-              className="shrink-0 w-8 h-8 rounded-full bg-white/20 hover:bg-[#0A66C2] backdrop-blur-sm transition-all flex items-center justify-center text-white/80 hover:text-white"
-              onClick={e => e.stopPropagation()}
-            >
-              <LinkedInIcon />
-            </a>
+            {member.linkedin && (
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View LinkedIn Profile"
+                className="shrink-0 w-8 h-8 rounded-full bg-white/20 hover:bg-[#0A66C2] backdrop-blur-sm transition-all flex items-center justify-center text-white/80 hover:text-white"
+                onClick={e => e.stopPropagation()}
+              >
+                <LinkedInIcon />
+              </a>
+            )}
           </div>
         </div>
 
-        {/* ── Body — scrollable, hidden scrollbar ── */}
+        {/* Body */}
         <div className="overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="px-6 py-5 sm:px-8 sm:py-6 space-y-6">
-            {sections.map((section, i) => (
+            {sections.length > 0 ? sections.map((section, i) => (
               <div key={section.label}>
                 {i > 0 && <div className="border-t border-gray-100 mb-5" />}
-                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">
-                  {section.label}
-                </p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">{section.label}</p>
                 <div className="space-y-2.5">
                   {section.text.map((para, j) => (
                     <p key={j} className="text-gray-500 text-sm leading-relaxed">{para}</p>
                   ))}
                 </div>
               </div>
-            ))}
+            )) : (
+              <p className="text-gray-400 text-sm text-center py-8">Story coming soon.</p>
+            )}
           </div>
         </div>
       </div>
@@ -467,31 +482,36 @@ function TeamSection() {
           >
             {/* Full-width photo */}
             <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                onError={(e) => {
-                  const t = e.currentTarget;
-                  t.style.display = 'none';
-                  const parent = t.parentElement!;
-                  parent.className += ` bg-gradient-to-br ${member.gradient}`;
-                  parent.innerHTML = `<span style="color:white;font-weight:700;font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%;width:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
-                }}
-              />
-              {/* Gradient overlay at bottom */}
+              {member.avatar ? (
+                <img
+                  src={member.avatar}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    t.style.display = 'none';
+                    const parent = t.parentElement!;
+                    parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center"><span style="color:white;font-weight:700;font-size:2.5rem">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span></div>`;
+                  }}
+                />
+              ) : (
+                <div className={`w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center`}>
+                  <span className="text-white font-bold text-5xl">{member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>
+                </div>
+              )}
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
-              {/* LinkedIn icon over photo */}
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${member.name} on LinkedIn`}
-                onClick={e => e.stopPropagation()}
-                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
-              >
-                <LinkedInIcon />
-              </a>
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                  onClick={e => e.stopPropagation()}
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
+                >
+                  <LinkedInIcon />
+                </a>
+              )}
             </div>
             {/* Card body */}
             <div className="px-5 pt-3 pb-4 text-center">
@@ -505,8 +525,6 @@ function TeamSection() {
           </button>
         ))}
       </div>
-
-      {/* Modal */}
       {selected && <TeamModal member={selected} onClose={() => setSelected(null)} />}
     </>
   );
