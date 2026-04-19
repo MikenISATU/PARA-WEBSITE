@@ -326,7 +326,7 @@ const teamMembers = [
     name: 'Alicia Amor',
     role: 'Marketing & Networking Head',
     linkedin: 'https://linkedin.com/in/alicia-amor',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578233/PARA_m6hhjw.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
