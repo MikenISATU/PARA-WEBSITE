@@ -351,35 +351,6 @@ const teamMembers = [
       'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
     ],
   },
-  {
-    name: 'Alicia Amor',
-    role: 'Marketing & Networking Head',
-    linkedin: 'https://linkedin.com/in/alicia-amor',
-    avatar: 'https://ui-avatars.com/api/?name=Alicia+Amor&background=db2777&color=fff&size=200&bold=true',
-    gradient: 'from-pink-500 to-rose-600',
-    short: 'Connecting PARA to the people and communities who need it most.',
-    whyJoined: [
-      'I am currently the Marketing and Networking Head of the PARA team.',
-      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication — when people are heard, understood, and connected, they\'re also able to help each other better.',
-      'That\'s what drew me to PARA. I wanted to be part of building something that comes from real commuter experiences and turns them into something meaningful. A system that doesn\'t just function, but actually understands the struggles of the people using it.',
-    ],
-    theProblem: [
-      'One of my worst commute experiences was when what was supposed to be a 10–15 minute ride turned into almost two hours.',
-      'It was rush hour, and I was with friends coming from Iloilo Doctors College, heading to SM City Iloilo for a simple celebratory dinner. But everything became stressful quickly. We were trying to find jeepneys going our way, but most were already packed, and we weren\'t even sure if they were the right ones.',
-      'We felt uncomfortable asking around because everyone was also in a rush. So we kept moving from one side of the road to another, waiting and hoping for the right ride. The sun was setting. We were hungry and exhausted.',
-      'What should have been a happy celebration turned into frustration and even arguments because of the stress and confusion. We arrived an hour late, and everyone else had already started eating.',
-      'That experience made me realize how much time and energy commuters lose not just because of traffic, but because of the lack of clear and accessible information.',
-    ],
-    myRole: [
-      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
-    ],
-    whyItMatters: [
-      'I hope that as this system grows within Iloilo City and eventually expands across the Philippines, PARA becomes a way to make everyday commuting clearer, more efficient, and less stressful.',
-      'It is built from real experiences — moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
-      'A system that saves time, reduces stress, and truly works for the people.',
-      'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
-    ],
-  },
 ];
 
 // ─── Team Modal ───────────────────────────────────────────────────────────────
