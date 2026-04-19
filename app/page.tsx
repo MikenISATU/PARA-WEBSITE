@@ -369,20 +369,17 @@ function TeamModal({ member, onClose }: {
           <h3 className="text-xl font-bold text-white">{member.name}</h3>
           <p className="text-white/75 text-sm mt-1">{member.role}</p>
 
-          {/* School badge + LinkedIn pill — same row */}
-          <div className="flex items-center justify-center gap-2 mt-3 flex-wrap">
-            <span className="text-[10px] font-bold uppercase tracking-widest bg-white/20 text-white rounded-full px-3 py-1">
-              {member.school}
-            </span>
+          {/* LinkedIn icon button */}
+          <div className="flex items-center justify-center mt-3">
             <a
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[12px] text-white/80 hover:text-white border border-white/25 hover:bg-white/15 transition-all rounded-full px-3 py-1"
+              aria-label="View LinkedIn Profile"
+              className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition-all flex items-center justify-center text-white/80 hover:text-white"
               onClick={e => e.stopPropagation()}
             >
               <LinkedInIcon />
-              View LinkedIn Profile
             </a>
           </div>
         </div>
@@ -445,7 +442,6 @@ function TeamSection() {
             <div className="px-5 pt-3 pb-5 text-center">
               <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
               <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
-              <span className="inline-block mt-1.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-50 text-blue-500 rounded-full px-2.5 py-0.5">{member.school}</span>
               <p className="text-gray-500 text-xs mt-3 leading-relaxed">{member.short}</p>
               <p className="text-[#2563eb] text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 Read story →
