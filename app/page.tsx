@@ -632,9 +632,12 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
           <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
         </div>
       </div>
-      <a href="/para.apk" download className="transition hover:scale-105 hover:opacity-90">
-        <GooglePlayBadge className="h-[46px] w-auto" />
-      </a>
+      <div className="relative cursor-not-allowed">
+        <GooglePlayBadge className="h-[46px] w-auto opacity-50" />
+        <div className="absolute inset-0 flex items-center justify-center rounded-[5px] bg-black/60 backdrop-blur-[1px]">
+          <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -662,7 +665,7 @@ export default function Home() {
               </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6">
-                <a href="#" className="inline-block bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-medium text-lg px-10 py-4 rounded-2xl shadow-lg active:scale-95">Download the App</a>
+                <a href="/para.apk" download className="inline-block bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-medium text-lg px-10 py-4 rounded-2xl shadow-lg active:scale-95">Download APK</a>
               </div>
               <div className="mt-6 flex justify-center lg:justify-start"><AppBadges /></div>
             </div>
