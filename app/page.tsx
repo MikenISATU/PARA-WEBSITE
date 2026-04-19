@@ -92,7 +92,7 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
 
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
-  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: true  },
+  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
   { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
   { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
@@ -374,7 +374,7 @@ const teamMembers = [
 const faqs = [
   {
     q: 'Is PARA free to use?',
-    a: 'Yes — PARA is completely free. No subscription, no in-app purchases, no hidden fees. We believe every commuter deserves access to clear route information regardless of their budget.',
+    a: 'PARA is free during our beta period. As we grow and add more features, we plan to introduce subscription tiers — but core route navigation will always remain accessible.',
   },
   {
     q: 'Which cities does PARA currently cover?',
@@ -393,8 +393,8 @@ const faqs = [
     a: 'Inside the app, you can flag any stop or route directly. There\'s also a "Report a Route Issue" link in our footer that takes you to a quick form. Our team reviews all submissions and updates the data usually within 48 hours.',
   },
   {
-    q: 'When will PARA be available on iOS?',
-    a: 'PARA is currently available on Android via Google Play. iOS is in development and we\'re targeting a release later this year. You can sign up for updates via our social channels.',
+    q: 'How do I get the app?',
+    a: 'PARA is currently available as a direct Android APK download — no Google Play required. iOS support is on our roadmap. You can get the latest APK from our download link above.',
   },
 ];
 
@@ -632,7 +632,7 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
           <span className="text-white text-[11px] font-bold uppercase tracking-widest">Soon</span>
         </div>
       </div>
-      <a href="https://test.com" target="_blank" rel="noopener noreferrer" className="transition hover:scale-105 hover:opacity-90">
+      <a href="/para.apk" download className="transition hover:scale-105 hover:opacity-90">
         <GooglePlayBadge className="h-[46px] w-auto" />
       </a>
     </div>
@@ -700,7 +700,7 @@ export default function Home() {
           {[
             { value: '18+',    label: 'Active Routes in Iloilo',         sub: 'and growing'              },
             { value: '100%',   label: 'Community-Verified Data',         sub: 'by real commuters'        },
-            { value: 'Free',   label: 'Always Free to Use',              sub: 'no subscriptions'         },
+            { value: 'Beta',   label: 'Currently in Beta',              sub: 'free during early access'  },
           ].map(s => (
             <div key={s.label} className="flex flex-col items-center gap-1">
               <span className="text-4xl font-extrabold text-[#2563eb] tracking-tight">{s.value}</span>
