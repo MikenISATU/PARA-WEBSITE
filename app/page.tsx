@@ -358,22 +358,17 @@ function TeamModal({ member, onClose }: {
   member: typeof teamMembers[0];
   onClose: () => void;
 }) {
-  const [activeTab, setActiveTab] = useState(0);
-
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  // Reset tab when a different member is opened
-  React.useEffect(() => { setActiveTab(0); }, [member]);
-
-  const tabs: { label: string; text: string[] }[] = [
-    { label: 'Why I Joined',    text: member.whyJoined },
-    { label: 'The Problem',     text: member.theProblem },
-    { label: 'My Role',         text: member.myRole },
-    { label: 'Why It Matters',  text: member.whyItMatters },
+  const sections: { label: string; text: string[] }[] = [
+    { label: 'Why I Joined PARA', text: member.whyJoined },
+    { label: 'The Problem',       text: member.theProblem },
+    { label: 'My Role',           text: member.myRole },
+    { label: 'Why PARA Matters',  text: member.whyItMatters },
   ];
 
   return (
@@ -384,11 +379,11 @@ function TeamModal({ member, onClose }: {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
 
       <div
-        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl overflow-hidden"
+        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* ── Header ── */}
-        <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-5 relative overflow-hidden`}>
+        {/* ── Header — sticky, never scrolls ── */}
+        <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-5 relative overflow-hidden shrink-0`}>
           <div className="absolute -top-8 -right-8 w-36 h-36 bg-white/10 rounded-full" />
           <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full" />
 
@@ -433,31 +428,23 @@ function TeamModal({ member, onClose }: {
               <LinkedInIcon />
             </a>
           </div>
-
-          {/* Tabs — inside header */}
-          <div className="flex gap-1 mt-4 relative z-10">
-            {tabs.map((tab, i) => (
-              <button
-                key={tab.label}
-                onClick={() => setActiveTab(i)}
-                className={[
-                  'flex-1 text-[11px] font-semibold py-1.5 rounded-lg transition-all duration-150 truncate px-1',
-                  activeTab === i
-                    ? 'bg-white text-[#2563eb] shadow-sm'
-                    : 'text-white/70 hover:text-white hover:bg-white/15',
-                ].join(' ')}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
         </div>
 
-        {/* ── Content panel — fixed height, scrollable but no visible scrollbar ── */}
-        <div className="px-6 py-5 sm:px-8 sm:py-6 h-52 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <div className="space-y-2.5">
-            {tabs[activeTab].text.map((para, i) => (
-              <p key={i} className="text-gray-500 text-sm leading-relaxed">{para}</p>
+        {/* ── Body — scrollable, hidden scrollbar ── */}
+        <div className="overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="px-6 py-5 sm:px-8 sm:py-6 space-y-6">
+            {sections.map((section, i) => (
+              <div key={section.label}>
+                {i > 0 && <div className="border-t border-gray-100 mb-5" />}
+                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">
+                  {section.label}
+                </p>
+                <div className="space-y-2.5">
+                  {section.text.map((para, j) => (
+                    <p key={j} className="text-gray-500 text-sm leading-relaxed">{para}</p>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
