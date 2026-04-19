@@ -358,17 +358,22 @@ function TeamModal({ member, onClose }: {
   member: typeof teamMembers[0];
   onClose: () => void;
 }) {
+  const [activeTab, setActiveTab] = useState(0);
+
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const sections: { label: string; text: string[] }[] = [
-    { label: 'Why I Joined PARA', text: member.whyJoined },
-    { label: 'The Problem',       text: member.theProblem },
-    { label: 'My Role',           text: member.myRole },
-    { label: 'Why PARA Matters',  text: member.whyItMatters },
+  // Reset tab when a different member is opened
+  React.useEffect(() => { setActiveTab(0); }, [member]);
+
+  const tabs: { label: string; text: string[] }[] = [
+    { label: 'Why I Joined',    text: member.whyJoined },
+    { label: 'The Problem',     text: member.theProblem },
+    { label: 'My Role',         text: member.myRole },
+    { label: 'Why It Matters',  text: member.whyItMatters },
   ];
 
   return (
@@ -376,20 +381,18 @@ function TeamModal({ member, onClose }: {
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
-      {/* Blurred backdrop */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
 
-      {/* Modal card */}
       <div
-        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] overflow-y-auto"
+        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* Header gradient */}
-        <div className={`bg-gradient-to-br ${member.gradient} px-8 pt-8 pb-6 rounded-t-3xl relative overflow-hidden text-center`}>
-          <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full" />
-          <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-white/10 rounded-full" />
+        {/* ── Header ── */}
+        <div className={`bg-gradient-to-br ${member.gradient} px-6 pt-6 pb-5 relative overflow-hidden`}>
+          <div className="absolute -top-8 -right-8 w-36 h-36 bg-white/10 rounded-full" />
+          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full" />
 
-          {/* Close button */}
+          {/* Close */}
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center text-white"
@@ -399,9 +402,9 @@ function TeamModal({ member, onClose }: {
             </svg>
           </button>
 
-          {/* Avatar */}
-          <div className="flex justify-center mb-3">
-            <div className="w-[72px] h-[72px] rounded-full border-[3px] border-white/30 overflow-hidden shadow-lg bg-white/20">
+          {/* Identity row */}
+          <div className="flex items-center gap-4 relative z-10">
+            <div className="w-16 h-16 shrink-0 rounded-2xl border-2 border-white/30 overflow-hidden bg-white/20 shadow-lg">
               <img
                 src={member.avatar}
                 alt={member.name}
@@ -411,48 +414,52 @@ function TeamModal({ member, onClose }: {
                   t.style.display = 'none';
                   const parent = t.parentElement!;
                   parent.style.background = 'rgba(255,255,255,0.2)';
-                  parent.innerHTML = `<span style="color:white;font-weight:700;font-size:1.25rem;display:flex;align-items:center;justify-content:center;height:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
+                  parent.innerHTML = `<span style="color:white;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;height:100%">${member.name.split(' ').map((w: string) => w[0]).join('').slice(0,2)}</span>`;
                 }}
               />
             </div>
-          </div>
-
-          {/* Name & role */}
-          <h3 className="text-xl font-bold text-white">{member.name}</h3>
-          <p className="text-white/75 text-sm mt-1">{member.role}</p>
-
-          {/* LinkedIn icon button */}
-          <div className="flex items-center justify-center mt-3">
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-bold text-white leading-tight">{member.name}</h3>
+              <p className="text-white/70 text-xs mt-0.5">{member.role}</p>
+            </div>
             <a
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View LinkedIn Profile"
-              className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition-all flex items-center justify-center text-white/80 hover:text-white"
+              className="shrink-0 w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 transition-all flex items-center justify-center text-white/80 hover:text-white"
               onClick={e => e.stopPropagation()}
             >
               <LinkedInIcon />
             </a>
           </div>
+
+          {/* Tabs — inside header */}
+          <div className="flex gap-1 mt-4 relative z-10">
+            {tabs.map((tab, i) => (
+              <button
+                key={tab.label}
+                onClick={() => setActiveTab(i)}
+                className={[
+                  'flex-1 text-[11px] font-semibold py-1.5 rounded-lg transition-all duration-150 truncate px-1',
+                  activeTab === i
+                    ? 'bg-white text-[#2563eb] shadow-sm'
+                    : 'text-white/70 hover:text-white hover:bg-white/15',
+                ].join(' ')}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Modal body — 4 structured sections */}
-        <div className="px-6 py-5 sm:px-8 sm:py-6">
-          {sections.map((section, i) => (
-            <React.Fragment key={section.label}>
-              {i > 0 && <div className="border-t border-gray-100 my-4" />}
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">
-                  {section.label}
-                </p>
-                <div className="space-y-2.5">
-                  {section.text.map((para, j) => (
-                    <p key={j} className="text-gray-500 text-sm leading-relaxed">{para}</p>
-                  ))}
-                </div>
-              </div>
-            </React.Fragment>
-          ))}
+        {/* ── Content panel — fixed height, no scroll ── */}
+        <div className="px-6 py-5 sm:px-8 sm:py-6 h-52 overflow-y-auto">
+          <div className="space-y-2.5">
+            {tabs[activeTab].text.map((para, i) => (
+              <p key={i} className="text-gray-500 text-sm leading-relaxed">{para}</p>
+            ))}
+          </div>
         </div>
       </div>
     </div>
