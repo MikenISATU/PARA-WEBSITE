@@ -281,7 +281,7 @@ const teamMembers = [
     name: 'Miles Kenneth Napilan',
     role: 'UI/UX & Front-end Developer',
     linkedin: 'https://www.linkedin.com/in/miles-kenneth-napilan-62b1a31b8/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/5_bxlhi9.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696914/PARA_1_couobe.png',
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
