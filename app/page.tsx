@@ -371,7 +371,7 @@ const teamMembers = [
     name: 'MJ Torre',
     role: 'Operations & Compliance',
     linkedin: '',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/4_nqznb7.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776703782/MJ_bjoyrr.png',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
