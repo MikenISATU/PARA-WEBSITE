@@ -220,21 +220,37 @@ function IloiloRouteDropdown() {
 const teamMembers = [
   {
     name: 'Keannu Torre',
-    role: 'Project Lead',
+    role: 'Project Lead & Founder',
     linkedin: 'https://www.linkedin.com/in/keannu-torre/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/2_h2w8sn.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/2_tx3rwm.png',
     gradient: 'from-blue-500 to-blue-700',
-    short: 'The project lead driving PARA from idea to reality.',
-    whyJoined: [''],
-    theProblem: [''],
-    myRole: [''],
-    whyItMatters: [''],
+    short: 'The founder who turned a bedroom map project into PARA.',
+    whyJoined: [
+      'I am the founder and project lead of the PARA Team.',
+      'PARA started the summer right after I graduated high school. Growing up I never really figured out the jeepney transportation system, and it became apparent real quickly that even for people who depended on this system most of their lives have not fully grasped it.',
+      'That summer, my friend Nathaniel Del Oeste and I threw ourselves into it. We converted my bedroom into a makeshift office and spent months riding jeepneys across the city, studying routes we recorded and drawing them into a map.',
+      'Initially PARA was just supposed to be an up-to-date map drawing for students to use, but the more routes we rode, the more drivers we talked to, the more commuters we listened to, the clearer it became that a static map couldn\'t capture something this alive. It was like putting together a puzzle whose pieces change shape all the time.',
+    ],
+    theProblem: [
+      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early — standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
+      'Asking around to get around was how I managed my way within the system with much difficulty. Then I asked myself: what if I was a student on my first day of school without my parents, what if I was elderly after route changes, what if I just moved to Iloilo for a fresh start?',
+      'A final question gave birth to the refined idea of PARA — "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
+    ],
+    myRole: [
+      'It became my goal to build something bigger than myself. As founder and project lead, I work to bring together the expertise and energy of my team toward one thing: giving commuters the certainty and reliability they\'ve always deserved but never had.',
+    ],
+    whyItMatters: [
+      'The jeepney is one of the most iconic symbols of Filipino culture and one of its most misunderstood systems. For all its visibility, it operates digitally in the dark: routes outdated or undocumented, changes unannounced, knowledge passed informally or not at all.',
+      'What we found isn\'t just a problem, but lives normalized around it — and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
+      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter — they all deserve the same confidence that the system will make sense to them.',
+      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map — it was always a collective movement.',
+    ],
   },
   {
     name: 'John Eugine Fernandez',
     role: 'Lead Developer',
     linkedin: 'https://www.linkedin.com/in/john-eugine-fernandez-9a99a8331/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609384/3_w7rbbn.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/3_vl2yuc.png',
     gradient: 'from-indigo-500 to-blue-600',
     short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
@@ -265,7 +281,7 @@ const teamMembers = [
     name: 'Miles Kenneth Napilan',
     role: 'UI/UX & Front-end Developer',
     linkedin: 'https://www.linkedin.com/in/miles-kenneth-napilan-62b1a31b8/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/5_ikxojp.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/5_bxlhi9.png',
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
@@ -288,7 +304,7 @@ const teamMembers = [
     name: 'MJ Torre',
     role: 'Operations & Compliance',
     linkedin: '',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776609385/4_qcg3ek.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/4_nqznb7.png',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
@@ -317,7 +333,7 @@ const teamMembers = [
     name: 'Alicia Amor',
     role: 'Marketing & Business Development',
     linkedin: 'https://www.linkedin.com/in/aliciaamorc-alisseroma/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776578558/PARA_pepw1t.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/1_jopo8f.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
@@ -345,7 +361,7 @@ const teamMembers = [
     name: 'Andre Dorde',
     role: 'Analytics & Back-end Developer',
     linkedin: 'https://www.linkedin.com/in/andre-benedict-dorde/',
-    avatar: '',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/6_zbuqso.png',
     gradient: 'from-violet-500 to-indigo-600',
     short: 'Building the data and back-end systems that make PARA reliable.',
     whyJoined: [
@@ -394,7 +410,7 @@ const faqs = [
   },
   {
     q: 'How do I get the app?',
-    a: 'PARA is currently available as a direct Android APK download — no Google Play required. iOS support is on our roadmap. You can get the latest APK from our download link above.',
+    a: 'PARA is currently available as a direct Android APK download — no Google Play required. iOS support is on our roadmap. You can get the latest APK from the Download APK button above.',
   },
 ];
 
@@ -463,6 +479,14 @@ function TeamModal({ member, onClose }: {
   ];
   const sections = allSections.filter(s => s.text.some(p => p.trim() !== ''));
 
+  // Keannu's first section label is different
+  const displaySections = sections.map(s => ({
+    ...s,
+    label: member.name === 'Keannu Torre' && s.label === 'Why I Joined PARA'
+      ? 'Why I Started PARA'
+      : s.label,
+  }));
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
@@ -521,7 +545,7 @@ function TeamModal({ member, onClose }: {
         {/* Body */}
         <div className="overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="px-6 py-5 sm:px-8 sm:py-6 space-y-6">
-            {sections.length > 0 ? sections.map((section, i) => (
+            {displaySections.length > 0 ? displaySections.map((section, i) => (
               <div key={section.label}>
                 {i > 0 && <div className="border-t border-gray-100 mb-5" />}
                 <p className="text-[10px] font-bold uppercase tracking-[0.13em] text-[#2563eb] mb-2">{section.label}</p>
@@ -554,7 +578,6 @@ function TeamSection() {
             onClick={() => setSelected(member)}
             className="group text-left rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 bg-white"
           >
-            {/* Full-width photo */}
             <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
               {member.avatar ? (
                 <img
@@ -587,7 +610,6 @@ function TeamSection() {
                 </a>
               )}
             </div>
-            {/* Card body */}
             <div className="px-5 pt-3 pb-4 text-center">
               <h3 className="font-bold text-gray-900 text-base leading-tight">{member.name}</h3>
               <p className="text-[#2563eb] text-xs font-semibold mt-0.5">{member.role}</p>
@@ -739,7 +761,6 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Ride in 3 simple steps</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 relative">
-            {/* Desktop horizontal connector */}
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
               { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
@@ -747,10 +768,7 @@ export default function Home() {
               { step: '03', title: 'Ride with confidence',   desc: 'Track your ride live and know exactly when to get off.' },
             ].map((s, i) => (
               <div key={s.step} className="relative z-10 flex flex-col items-center text-center">
-                {/* Mobile vertical connector */}
-                {i > 0 && (
-                  <div className="md:hidden w-0.5 h-8 bg-blue-100 mb-0" />
-                )}
+                {i > 0 && <div className="md:hidden w-0.5 h-8 bg-blue-100 mb-0" />}
                 <div className="w-20 h-20 rounded-full bg-[#2563eb] text-white text-2xl font-bold flex items-center justify-center shadow-lg mb-5 mt-5 md:mt-0">{s.step}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{s.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{s.desc}</p>
