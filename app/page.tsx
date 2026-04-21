@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
+
 const IconSearch = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <circle cx="21" cy="21" r="13" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
@@ -86,26 +87,26 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 const features = [
-  { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds, no guessing, no asking around.',   highlight: false },
-  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',         highlight: false },
-  { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points. PARA plans the full trip for you.',              highlight: false },
-  { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                         highlight: false },
-  { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',               highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute, from Luzon to Mindanao.',                            highlight: false },
+  { title: 'Instant Route Search', desc: 'Type your destination and get the best jeepney routes in seconds, no guessing, no asking around.', highlight: false },
+  { title: 'Live Location Tracking', desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.', highlight: false },
+  { title: 'Smart Transfers', desc: 'Multi-jeep routes with intelligent transfer points. PARA plans the full trip for you.', highlight: false },
+  { title: 'Offline Mode', desc: 'Download routes for offline use. Commute confidently even with weak signal.', highlight: false },
+  { title: 'Community-Powered', desc: 'Route data verified and updated by real commuters and drivers across the Philippines.', highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute, from Luzon to Mindanao.', highlight: false },
 ];
 const reviews = [
-  { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
-  { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
-  { name: 'Sarah M.',  location: 'Cebu City',   rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
-  { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
+  { name: 'Maria L.', location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
+  { name: 'Paolo R.', location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
+  { name: 'Sarah M.', location: 'Cebu City', rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
+  { name: 'Kuya Jun', location: 'Pasay', rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
 const roadmapItems = [
-  { city: 'Iloilo',    title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
-  { city: 'Bacolod',   title: 'Coming Soon → Bacolod',       desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'inprogress' },
-  { city: 'Cebu',      title: 'Coming Soon → Cebu',          desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.',                        status: 'upcoming'   },
-  { city: 'Aklan',     title: 'Coming Soon → Aklan',         desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.',                 status: 'upcoming'   },
-  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'   },
-  { city: 'Tacloban',  title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'   },
+  { city: 'Iloilo', title: 'Now Available in Iloilo', desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.', status: 'current' },
+  { city: 'Bacolod', title: 'Coming Soon → Bacolod', desc: 'The City of Smiles is next — complete jeepney route mapping underway.', status: 'inprogress' },
+  { city: 'Cebu', title: 'Coming Soon → Cebu', desc: 'Expanding to Cebu City and Metro Cebu — the heart of the Visayas.', status: 'upcoming' },
+  { city: 'Aklan', title: 'Coming Soon → Aklan', desc: 'Covering Kalibo and Boracay gateway routes for locals and tourists alike.', status: 'upcoming' },
+  { city: 'Dumaguete', title: 'Coming Soon → Dumaguete', desc: 'Route data collection begins in the City of Gentle People.', status: 'upcoming' },
+  { city: 'Tacloban', title: 'Coming Soon → Tacloban', desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.', status: 'upcoming' },
 ];
 const iloiloAvailable = [
   'Bo. Obrero to Iloilo City Proper Loop',
@@ -127,11 +128,11 @@ const iloiloAvailable = [
   'Mohon to Mandurriao Business District',
   'La Paz to Festive Walk via Nabitasan Loop',
 ];
-const FacebookIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>;
-const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
+const FacebookIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>;
+const TwitterXIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
-const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
-// ─── Animated Stats Bar ───────────────────────────────────────────────────────
+const LinkedInIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
+
 function useCountUp(target: number, duration: number, started: boolean) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -147,6 +148,7 @@ function useCountUp(target: number, duration: number, started: boolean) {
   }, [started, target, duration]);
   return count;
 }
+
 function StatsBar() {
   const [started, setStarted] = useState(false);
   const ref = React.useRef<HTMLElement>(null);
@@ -193,7 +195,7 @@ function StatsBar() {
     </section>
   );
 }
-// ─── Feature Card ─────────────────────────────────────────────────────────────
+
 function FeatureCard({ title, desc, IconComponent, highlight }: {
   title: string; desc: string;
   IconComponent: React.ComponentType<{ white?: boolean }>;
@@ -228,7 +230,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
     </div>
   );
 }
-// ─── Iloilo Route Dropdown ────────────────────────────────────────────────────
+
 function IloiloRouteDropdown() {
   const [open, setOpen] = useState(false);
   return (
@@ -263,7 +265,7 @@ function IloiloRouteDropdown() {
     </div>
   );
 }
-// ─── Team Data ────────────────────────────────────────────────────────────────
+
 const teamMembers = [
   {
     name: 'Keannu Torre',
@@ -279,18 +281,18 @@ const teamMembers = [
       'Initially PARA was just supposed to be an up-to-date map drawing for students to use, but the more routes we rode, the more drivers we talked to, the more commuters we listened to, the clearer it became that a static map couldn\'t capture something this alive. It was like putting together a puzzle whose pieces change shape all the time.',
     ],
     theProblem: [
-      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early, standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
+      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early — standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
       'Asking around to get around was how I managed my way within the system with much difficulty. Then I asked myself: what if I was a student on my first day of school without my parents, what if I was elderly after route changes, what if I just moved to Iloilo for a fresh start?',
-      'A final question gave birth to the refined idea of PARA: "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
+      'A final question gave birth to the refined idea of PARA — "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
     ],
     myRole: [
       'It became my goal to build something bigger than myself. As founder and project lead, I work to bring together the expertise and energy of my team toward one thing: giving commuters the certainty and reliability they\'ve always deserved but never had.',
     ],
     whyItMatters: [
       'The jeepney is one of the most iconic symbols of Filipino culture and one of its most misunderstood systems. For all its visibility, it operates digitally in the dark: routes outdated or undocumented, changes unannounced, knowledge passed informally or not at all.',
-      'What we found isn\'t just a problem, but lives normalized around it, and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
-      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter, they all deserve the same confidence that the system will make sense to them.',
-      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map, it was always a collective movement.',
+      'What we found isn\'t just a problem, but lives normalized around it — and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
+      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter — they all deserve the same confidence that the system will make sense to them.',
+      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map — it was always a collective movement.',
     ],
   },
   {
@@ -336,7 +338,7 @@ const teamMembers = [
       'Currently, I\'m part of the UI/UX team, where I handle design, website development, and deployment. I also support other technical tasks whenever needed. My background in development allows me to contribute both creatively and technically to PARA.',
     ],
     theProblem: [
-      'As a public commuter, commuting has always been challenging for me, especially during my student days and even now.',
+      'As a public commuter, commuting has always been challenging for me — especially during my student days and even now.',
       'There were times I had to wait a long time for a ride, deal with unpredictable routes, or struggle during peak hours just to get home.',
       'It\'s tiring, inefficient, and sometimes even stressful not knowing when or how you\'ll reach your destination. Those everyday struggles really stuck with me.',
     ],
@@ -371,7 +373,7 @@ const teamMembers = [
     myRole: [''],
     whyItMatters: [
       'Through all of this, I became even more motivated to solve these problems because PARA, at its core, is my response to that need.',
-      'For me, PARA is not just a system, it is a way of bringing clarity to something that is currently uncertain, messy, and difficult to navigate.',
+      'For me, PARA is not just a system — it is a way of bringing clarity to something that is currently uncertain, messy, and difficult to navigate.',
       'It represents structure in a system that often feels unstructured. It represents reliability in an environment where people are often left guessing.',
       'That is what PARA is for me.',
     ],
@@ -385,11 +387,11 @@ const teamMembers = [
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
       'I am currently the Marketing and Business Development Head of the PARA team.',
-      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication, when people are heard, understood, and connected, they\'re also able to help each other better.',
+      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication — when people are heard, understood, and connected, they\'re also able to help each other better.',
       'That\'s what drew me to PARA. I wanted to be part of building something that comes from real commuter experiences and turns them into something meaningful. A system that doesn\'t just function, but actually understands the struggles of the people using it.',
     ],
     theProblem: [
-      'One of my worst commute experiences was when what was supposed to be a 10-15 minute ride turned into almost two hours.',
+      'One of my worst commute experiences was when what was supposed to be a 10–15 minute ride turned into almost two hours.',
       'It was rush hour, and I was with friends coming from Iloilo Doctors College, heading to SM City Iloilo for a simple celebratory dinner. But everything became stressful quickly. We were trying to find jeepneys going our way, but most were already packed, and we weren\'t even sure if they were the right ones.',
       'We felt uncomfortable asking around because everyone was also in a rush. So we kept moving from one side of the road to another, waiting and hoping for the right ride. The sun was setting. We were hungry and exhausted.',
       'What should have been a happy celebration turned into frustration and even arguments because of the stress and confusion. We arrived an hour late, and everyone else had already started eating.',
@@ -397,11 +399,11 @@ const teamMembers = [
     ],
     myRole: [''],
     whyItMatters: [
-      'For me, PARA is something that can transform the lives of every commuter, not just locals, but also travelers.',
+      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
       'I hope that as this system grows within Iloilo City and eventually expands across the Philippines, PARA becomes a way to make everyday commuting clearer, more efficient, and less stressful.',
-      'It is built from real experiences, moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
+      'It is built from real experiences — moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
       'A system that saves time, reduces stress, and truly works for the people.',
-      'Because Filipinos deserve a system that brings clarity, and I hope PARA can be that for us.',
+      'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
     ],
   },
   {
@@ -418,21 +420,21 @@ const teamMembers = [
       'Currently, I serve as the Associate Vice President for Community Relations of the Computer Society of Ateneo, and as a Deputy for Administration of the Ateneo Resident Students Association. In both roles, I\'ve built systems that reduce manual workload and help people focus on more important tasks.',
     ],
     theProblem: [
-      'As a student living away from home in Iloilo and studying in Manila, commuting has become a regular part of my life, but it hasn\'t always been smooth.',
-      'Back when I was still unfamiliar with the routes in Metro Manila, I had to travel from BGC back to ADMU. I took buses, jeepneys, asked people for directions, and even relied on commuting guide apps, but I still couldn\'t find a clear route.',
+      'As a student living away from home in Iloilo and studying in Manila, commuting has become a regular part of my life — but it hasn\'t always been smooth.',
+      'Back when I was still unfamiliar with the routes in Metro Manila, I had to travel from BGC back to ADMU. I took buses, jeepneys, asked people for directions, and even relied on commuting guide apps — but I still couldn\'t find a clear route.',
       'Out of frustration, I ended up walking from Anonas to ADMU in the rain. By the time I arrived, I was completely soaked, exhausted, and had wasted almost two hours on a stressful journey.',
       'Later on, I found out there was actually a bus route from near BGC that could have taken me to ADMU in a little over 30 minutes. If I had known that earlier, it would have saved me so much time, effort, and money.',
-      'Even now, there are still many routes I\'m unfamiliar with, not just in Metro Manila, but also back in Iloilo.',
+      'Even now, there are still many routes I\'m unfamiliar with — not just in Metro Manila, but also back in Iloilo.',
     ],
     myRole: [''],
     whyItMatters: [
       'That\'s why I\'m helping build PARA.',
-      'For me, PARA is a companion that grows with you, helping make your journeys easier and hassle-free. Instead of asking multiple sources or guessing your way through routes, you can rely on one platform that gives you what you need quickly and accurately.',
+      'For me, PARA is a companion that grows with you — helping make your journeys easier and hassle-free. Instead of asking multiple sources or guessing your way through routes, you can rely on one platform that gives you what you need quickly and accurately.',
       'It\'s built for people like me who commute often and just want to get to their destination without unnecessary stress or confusion.',
     ],
   },
 ];
-// ─── FAQ ─────────────────────────────────────────────────────────────────────
+
 const faqs = [
   {
     q: 'Is PARA free to use?',
@@ -459,6 +461,7 @@ const faqs = [
     a: 'PARA is currently available as a direct Android APK download. We\'re in beta testing, with plans to launch on Google Play and iOS soon. You can register as a beta tester by clicking the button above.',
   },
 ];
+
 function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
   return (
@@ -504,7 +507,7 @@ function FaqSection() {
     </section>
   );
 }
-// ─── Team Modal ───────────────────────────────────────────────────────────────
+
 function TeamModal({ member, onClose }: {
   member: typeof teamMembers[0];
   onClose: () => void;
@@ -515,10 +518,10 @@ function TeamModal({ member, onClose }: {
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
   const allSections: { label: string; text: string[] }[] = [
-    { label: 'Why I Joined PARA',             text: member.whyJoined },
-    { label: 'The Problem We Want To Solve',   text: member.theProblem },
-    { label: 'My Role',                        text: member.myRole },
-    { label: 'Why PARA Matters',               text: member.whyItMatters },
+    { label: 'Why I Joined PARA', text: member.whyJoined },
+    { label: 'The Problem We Want To Solve', text: member.theProblem },
+    { label: 'My Role', text: member.myRole },
+    { label: 'Why PARA Matters', text: member.whyItMatters },
   ];
   const sections = allSections.filter(s => s.text.some(p => p.trim() !== ''));
   const displaySections = sections.map(s => ({
@@ -567,7 +570,7 @@ function TeamModal({ member, onClose }: {
               <p className="text-white/70 text-xs mt-0.5">{member.role}</p>
             </div>
             {member.linkedin && (
-              
+              <a
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -601,7 +604,7 @@ function TeamModal({ member, onClose }: {
     </div>
   );
 }
-// ─── Team Section ─────────────────────────────────────────────────────────────
+
 function TeamSection() {
   const [selected, setSelected] = useState<typeof teamMembers[0] | null>(null);
   return (
@@ -633,7 +636,7 @@ function TeamSection() {
               )}
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
               {member.linkedin && (
-                
+                <a
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -660,7 +663,7 @@ function TeamSection() {
     </>
   );
 }
-// ─── Navbar wrapper ───────────────────────────────────────────────────────────
+
 function NavbarWrapper() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -677,7 +680,7 @@ function NavbarWrapper() {
     </div>
   );
 }
-// ─── App Badges ───────────────────────────────────────────────────────────────
+
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
@@ -696,15 +699,16 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
     </div>
   );
 }
+
 function scrollTo(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
       <NavbarWrapper />
-      {/* ── HERO ── */}
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -717,7 +721,7 @@ export default function Home() {
               </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
-                
+                <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -752,23 +756,22 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── MISSION ── */}
       <section id="mission" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">Our Mission</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Making every commute smarter, faster, and less stressful</h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day, yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+            Millions of Filipinos ride jeepneys every day, yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.
+          </p>
         </div>
       </section>
-      {/* ── STATS BAR ── */}
       <StatsBar />
-      {/* ── KEY FEATURES ── */}
       <section id="features" className="py-24 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads, not some idealized transit system.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
@@ -778,7 +781,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── HOW IT WORKS ── */}
       <section id="how-it-works" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -789,8 +791,8 @@ export default function Home() {
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
               { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
-              { step: '02', title: 'Get your route',         desc: 'PARA shows the best jeepney combinations with fares and stops.' },
-              { step: '03', title: 'Ride with confidence',   desc: 'Track your ride live and know exactly when to get off.' },
+              { step: '02', title: 'Get your route', desc: 'PARA shows the best jeepney combinations with fares and stops.' },
+              { step: '03', title: 'Ride with confidence', desc: 'Track your ride live and know exactly when to get off.' },
             ].map((s, i) => (
               <div key={s.step} className="relative z-10 flex flex-col items-center text-center">
                 {i > 0 && <div className="md:hidden w-0.5 h-8 bg-blue-100 mb-0" />}
@@ -802,7 +804,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── ROADMAP ── */}
       <section id="roadmap" className="bg-gray-50 scroll-mt-16">
         <div className="bg-[#2563eb] w-full py-16 px-6 text-center mb-14">
           <p className="text-blue-200 text-xs font-bold uppercase tracking-[0.2em] mb-3">City Expansion Road Map</p>
@@ -819,9 +820,9 @@ export default function Home() {
                 {roadmapItems.map(item => (
                   <div key={item.city} className="relative flex gap-6 pl-14">
                     <div className={['absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2',
-                      item.status === 'current'    ? 'bg-[#2563eb] border-[#2563eb] text-white' :
+                      item.status === 'current' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
                       item.status === 'inprogress' ? 'bg-[#2563eb] border-[#2563eb] text-white' :
-                                                     'bg-white border-gray-200 text-gray-400'].join(' ')}>
+                      'bg-white border-gray-200 text-gray-400'].join(' ')}>
                       {item.status === 'current' ? '✓' : item.status === 'inprogress' ? '→' : '·'}
                     </div>
                     <div className={['rounded-2xl border flex-1 overflow-hidden',
@@ -832,9 +833,9 @@ export default function Home() {
                           : 'bg-white border-gray-100 shadow-sm'].join(' ')}>
                       <div className="p-5">
                         <span className={['text-xs font-semibold uppercase tracking-wider',
-                          item.status === 'current'    ? 'text-blue-200' :
+                          item.status === 'current' ? 'text-blue-200' :
                           item.status === 'inprogress' ? 'text-[#2563eb]' :
-                                                         'text-gray-400'].join(' ')}>
+                          'text-gray-400'].join(' ')}>
                           {item.city}
                           {item.status === 'inprogress' && (
                             <span className="ml-2 bg-blue-100 text-[#2563eb] rounded-full px-2 py-0.5 text-xs">In Progress</span>
@@ -854,7 +855,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── TEAM / OUR STORY ── */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -865,7 +865,6 @@ export default function Home() {
           <TeamSection />
         </div>
       </section>
-      {/* ── REVIEWS ── */}
       <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16 hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -889,9 +888,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── FAQ ── */}
       <FaqSection />
-      {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
         <div className="border-b border-white/5">
           <div className="max-w-screen-2xl mx-auto px-8 xl:px-16 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -911,10 +908,10 @@ export default function Home() {
               <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-7">The Philippines&apos; most complete jeepney route companion. Open to all commuters, built by Filipinos.</p>
               <div className="flex gap-2.5">
                 {[
-                  { href: 'https://www.facebook.com/profile.php?id=61573242432747', label: 'Facebook',  icon: <FacebookIcon />,  hover: 'hover:bg-[#1877F2]' },
-                  { href: 'https://x.com',         label: 'X',         icon: <TwitterXIcon />,  hover: 'hover:bg-white/10'  },
+                  { href: 'https://www.facebook.com/profile.php?id=61573242432747', label: 'Facebook', icon: <FacebookIcon />, hover: 'hover:bg-[#1877F2]' },
+                  { href: 'https://x.com', label: 'X', icon: <TwitterXIcon />, hover: 'hover:bg-white/10' },
                   { href: 'https://instagram.com', label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
-                  { href: 'https://linkedin.com',  label: 'LinkedIn',  icon: <LinkedInIcon />,  hover: 'hover:bg-[#0A66C2]' },
+                  { href: 'https://linkedin.com', label: 'LinkedIn', icon: <LinkedInIcon />, hover: 'hover:bg-[#0A66C2]' },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                     className={`w-8 h-8 rounded-md border border-white/10 bg-white/5 ${s.hover} text-white/50 hover:text-white flex items-center justify-center transition-all duration-200`}>
@@ -927,11 +924,11 @@ export default function Home() {
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Product</p>
               <ul className="space-y-3">
                 {[
-                  { label: 'Features',     id: 'features'     },
+                  { label: 'Features', id: 'features' },
                   { label: 'How It Works', id: 'how-it-works' },
-                  { label: 'Roadmap',      id: 'roadmap'      },
-                  { label: 'FAQ',          id: 'faq'          },
-                  { label: 'Download',     id: 'hero'         },
+                  { label: 'Roadmap', id: 'roadmap' },
+                  { label: 'FAQ', id: 'faq' },
+                  { label: 'Download', id: 'hero' },
                 ].map(l => (
                   <li key={l.label}><button onClick={() => scrollTo(l.id)} className="text-white/55 hover:text-white text-sm transition-colors text-left">{l.label}</button></li>
                 ))}
@@ -942,8 +939,8 @@ export default function Home() {
               <ul className="space-y-3">
                 {[
                   { label: 'Our Mission', id: 'mission' },
-                  { label: 'Blog',        id: null      },
-                  { label: 'Careers',     id: null      },
+                  { label: 'Blog', id: null },
+                  { label: 'Careers', id: null },
                 ].map(l => (
                   <li key={l.label}>
                     {l.id
@@ -957,10 +954,10 @@ export default function Home() {
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
               <ul className="space-y-3">
                 {[
-                  { label: 'para.teams.ph@gmail.com',    href: 'mailto:para.teams.ph@gmail.com' },
-                  { label: 'Support Center',       href: '#team' },
+                  { label: 'para.teams.ph@gmail.com', href: 'mailto:para.teams.ph@gmail.com' },
+                  { label: 'Support Center', href: '#team' },
                   { label: 'Report a Route Issue', href: 'https://forms.gle/1nnmYjyXAJ2Qb9b6A' },
-                  { label: 'Partner with Us',      href: '#team' },
+                  { label: 'Partner with Us', href: '#team' },
                 ].map(l => (
                   <li key={l.label}><a href={l.href} className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a></li>
                 ))}
