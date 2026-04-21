@@ -436,7 +436,7 @@ const teamMembers = [
 const faqs = [
   {
     q: 'Is PARA free to use?',
-    a: 'PARA is free during our beta period. As we grow and add more features, we plan to introduce subscription tiers — but core route navigation will always remain accessible.',
+    a: 'PARA is absolutely free. We aim to make it accessible to everyone looking for an easier way to get around the Philippines.',
   },
   {
     q: 'Which cities does PARA currently cover?',
