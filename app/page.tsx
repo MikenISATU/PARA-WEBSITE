@@ -428,7 +428,7 @@ const teamMembers = [
     name: 'Andre Dorde',
     role: 'Analytics & Back-end Developer',
     linkedin: 'https://www.linkedin.com/in/andre-benedict-dorde/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/6_zbuqso.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776780199/Andre_vchssl.png',
     gradient: 'from-violet-500 to-indigo-600',
     short: 'Building the data and back-end systems that make PARA reliable.',
     whyJoined: [
