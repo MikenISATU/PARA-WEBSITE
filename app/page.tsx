@@ -861,8 +861,8 @@ export default function Home() {
       <NavbarWrapper />
 
       <section id="hero" className="scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 lg:pt-32 lg:pb-28 xl:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-14 lg:gap-10 xl:gap-16">
+        <div className="max-w-7xl mx-auto px-6 pt-20 pb-14 lg:pt-24 lg:pb-16 xl:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-10 lg:gap-8 xl:gap-12">
             <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto lg:mx-0">
               <div className="flex items-center justify-center lg:justify-start -mb-8 lg:-mb-10">
                 <Image
