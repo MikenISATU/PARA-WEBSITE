@@ -716,9 +716,11 @@ export default function Home() {
               <div className="flex items-center justify-center lg:justify-start -mb-10 lg:-mb-14">
                 <Image src="/para-logo.png" alt="PARA Logo" width={600} height={200} priority className="w-auto max-w-full h-56 sm:h-64 lg:h-72 object-contain object-left lg:-ml-20" />
               </div>
-              <h1 className="text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 leading-tight">
-                Find the best<br />Jeepney Route<br /><span className="text-[#2563eb]">Instantly</span>
-              </h1>
+                <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[0.95]">
+                  Find the best<br />
+                  Jeepney Route<br />
+                  <span className="text-[#2563eb]">Instantly</span>
+                </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
                 <a
