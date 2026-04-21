@@ -477,7 +477,7 @@ const faqs = [
   },
   {
     q: 'How do I get the app?',
-    a: 'PARA is currently available as a direct Android APK download — no Google Play required. We’re in beta testing, with plans to launch on Google Play and iOS soon. You can get the latest APK using the Download APK button above.',
+    a: 'PARA is currently available as a direct Android APK download. We’re in beta testing, with plans to launch on Google Play and iOS soon. You can register as a beta tester by clicking the button above.',
   },
 ];
 
