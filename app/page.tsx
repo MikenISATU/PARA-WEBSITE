@@ -339,7 +339,7 @@ function PhoneMockup() {
 
               <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[3.5%] bg-black" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3.5%] bg-black" />
             </div>
           </div>
         </div>
@@ -863,7 +863,7 @@ export default function Home() {
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-20 pb-14 lg:pt-24 lg:pb-16 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-10 lg:gap-8 xl:gap-12">
-            <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto lg:mx-0">
+           <div className="flex items-center justify-center lg:justify-start -mb-8 lg:-mb-12 xl:-mb-14">
               <div className="flex items-center justify-center lg:justify-start -mb-8 lg:-mb-10">
                 <Image
                   src="/para-logo.png"
