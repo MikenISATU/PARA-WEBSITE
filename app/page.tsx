@@ -875,13 +875,12 @@ export default function Home() {
                 />
               </div>
 
-              <h1 className="text-5xl sm:text-6xl xl:text-[4.5rem] font-extrabold tracking-tight text-gray-900 leading-[0.92]">
-                Find the best
-                <br />
-                Jeepney Route
-                <br />
-                <span className="text-[#2563eb]">Instantly</span>
-              </h1>
+                <h1 className="text-5xl sm:text-6xl xl:text-[4.5rem] font-extrabold tracking-tight text-gray-900 leading-[0.98]">
+                  <span className="block">Find the best</span>
+                  <span className="block mt-1">Jeepney Route</span>
+                  <span className="block mt-1 text-[#2563eb]">Instantly</span>
+                </h1>
+
 
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-5">
                 Your Jeepney Route Companion for the Philippines
