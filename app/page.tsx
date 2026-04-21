@@ -222,7 +222,7 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
       </div>
-      <a href="https://test.com" target="_blank" rel="noopener noreferrer"
+      <a href="#" target="_blank" rel="noopener noreferrer"
         className={['mt-auto text-sm font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200',
           highlight ? 'text-white' : 'text-[#2563eb]'].join(' ')}>
         Learn more →
