@@ -339,7 +339,7 @@ function PhoneMockup() {
 
               <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[4%] bg-black" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[2%] bg-black" />
             </div>
           </div>
         </div>
@@ -871,7 +871,7 @@ export default function Home() {
                   width={600}
                   height={200}
                   priority
-                  className="w-auto max-w-full h-48 sm:h-56 lg:h-64 object-contain object-left lg:-ml-8 xl:-ml-10"
+                  className="w-auto max-w-full h-48 sm:h-56 lg:h-64 object-contain object-left lg:-ml-10 xl:-ml-12"
                 />
               </div>
 
