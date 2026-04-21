@@ -87,10 +87,22 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
     <text x="40" y="13" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="6.5" letterSpacing=".5">GET IT ON</text>
     <text x="39" y="27" fill="#fff" fontFamily="'Helvetica Neue', Helvetica, sans-serif" fontSize="14" fontWeight="500" letterSpacing="-.2">Google Play</text>
     <defs>
-      <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#00a0ff" /><stop offset="1" stopColor="#00e3ff" /></linearGradient>
-      <linearGradient id="gp2" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#ffe000" /><stop offset="1" stopColor="#ff9c00" /></linearGradient>
-      <linearGradient id="gp3" x1="24.827" y1="19.704" x2="2.069" y2="-3.054" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#ff3a44" /><stop offset="1" stopColor="#c31162" /></linearGradient>
-      <linearGradient id="gp4" x1="7.297" y1="41.824" x2="17.46" y2="31.661" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)"><stop offset="0" stopColor="#32a071" /><stop offset="1" stopColor="#00f076" /></linearGradient>
+      <linearGradient id="gp1" x1="21.8" y1="33.29" x2="5.017" y2="16.508" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#00a0ff" />
+        <stop offset="1" stopColor="#00e3ff" />
+      </linearGradient>
+      <linearGradient id="gp2" x1="33.834" y1="21.999" x2="9.637" y2="21.999" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#ffe000" />
+        <stop offset="1" stopColor="#ff9c00" />
+      </linearGradient>
+      <linearGradient id="gp3" x1="24.827" y1="19.704" x2="2.069" y2="-3.054" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#ff3a44" />
+        <stop offset="1" stopColor="#c31162" />
+      </linearGradient>
+      <linearGradient id="gp4" x1="7.297" y1="41.824" x2="17.46" y2="31.661" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 42)">
+        <stop offset="0" stopColor="#32a071" />
+        <stop offset="1" stopColor="#00f076" />
+      </linearGradient>
     </defs>
   </svg>
 );
@@ -151,7 +163,6 @@ function useCountUp(target: number, duration: number, started: boolean) {
 
   useEffect(() => {
     if (!started) return;
-
     let start = 0;
     const step = Math.ceil(target / (duration / 16));
     const timer = setInterval(() => {
@@ -163,7 +174,6 @@ function useCountUp(target: number, duration: number, started: boolean) {
         setCount(start);
       }
     }, 16);
-
     return () => clearInterval(timer);
   }, [started, target, duration]);
 
@@ -177,7 +187,6 @@ function StatsBar() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -187,7 +196,6 @@ function StatsBar() {
       },
       { threshold: 0.4 }
     );
-
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
@@ -215,10 +223,7 @@ function StatsBar() {
           <span className="text-gray-400 text-sm leading-snug max-w-[160px]">by real commuters on the ground</span>
         </div>
         <div className="flex flex-col items-center gap-2 py-8 sm:py-0 sm:px-10 text-center">
-          <span
-            className="text-6xl sm:text-7xl font-black text-[#2563eb] tracking-tight leading-none transition-opacity duration-700"
-            style={{ opacity: started ? 1 : 0 }}
-          >
+          <span className="text-6xl sm:text-7xl font-black text-[#2563eb] tracking-tight leading-none transition-opacity duration-700" style={{ opacity: started ? 1 : 0 }}>
             Beta
           </span>
           <span className="text-gray-900 font-bold text-lg mt-1">Early Access</span>
@@ -258,13 +263,11 @@ function FeatureCard({
           </span>
         </>
       )}
-
       <div className={['w-14 h-14 rounded-2xl flex items-center justify-center shrink-0', highlight ? 'bg-white/20' : 'bg-blue-50'].join(' ')}>
         <div className="w-9 h-9">
           <IconComponent white={highlight} />
         </div>
       </div>
-
       <div>
         <h3 className={['text-lg font-bold mb-1.5', highlight ? 'text-white' : 'text-gray-900'].join(' ')}>{title}</h3>
         <p className={['text-sm leading-relaxed', highlight ? 'text-blue-100' : 'text-gray-500'].join(' ')}>{desc}</p>
@@ -310,6 +313,36 @@ function IloiloRouteDropdown() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function PhoneMockup() {
+  return (
+    <div className="relative w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[380px] xl:max-w-[400px]">
+      <div className="absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)] blur-3xl" />
+
+      <div className="relative rounded-[3.4rem] bg-gradient-to-br from-[#f8fafc] via-[#cbd5e1] to-[#94a3b8] p-[5px] shadow-[0_30px_90px_rgba(15,23,42,0.28)]">
+        <div className="rounded-[3rem] bg-gradient-to-br from-[#dfe6ee] via-[#b8c2cf] to-[#8a96a8] p-[2px]">
+          <div className="relative rounded-[2.8rem] bg-black p-[10px] overflow-hidden">
+            <div className="absolute left-[-3px] top-28 h-14 w-[3px] rounded-r-full bg-slate-300/80" />
+            <div className="absolute left-[-3px] top-44 h-24 w-[3px] rounded-r-full bg-slate-300/80" />
+            <div className="absolute right-[-3px] top-36 h-20 w-[3px] rounded-l-full bg-slate-300/80" />
+
+            <div className="relative overflow-hidden rounded-[2.35rem] bg-zinc-950 aspect-[9/19]">
+              <div className="absolute top-2 left-1/2 z-30 h-7 w-32 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_-1px_0_rgba(255,255,255,0.06)]" />
+
+              <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="h-full w-full object-cover object-top">
+                <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776794770/F2PARA_1_1_hpisfc.mp4" type="video/mp4" />
+              </video>
+
+              <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[3%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[5%] bg-black" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -498,7 +531,7 @@ const faqs = [
   },
   {
     q: 'Can I use PARA without an internet connection?',
-    a: 'Yes. PARA includes an offline mode that lets you download route data in advance. Once downloaded, you can search and navigate routes even with no signal and which matters most when you\'re in areas with weak connectivity.',
+    a: 'Yes. PARA includes an offline mode that lets you download route data in advance. Once downloaded, you can search and navigate routes even with no signal, which matters most when you\'re in areas with weak connectivity.',
   },
   {
     q: 'How do I report a wrong stop or route change?',
@@ -821,9 +854,9 @@ export default function Home() {
       <NavbarWrapper />
 
       <section id="hero" className="scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-14 xl:gap-16">
-            <div className="w-full lg:w-[52%] text-center lg:text-left">
+        <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 lg:pt-32 lg:pb-28 xl:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-14 lg:gap-10 xl:gap-16">
+            <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto lg:mx-0">
               <div className="flex items-center justify-center lg:justify-start -mb-8 lg:-mb-10">
                 <Image
                   src="/para-logo.png"
@@ -835,7 +868,7 @@ export default function Home() {
                 />
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 leading-[0.95]">
+              <h1 className="text-5xl sm:text-6xl xl:text-[4.5rem] font-extrabold tracking-tight text-gray-900 leading-[0.92]">
                 Find the best
                 <br />
                 Jeepney Route
@@ -843,11 +876,11 @@ export default function Home() {
                 <span className="text-[#2563eb]">Instantly</span>
               </h1>
 
-              <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">
+              <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-5">
                 Your Jeepney Route Companion for the Philippines
               </p>
 
-              <div className="mt-6 flex flex-col items-center lg:items-start gap-4">
+              <div className="mt-7 flex flex-col items-center lg:items-start gap-4">
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   target="_blank"
@@ -879,20 +912,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full lg:w-[42%] flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[380px]">
-                <div className="relative bg-black rounded-[52px] border-[14px] border-black shadow-2xl overflow-hidden aspect-[9/19]">
-                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-30" />
-                  <div className="absolute inset-[6px] bg-zinc-950 rounded-[38px] overflow-hidden">
-                    <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover object-top">
-                      <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776794770/F2PARA_1_1_hpisfc.mp4" type="video/mp4" />
-                    </video>
-                    <div className="absolute top-0 left-0 right-0 h-[3%] bg-black z-10 pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-black z-10 pointer-events-none" />
-                  </div>
-                </div>
-                <div className="absolute -inset-6 bg-gradient-to-br from-[#2563eb]/10 to-transparent blur-3xl -z-10" />
-              </div>
+            <div className="flex justify-center lg:justify-end">
+              <PhoneMockup />
             </div>
           </div>
         </div>
