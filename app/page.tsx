@@ -267,7 +267,7 @@ function IloiloRouteDropdown() {
 const teamMembers = [
   {
     name: 'Keannu Torre',
-    role: 'Project Lead & Founder',
+    role: 'Project Lead',
     linkedin: 'https://www.linkedin.com/in/keannu-torre/',
     avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/2_tx3rwm.png',
     gradient: 'from-blue-500 to-blue-700',
