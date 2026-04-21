@@ -99,7 +99,6 @@ const reviews = [
   { name: 'Sarah M.',  location: 'Cebu City',   rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
-// ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
   { city: 'Iloilo',    title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
   { city: 'Bacolod',   title: 'Coming Soon → Bacolod',       desc: 'The City of Smiles is next — complete jeepney route mapping underway.',                    status: 'inprogress' },
@@ -108,7 +107,6 @@ const roadmapItems = [
   { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'   },
   { city: 'Tacloban',  title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'   },
 ];
-// ─── Iloilo Active Routes ─────────────────────────────────────────────────────
 const iloiloAvailable = [
   'Bo. Obrero to Iloilo City Proper Loop',
   'Villa Plaza to City Proper via Calumpang',
@@ -129,7 +127,6 @@ const iloiloAvailable = [
   'Mohon to Mandurriao Business District',
   'La Paz to Festive Walk via Nabitasan Loop',
 ];
-// ─── Social SVGs ──────────────────────────────────────────────────────────────
 const FacebookIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>;
 const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
@@ -720,20 +717,19 @@ export default function Home() {
               </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
+                {/* ── Beta Tester Button ── */}
                 <a
-                  href="https://forms.gle/1nnmYjyXAJ2Qb9b6A"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg active:scale-95 group"
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg active:scale-95 group"
                 >
-                  {/* Clipboard / form icon */}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
                     <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
                     <rect x="9" y="3" width="6" height="4" rx="1"/>
                     <path d="M9 12h6M9 16h4"/>
                   </svg>
                   <span>Register as a Beta Tester</span>
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 shrink-0 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                     <path d="M7 17 17 7M7 7h10v10"/>
                   </svg>
@@ -743,15 +739,12 @@ export default function Home() {
             </div>
             <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px] lg:ml-auto lg:pl-8 xl:pl-16">
               <div className="relative bg-black rounded-[52px] border-[14px] border-black shadow-2xl overflow-hidden aspect-[9/19]">
-                {/* Dynamic island */}
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-30" />
                 <div className="absolute inset-[6px] bg-zinc-950 rounded-[38px] overflow-hidden">
                   <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover object-top">
                     <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776781251/para-onboarding1_1_1_xuhzjz.mp4" type="video/mp4" />
                   </video>
-                  {/* Mask status bar at top */}
                   <div className="absolute top-0 left-0 right-0 h-[3%] bg-black z-10 pointer-events-none" />
-                  {/* Mask bottom nav bar */}
                   <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-black z-10 pointer-events-none" />
                 </div>
               </div>
