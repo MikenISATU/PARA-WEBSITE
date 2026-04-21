@@ -958,7 +958,7 @@ export default function Home() {
               <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest mb-5">Contact</p>
               <ul className="space-y-3">
                 {[
-                  { label: 'hello@paraapp.ph',    href: 'mailto:hello@paraapp.ph' },
+                  { label: 'para.teams.ph@gmail.com',    href: 'mailto:para.teams.ph@gmail.com' },
                   { label: 'Support Center',       href: '#team' },
                   { label: 'Report a Route Issue', href: 'https://forms.gle/1nnmYjyXAJ2Qb9b6A' },
                   { label: 'Partner with Us',      href: '#team' },
