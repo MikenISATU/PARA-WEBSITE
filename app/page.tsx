@@ -319,8 +319,9 @@ function IloiloRouteDropdown() {
 
 function PhoneMockup() {
   return (
-    <div className="relative w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[380px] xl:max-w-[400px]">
+    <div className="relative w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[380px] xl:max-w-[400px] pb-10">
       <div className="absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)] blur-3xl" />
+      <div className="absolute left-1/2 bottom-0 h-10 w-[72%] -translate-x-1/2 rounded-full bg-black/20 blur-2xl" />
 
       <div className="relative rounded-[3.4rem] bg-gradient-to-br from-[#f8fafc] via-[#cbd5e1] to-[#94a3b8] p-[5px] shadow-[0_30px_90px_rgba(15,23,42,0.28)]">
         <div className="rounded-[3rem] bg-gradient-to-br from-[#dfe6ee] via-[#b8c2cf] to-[#8a96a8] p-[2px]">
@@ -337,8 +338,8 @@ function PhoneMockup() {
               </video>
 
               <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-[3%] bg-black" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[5%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[4%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[4%] bg-black" />
             </div>
           </div>
         </div>
@@ -356,24 +357,30 @@ const teamMembers = [
     gradient: 'from-blue-500 to-blue-700',
     short: 'The founder who turned a bedroom map project into PARA.',
     whyJoined: [
-      'I am the founder and project lead of the PARA Team.',
-      'PARA started the summer right after I graduated high school. Growing up I never really figured out the jeepney transportation system, and it became apparent real quickly that even for people who depended on this system most of their lives have not fully grasped it.',
-      'That summer, my friend Nathaniel Del Oeste and I threw ourselves into it. We converted my bedroom into a makeshift office and spent months riding jeepneys across the city, studying routes we recorded and drawing them into a map.',
-      'Initially PARA was just supposed to be an up-to-date map drawing for students to use, but the more routes we rode, the more drivers we talked to, the more commuters we listened to, the clearer it became that a static map couldn\'t capture something this alive. It was like putting together a puzzle whose pieces change shape all the time.',
+      'I’m the project lead and founder of PARA.',
+      'PARA started the summer after I graduated high school. Growing up, I couldn’t make sense of the jeepney system, and the more I looked, the more I realized it wasn’t just me. Even lifelong commuters, people who’ve ridden these routes for years, were still riding by instinct alone.',
+      'That summer, my good friend Nathaniel Del Oeste and I threw ourselves into it. We converted my bedroom into a makeshift office and spent months riding jeepneys across Iloilo, route after route, stop after stop, recording what we found and drawing it all into a map.',
+      'We thought we were building a simple map. But the more routes we rode, the more drivers we talked to, the more commuters we listened to, the clearer it became that no static map could capture something this alive. It was like putting together a puzzle, except the pieces kept changing shape.',
+      'I came to aspire to build something greater than myself. As founder and project lead, that meant bringing together the right people and channeling that shared energy toward one mission: to provide commuters the certainty and reliability they\'ve long deserved, yet too often gone without.',
+      'At the end of every meeting, we remained anchored in the people behind the problem, who we’re building this for. With all the care, conviction, and a great deal of heart, we give you: PARA.',
     ],
+    
     theProblem: [
-      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early — standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
-      'Asking around to get around was how I managed my way within the system with much difficulty. Then I asked myself: what if I was a student on my first day of school without my parents, what if I was elderly after route changes, what if I just moved to Iloilo for a fresh start?',
-      'A final question gave birth to the refined idea of PARA — "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
+      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I saw Ilonggos use was simply arriving early. Standing at the roadside, sacrificing time, carrying quiet anxiety, the majority of the time, just hoping to make it through. Efficient transportation is supposed to save time. But when the uncertainty eats into that time, the advantage disappears.',
+      'For a long time, asking around was how I managed my way within the system. Then I started asking a variety of questions. What if I were a student commuting alone for the first time without my parents? An elderly person navigating route changes with no one to ask? Someone who just moved to Iloilo, trying to build a life in an unfamiliar city?',
+      'A final question gave birth to the refined idea of PARA, "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
     ],
-    myRole: [
-      'It became my goal to build something bigger than myself. As founder and project lead, I work to bring together the expertise and energy of my team toward one thing: giving commuters the certainty and reliability they\'ve always deserved but never had.',
-    ],
+    
+    myRole: [''],
+    
     whyItMatters: [
-      'The jeepney is one of the most iconic symbols of Filipino culture and one of its most misunderstood systems. For all its visibility, it operates digitally in the dark: routes outdated or undocumented, changes unannounced, knowledge passed informally or not at all.',
-      'What we found isn\'t just a problem, but lives normalized around it — and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
-      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter — they all deserve the same confidence that the system will make sense to them.',
-      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map — it was always a collective movement.',
+      'This was never just about getting from point A to point B.',
+      'The jeepney is one of the most iconic symbols of Filipino culture and one of its most misunderstood systems. For all its visibility, it operates without any real digital presence. Routes can be outdated or undocumented, changes go unannounced, and knowledge gets passed informally, or not at all.',
+      'What we found isn’t just a problem. It’s a way of life that people have subtly normalized around. Unreliable transit information takes something real from people. It limits where they can work, study, and go. It quietly takes the most time from those already stretched the thinnest.',
+      'PARA matters because certainty shouldn’t be a privilege. It shouldn’t depend on how long you’ve lived somewhere, who you know, or how early you’re willing to wake up. A student, a new arrival, an elderly commuter: they all deserve the same confidence that the system will make sense to them.',
+      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just to map a city. It was a collective movement towards clarity.',
+      'And at the center of that movement, is you.',
+      'This is our story. This is PARA – para sa lahat.',
     ],
   },
   {
@@ -864,7 +871,7 @@ export default function Home() {
                   width={600}
                   height={200}
                   priority
-                  className="w-auto max-w-full h-48 sm:h-56 lg:h-64 object-contain object-left"
+                  className="w-auto max-w-full h-48 sm:h-56 lg:h-64 object-contain object-left lg:-ml-6 xl:-ml-8"
                 />
               </div>
 
