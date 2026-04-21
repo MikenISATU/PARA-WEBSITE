@@ -781,7 +781,7 @@ export default function Home() {
                     <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776781251/para-onboarding1_1_1_xuhzjz.mp4" type="video/mp4" />
                   </video>
                   {/* Mask status bar at top */}
-                  <div className="absolute top-0 left-0 right-0 h-[8%] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[8%] bg-black z-10 pointer-events-none" />
                   {/* Mask bottom nav bar */}
                   <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-black z-10 pointer-events-none" />
                 </div>
