@@ -371,7 +371,7 @@ const teamMembers = [
     name: 'MJ Torre',
     role: 'Operations & Compliance',
     linkedin: '',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/4_nqznb7.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776703782/MJ_bjoyrr.png',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
@@ -477,7 +477,7 @@ const faqs = [
   },
   {
     q: 'How do I get the app?',
-    a: 'PARA is currently available as a direct Android APK download — no Google Play required. iOS support is on our roadmap. You can get the latest APK from the Download APK button above.',
+    a: 'PARA is currently available as a direct Android APK download — no Google Play required. We’re in beta testing, with plans to launch on Google Play and iOS soon. You can get the latest APK using the Download APK button above.',
   },
 ];
 
@@ -763,12 +763,11 @@ export default function Home() {
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
                     <path d="M17.523 15.341a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-11.046 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM.82 8.516l2.01 3.48A3.745 3.745 0 0 0 2 14v5.25A2.75 2.75 0 0 0 4.75 22h14.5A2.75 2.75 0 0 0 22 19.25V14a3.745 3.745 0 0 0-.83-2.004l2.01-3.48a.75.75 0 0 0-1.3-.752l-1.954 3.384A3.737 3.737 0 0 0 18 10.5H6a3.737 3.737 0 0 0-1.926.648L2.12 7.764a.75.75 0 1 0-1.3.752ZM6 12h12a2.25 2.25 0 0 1 2.25 2.25v5a1.25 1.25 0 0 1-1.25 1.25H5A1.25 1.25 0 0 1 3.75 19.25v-5A2.25 2.25 0 0 1 6 12Z"/>
                   </svg>
-                  <span>Download for Android</span>
+                  <span>Register as a Beta tester</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 shrink-0 opacity-60 group-hover:translate-y-0.5 transition-transform">
                     <path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </a>
-                <span className="text-gray-400 text-xs self-center">APK · Android 8.0+</span>
               </div>
               <div className="mt-6 flex justify-center lg:justify-start"><AppBadges /></div>
             </div>
