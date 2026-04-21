@@ -1,11 +1,8 @@
 'use client';
-
 // app/page.tsx
-
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
-
 const IconSearch = ({ white }: { white?: boolean }) => (
   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <circle cx="21" cy="21" r="13" stroke={white ? '#fff' : '#2563eb'} strokeWidth="3.5" strokeLinecap="round"/>
@@ -60,7 +57,6 @@ const IconPhilippines = ({ white }: { white?: boolean }) => (
   </svg>
 );
 const FEATURE_ICONS = [IconSearch, IconLiveLocation, IconTransfer, IconOffline, IconCommunity, IconPhilippines];
-
 const AppStoreBadge = ({ className = '' }: { className?: string }) => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Download on the App Store">
     <rect width="120" height="40" rx="5" fill="#000"/>
@@ -89,7 +85,6 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
     </defs>
   </svg>
 );
-
 const features = [
   { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
   { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
@@ -98,14 +93,12 @@ const features = [
   { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
   { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
 ];
-
 const reviews = [
   { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
   { name: 'Paolo R.',  location: 'Quezon City', rating: 5, text: 'Super intuitive. I used to ask strangers which jeep to take — not anymore.' },
   { name: 'Sarah M.',  location: 'Cebu City',   rating: 5, text: 'The route suggestions are surprisingly accurate. I love how simple the UI is.' },
   { name: 'Kuya Jun',  location: 'Pasay',       rating: 4, text: 'As a driver I appreciate that commuters finally know where to go. Great app!' },
 ];
-
 // ─── Roadmap ──────────────────────────────────────────────────────────────────
 const roadmapItems = [
   { city: 'Iloilo',    title: 'Now Available in Iloilo',     desc: 'PARA launched in Iloilo City — full jeepney route coverage across all major corridors.',  status: 'current'    },
@@ -115,7 +108,6 @@ const roadmapItems = [
   { city: 'Dumaguete', title: 'Coming Soon → Dumaguete',     desc: 'Route data collection begins in the City of Gentle People.',                               status: 'upcoming'   },
   { city: 'Tacloban',  title: 'Coming Soon → Tacloban',      desc: 'Bringing PARA to Eastern Visayas — Tacloban and surrounding areas.',                       status: 'upcoming'   },
 ];
-
 // ─── Iloilo Active Routes ─────────────────────────────────────────────────────
 const iloiloAvailable = [
   'Bo. Obrero to Iloilo City Proper Loop',
@@ -137,13 +129,11 @@ const iloiloAvailable = [
   'Mohon to Mandurriao Business District',
   'La Paz to Festive Walk via Nabitasan Loop',
 ];
-
 // ─── Social SVGs ──────────────────────────────────────────────────────────────
 const FacebookIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>;
 const TwitterXIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.825 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>;
 const LinkedInIcon  = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-[15px] h-[15px]"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
-
 // ─── Animated Stats Bar ───────────────────────────────────────────────────────
 function useCountUp(target: number, duration: number, started: boolean) {
   const [count, setCount] = useState(0);
@@ -160,11 +150,9 @@ function useCountUp(target: number, duration: number, started: boolean) {
   }, [started, target, duration]);
   return count;
 }
-
 function StatsBar() {
   const [started, setStarted] = useState(false);
   const ref = React.useRef<HTMLElement>(null);
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -175,10 +163,8 @@ function StatsBar() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
   const routes = useCountUp(18, 1200, started);
   const percent = useCountUp(100, 1400, started);
-
   return (
     <section ref={ref} className="bg-white border-y border-gray-100 py-16 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
@@ -210,7 +196,6 @@ function StatsBar() {
     </section>
   );
 }
-
 // ─── Feature Card ─────────────────────────────────────────────────────────────
 function FeatureCard({ title, desc, IconComponent, highlight }: {
   title: string; desc: string;
@@ -246,7 +231,6 @@ function FeatureCard({ title, desc, IconComponent, highlight }: {
     </div>
   );
 }
-
 // ─── Iloilo Route Dropdown ────────────────────────────────────────────────────
 function IloiloRouteDropdown() {
   const [open, setOpen] = useState(false);
@@ -282,7 +266,6 @@ function IloiloRouteDropdown() {
     </div>
   );
 }
-
 // ─── Team Data ────────────────────────────────────────────────────────────────
 const teamMembers = [
   {
@@ -452,7 +435,6 @@ const teamMembers = [
     ],
   },
 ];
-
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
 const faqs = [
   {
@@ -477,10 +459,9 @@ const faqs = [
   },
   {
     q: 'How do I get the app?',
-    a: 'PARA is currently available as a direct Android APK download. We’re in beta testing, with plans to launch on Google Play and iOS soon. You can register as a beta tester by clicking the button above.',
+    a: 'PARA is currently available as a direct Android APK download. We\'re in beta testing, with plans to launch on Google Play and iOS soon. You can register as a beta tester by clicking the button above.',
   },
 ];
-
 function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
   return (
@@ -526,7 +507,6 @@ function FaqSection() {
     </section>
   );
 }
-
 // ─── Team Modal ───────────────────────────────────────────────────────────────
 function TeamModal({ member, onClose }: {
   member: typeof teamMembers[0];
@@ -537,7 +517,6 @@ function TeamModal({ member, onClose }: {
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
-
   const allSections: { label: string; text: string[] }[] = [
     { label: 'Why I Joined PARA',             text: member.whyJoined },
     { label: 'The Problem We Want To Solve',   text: member.theProblem },
@@ -545,15 +524,12 @@ function TeamModal({ member, onClose }: {
     { label: 'Why PARA Matters',               text: member.whyItMatters },
   ];
   const sections = allSections.filter(s => s.text.some(p => p.trim() !== ''));
-
-  // Keannu's first section label is different
   const displaySections = sections.map(s => ({
     ...s,
     label: member.name === 'Keannu Torre' && s.label === 'Why I Joined PARA'
       ? 'Why I Started PARA'
       : s.label,
   }));
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
@@ -561,7 +537,6 @@ function TeamModal({ member, onClose }: {
         className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[92vw] sm:max-w-lg md:max-w-xl max-h-[88vh] flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* Header photo */}
         <div className="relative w-full shrink-0 overflow-hidden" style={{ aspectRatio: '4/3' }}>
           {member.avatar ? (
             <img
@@ -608,8 +583,6 @@ function TeamModal({ member, onClose }: {
             )}
           </div>
         </div>
-
-        {/* Body */}
         <div className="overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="px-6 py-5 sm:px-8 sm:py-6 space-y-6">
             {displaySections.length > 0 ? displaySections.map((section, i) => (
@@ -631,11 +604,9 @@ function TeamModal({ member, onClose }: {
     </div>
   );
 }
-
 // ─── Team Section ─────────────────────────────────────────────────────────────
 function TeamSection() {
   const [selected, setSelected] = useState<typeof teamMembers[0] | null>(null);
-
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -692,7 +663,6 @@ function TeamSection() {
     </>
   );
 }
-
 // ─── Navbar wrapper ───────────────────────────────────────────────────────────
 function NavbarWrapper() {
   const [visible, setVisible] = useState(false);
@@ -710,7 +680,6 @@ function NavbarWrapper() {
     </div>
   );
 }
-
 // ─── App Badges ───────────────────────────────────────────────────────────────
 function AppBadges({ dark = false }: { dark?: boolean }) {
   return (
@@ -730,17 +699,14 @@ function AppBadges({ dark = false }: { dark?: boolean }) {
     </div>
   );
 }
-
 function scrollTo(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
       <NavbarWrapper />
-
       {/* ── HERO ── */}
       <section id="hero" className="scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 lg:pt-36 lg:pb-32">
@@ -755,17 +721,21 @@ export default function Home() {
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
                 <a
-                  href="/para.apk"
-                  download
+                  href="https://forms.gle/1nnmYjyXAJ2Qb9b6A"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg active:scale-95 group"
                 >
-                  {/* Android icon */}
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
-                    <path d="M17.523 15.341a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-11.046 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM.82 8.516l2.01 3.48A3.745 3.745 0 0 0 2 14v5.25A2.75 2.75 0 0 0 4.75 22h14.5A2.75 2.75 0 0 0 22 19.25V14a3.745 3.745 0 0 0-.83-2.004l2.01-3.48a.75.75 0 0 0-1.3-.752l-1.954 3.384A3.737 3.737 0 0 0 18 10.5H6a3.737 3.737 0 0 0-1.926.648L2.12 7.764a.75.75 0 1 0-1.3.752ZM6 12h12a2.25 2.25 0 0 1 2.25 2.25v5a1.25 1.25 0 0 1-1.25 1.25H5A1.25 1.25 0 0 1 3.75 19.25v-5A2.25 2.25 0 0 1 6 12Z"/>
+                  {/* Clipboard / form icon */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                    <path d="M9 12h6M9 16h4"/>
                   </svg>
-                  <span>Register as a Beta tester</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 shrink-0 opacity-60 group-hover:translate-y-0.5 transition-transform">
-                    <path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" strokeLinecap="round" strokeLinejoin="round"/>
+                  <span>Register as a Beta Tester</span>
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 shrink-0 opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                    <path d="M7 17 17 7M7 7h10v10"/>
                   </svg>
                 </a>
               </div>
@@ -790,7 +760,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── MISSION ── */}
       <section id="mission" className="bg-[#2563eb] py-20 px-6 scroll-mt-16">
         <div className="max-w-4xl mx-auto text-center">
@@ -799,10 +768,8 @@ export default function Home() {
           <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day — yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
         </div>
       </section>
-
       {/* ── STATS BAR ── */}
       <StatsBar />
-
       {/* ── KEY FEATURES ── */}
       <section id="features" className="py-24 px-6 bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
@@ -819,7 +786,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── HOW IT WORKS ── */}
       <section id="how-it-works" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
@@ -844,7 +810,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── ROADMAP ── */}
       <section id="roadmap" className="bg-gray-50 scroll-mt-16">
         <div className="bg-[#2563eb] w-full py-16 px-6 text-center mb-14">
@@ -897,7 +862,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── TEAM / OUR STORY ── */}
       <section id="team" className="py-20 px-6 bg-white scroll-mt-16">
         <div className="max-w-5xl mx-auto">
@@ -909,7 +873,6 @@ export default function Home() {
           <TeamSection />
         </div>
       </section>
-
       {/* ── REVIEWS ── */}
       <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16">
         <div className="max-w-6xl mx-auto">
@@ -934,10 +897,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── FAQ ── */}
       <FaqSection />
-
       {/* ── FOOTER ── */}
       <footer className="bg-[#0f172a] text-white">
         <div className="border-b border-white/5">
