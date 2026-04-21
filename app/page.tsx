@@ -338,7 +338,7 @@ function PhoneMockup() {
               </video>
 
               <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5%] bg-black" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[3.5%] bg-black" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1%] bg-black" />
             </div>
           </div>
