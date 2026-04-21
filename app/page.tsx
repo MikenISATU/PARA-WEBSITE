@@ -968,13 +968,11 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-white/25 text-xs">© {new Date().getFullYear()} PARA App. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            {/* <div className="flex items-center gap-6">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
                 <a key={l} href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">{l}</a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
