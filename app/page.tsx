@@ -959,9 +959,9 @@ export default function Home() {
               <ul className="space-y-3">
                 {[
                   { label: 'hello@paraapp.ph',    href: 'mailto:hello@paraapp.ph' },
-                  { label: 'Support Center',       href: '#' },
+                  { label: 'Support Center',       href: '#team' },
                   { label: 'Report a Route Issue', href: 'https://forms.gle/1nnmYjyXAJ2Qb9b6A' },
-                  { label: 'Partner with Us',      href: '#' },
+                  { label: 'Partner with Us',      href: '#team' },
                 ].map(l => (
                   <li key={l.label}><a href={l.href} className="text-white/55 hover:text-white text-sm transition-colors">{l.label}</a></li>
                 ))}
