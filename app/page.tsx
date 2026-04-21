@@ -371,7 +371,7 @@ const teamMembers = [
     name: 'MJ Torre',
     role: 'Operations & Compliance',
     linkedin: '',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776703782/MJ_bjoyrr.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/4_nqznb7.png',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
@@ -428,7 +428,7 @@ const teamMembers = [
     name: 'Andre Dorde',
     role: 'Analytics & Back-end Developer',
     linkedin: 'https://www.linkedin.com/in/andre-benedict-dorde/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776780199/Andre_vchssl.png',
+    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/6_zbuqso.png',
     gradient: 'from-violet-500 to-indigo-600',
     short: 'Building the data and back-end systems that make PARA reliable.',
     whyJoined: [
@@ -753,22 +753,37 @@ export default function Home() {
                 Find the best<br />Jeepney Route<br /><span className="text-[#2563eb]">Instantly</span>
               </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
-              <div className="mt-6">
-                <a href="/para.apk" download className="inline-block bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-medium text-lg px-10 py-4 rounded-2xl shadow-lg active:scale-95">Download APK</a>
+              <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
+                <a
+                  href="/para.apk"
+                  download
+                  className="inline-flex items-center gap-3 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg active:scale-95 group"
+                >
+                  {/* Android icon */}
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
+                    <path d="M17.523 15.341a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-11.046 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM.82 8.516l2.01 3.48A3.745 3.745 0 0 0 2 14v5.25A2.75 2.75 0 0 0 4.75 22h14.5A2.75 2.75 0 0 0 22 19.25V14a3.745 3.745 0 0 0-.83-2.004l2.01-3.48a.75.75 0 0 0-1.3-.752l-1.954 3.384A3.737 3.737 0 0 0 18 10.5H6a3.737 3.737 0 0 0-1.926.648L2.12 7.764a.75.75 0 1 0-1.3.752ZM6 12h12a2.25 2.25 0 0 1 2.25 2.25v5a1.25 1.25 0 0 1-1.25 1.25H5A1.25 1.25 0 0 1 3.75 19.25v-5A2.25 2.25 0 0 1 6 12Z"/>
+                  </svg>
+                  <span>Download for Android</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 shrink-0 opacity-60 group-hover:translate-y-0.5 transition-transform">
+                    <path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+                <span className="text-gray-400 text-xs self-center">APK · Android 8.0+</span>
               </div>
               <div className="mt-6 flex justify-center lg:justify-start"><AppBadges /></div>
             </div>
             <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px] lg:ml-auto lg:pl-8 xl:pl-16">
               <div className="relative bg-black rounded-[52px] border-[14px] border-black shadow-2xl overflow-hidden aspect-[9/19]">
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-5 bg-black rounded-full z-30 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-zinc-900 rounded-full" />
-                </div>
+                {/* Dynamic island */}
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-30" />
                 <div className="absolute inset-[6px] bg-zinc-950 rounded-[38px] overflow-hidden">
-                  <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover">
+                  <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover object-top">
                     <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776781251/para-onboarding1_1_1_xuhzjz.mp4" type="video/mp4" />
                   </video>
-                  <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
-                  <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-zinc-950 z-10" />
+                  {/* Mask status bar at top */}
+                  <div className="absolute top-0 left-0 right-0 h-[8%] bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+                  {/* Mask bottom nav bar */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-black z-10 pointer-events-none" />
                 </div>
               </div>
               <div className="absolute -inset-6 bg-gradient-to-br from-[#2563eb]/10 to-transparent blur-3xl -z-10" />
