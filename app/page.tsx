@@ -765,7 +765,7 @@ export default function Home() {
                 </div>
                 <div className="absolute inset-[6px] bg-zinc-950 rounded-[38px] overflow-hidden">
                   <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="w-full h-full object-cover">
-                    <source src="/para-onboarding.mp4" type="video/mp4" />
+                    <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776781251/para-onboarding1_1_1_xuhzjz.mp4" type="video/mp4" />
                   </video>
                   <div className="absolute top-0 left-0 right-0 h-[1%] bg-zinc-950 z-10" />
                   <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-zinc-950 z-10" />
