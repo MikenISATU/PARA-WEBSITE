@@ -86,12 +86,12 @@ const GooglePlayBadge = ({ className = '' }: { className?: string }) => (
   </svg>
 );
 const features = [
-  { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds — no guessing, no asking around.',   highlight: false },
-  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',           highlight: false },
-  { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points — PARA plans the full trip for you.',                highlight: false },
-  { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                           highlight: false },
-  { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',                 highlight: false },
-  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute — from Luzon to Mindanao.',                             highlight: false },
+  { title: 'Instant Route Search',      desc: 'Type your destination and get the best jeepney routes in seconds, no guessing, no asking around.',   highlight: false },
+  { title: 'Live Location Tracking',    desc: 'See your real-time position on the map as you ride, so you never miss your drop-off point.',         highlight: false },
+  { title: 'Smart Transfers',           desc: 'Multi-jeep routes with intelligent transfer points. PARA plans the full trip for you.',              highlight: false },
+  { title: 'Offline Mode',              desc: 'Download routes for offline use. Commute confidently even with weak signal.',                         highlight: false },
+  { title: 'Community-Powered',         desc: 'Route data verified and updated by real commuters and drivers across the Philippines.',               highlight: false },
+  { title: 'Built for the Philippines', desc: 'Designed around how Filipinos actually commute, from Luzon to Mindanao.',                            highlight: false },
 ];
 const reviews = [
   { name: 'Maria L.',  location: 'Makati City', rating: 5, text: 'Finally an app that gets the jeepney system! Saved me 30 mins on my daily commute.' },
@@ -170,7 +170,7 @@ function StatsBar() {
             {routes}{routes >= 18 ? '+' : ''}
           </span>
           <span className="text-gray-900 font-bold text-lg mt-1">Active Routes</span>
-          <span className="text-gray-400 text-sm leading-snug max-w-[160px]">in Iloilo City — and growing</span>
+          <span className="text-gray-400 text-sm leading-snug max-w-[160px]">in Iloilo City and growing</span>
         </div>
         <div className="flex flex-col items-center gap-2 py-8 sm:py-0 sm:px-10 text-center">
           <span className="text-6xl sm:text-7xl font-black text-[#2563eb] tracking-tight leading-none">
@@ -279,18 +279,18 @@ const teamMembers = [
       'Initially PARA was just supposed to be an up-to-date map drawing for students to use, but the more routes we rode, the more drivers we talked to, the more commuters we listened to, the clearer it became that a static map couldn\'t capture something this alive. It was like putting together a puzzle whose pieces change shape all the time.',
     ],
     theProblem: [
-      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early — standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
+      'Public transportation information in the Philippines is scarce, and what little exists goes stale fast. The most common workaround I see Ilonggos use was simply arriving early, standing at the roadside, sacrificing time spent elsewhere, carrying quiet anxiety every single day, just hoping they\'d make it. Transportation is supposed to save time. But when the preparation and uncertainty eat into that time, the advantage disappears.',
       'Asking around to get around was how I managed my way within the system with much difficulty. Then I asked myself: what if I was a student on my first day of school without my parents, what if I was elderly after route changes, what if I just moved to Iloilo for a fresh start?',
-      'A final question gave birth to the refined idea of PARA — "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
+      'A final question gave birth to the refined idea of PARA: "What if, instead of mapping the system from the outside, we mapped the lived experience of commuters and built something that doesn\'t just describe the system, but grows with it?"',
     ],
     myRole: [
       'It became my goal to build something bigger than myself. As founder and project lead, I work to bring together the expertise and energy of my team toward one thing: giving commuters the certainty and reliability they\'ve always deserved but never had.',
     ],
     whyItMatters: [
       'The jeepney is one of the most iconic symbols of Filipino culture and one of its most misunderstood systems. For all its visibility, it operates digitally in the dark: routes outdated or undocumented, changes unannounced, knowledge passed informally or not at all.',
-      'What we found isn\'t just a problem, but lives normalized around it — and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
-      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter — they all deserve the same confidence that the system will make sense to them.',
-      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map — it was always a collective movement.',
+      'What we found isn\'t just a problem, but lives normalized around it, and unreliable transit information compounds inequality. It limits where people can work, study, and go. It quietly takes the time of those who have the least of it.',
+      'PARA matters because certainty shouldn\'t be a privilege. It shouldn\'t depend on how long you\'ve lived somewhere, who you know, or how early you\'re willing to wake up. A student, a new arrival, an elderly commuter, they all deserve the same confidence that the system will make sense to them.',
+      'If we can do this in Iloilo, we can do it anywhere in the country where the same invisible friction exists. The goal was never just a map, it was always a collective movement.',
     ],
   },
   {
@@ -302,25 +302,25 @@ const teamMembers = [
     short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
       'My name is Eugine, and I am the programmer behind PARA.',
-      'PARA did not start in a boardroom or a business plan — it started from a question that comes up in the minds of everyday commuters: "What ride do I take to get there?" That simple but frustrating question became the seed of what PARA is today — a digital travel guide that helps people navigate Iloilo\'s jeepney route system with confidence.',
+      'PARA did not start in a boardroom or a business plan. It started from a question that comes up in the minds of everyday commuters: "What ride do I take to get there?" That simple but frustrating question became the seed of what PARA is today, a digital travel guide that helps people navigate Iloilo\'s jeepney route system with confidence.',
       'I joined PARA because I\'ve experienced that problem firsthand, and I\'ve always been drawn to building systems that make confusing things simpler and more accessible for everyone.',
     ],
     theProblem: [
       'I know that frustration personally.',
       'When I was in junior high, we had a half-day of school. My classmates and I went to the city to spend the afternoon, but later I decided to head home alone. It was my first time commuting home on my own.',
       'I knew one thing: a jeepney taking the Ungka route could get me to Westwoods Subdivision in Dungon B. Simple enough.',
-      'Then I saw it — Jaro - CPU - Ungka — and I hopped on. That was the mistake.',
-      'The jeep took a different path than I expected, and before I knew it, I was already at the Sambag stoplight — far past Westwood. That\'s when I realized there was another Ungka jeep that follows a different route entirely. Same name. Different path.',
+      'Then I saw it, Jaro - CPU - Ungka, and I hopped on. That was the mistake.',
+      'The jeep took a different path than I expected, and before I knew it, I was already at the Sambag stoplight, far past Westwood. That\'s when I realized there was another Ungka jeep that follows a different route entirely. Same name. Different path.',
       'Confused and panicked, I had to take another ride just to get back toward Westwood via Sta. Barbara. What should have been one ride became two. What should have been one fare became two.',
       'When I got home, my parents explained something I didn\'t know at the time: there are two Ungka routes, and unless you already know the system, there\'s no clear way to tell the difference.',
-      'That moment stayed with me — not because I made a mistake, but because I realized how easy it is to get lost in a system that assumes prior knowledge.',
+      'That moment stayed with me, not because I made a mistake, but because I realized how easy it is to get lost in a system that assumes prior knowledge.',
     ],
     myRole: [''],
     whyItMatters: [
-      'PARA exists for that version of me — the confused kid at the stoplight who just wanted to get home.',
+      'PARA exists for that version of me, the confused kid at the stoplight who just wanted to get home.',
       'It exists for every first-time commuter, every student adjusting to a new route, every person who has ever passed their stop because the system didn\'t clearly explain itself.',
-      'Our city\'s jeepney network works — but it works best only if you already memorize it. That gap between knowing and not knowing is what costs people time, money, and confidence.',
-      'PARA is our way of closing that gap. It is not built for tech-savvy users or people with time to figure things out. It is built para sa masa — the everyday commuter who just needs a clear, honest answer to one question: "What ride do I take to get there?"',
+      'Our city\'s jeepney network works, but it works best only if you already memorize it. That gap between knowing and not knowing is what costs people time, money, and confidence.',
+      'PARA is our way of closing that gap. It is not built for tech-savvy users or people with time to figure things out. It is built para sa masa, the everyday commuter who just needs a clear, honest answer to one question: "What ride do I take to get there?"',
       'That is what PARA is for me. And that is who we are building it for.',
     ],
   },
@@ -336,7 +336,7 @@ const teamMembers = [
       'Currently, I\'m part of the UI/UX team, where I handle design, website development, and deployment. I also support other technical tasks whenever needed. My background in development allows me to contribute both creatively and technically to PARA.',
     ],
     theProblem: [
-      'As a public commuter, commuting has always been challenging for me — especially during my student days and even now.',
+      'As a public commuter, commuting has always been challenging for me, especially during my student days and even now.',
       'There were times I had to wait a long time for a ride, deal with unpredictable routes, or struggle during peak hours just to get home.',
       'It\'s tiring, inefficient, and sometimes even stressful not knowing when or how you\'ll reach your destination. Those everyday struggles really stuck with me.',
     ],
@@ -356,22 +356,22 @@ const teamMembers = [
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
       'I\'ve always been drawn to organizing systems, setting processes, and making sure things are actually followed properly. In past leadership roles, I learned that vision alone isn\'t enough. Without discipline, risk management, and alignment with real-world standards, nothing scales.',
-      'Being part of PARA exposed me to how confusing and unpredictable public transportation really is. That made me realize that if we were serious about solving this problem, we needed to ensure that everything works — not just in concept, but in execution.',
+      'Being part of PARA exposed me to how confusing and unpredictable public transportation really is. That made me realize that if we were serious about solving this problem, we needed to ensure that everything works, not just in concept, but in execution.',
       'So I took on Operations and Compliance as both a responsibility and a necessity. For me, it\'s about making sure what we\'re building is not only meaningful, but also simple, functional, credible, and something people can actually rely on in their everyday lives.',
     ],
     theProblem: [
       'In all honesty, the entire experience of commuting during fieldwork was uncomfortable, confusing, and frustrating.',
-      'I had not really used public transportation for most of my life, with the exception of taxis. So when I took on my role in PARA, I had to manually record routes — meaning I had to ride every jeepney and bus in Iloilo and document their full routes, which took about an hour per route.',
+      'I had not really used public transportation for most of my life, with the exception of taxis. So when I took on my role in PARA, I had to manually record routes, meaning I had to ride every jeepney and bus in Iloilo and document their full routes, which took about an hour per route.',
       'During one of these trips, I fell asleep out of fatigue. When I woke up, I realized I had ended up somewhere unfamiliar. It was already dark, I had no idea where I was, the area felt unsafe, and there were no nearby jeepneys or buses that could take me back. I had to end the day with an incomplete recording and take a taxi home.',
       'As I continued doing route recordings, I found myself thinking how useful it would be if there was something that could show where a bus is, where it will pass, when it will arrive, and where it is in real time.',
-      'Then I realized — this was exactly what we were building.',
-      'That uncertainty is not just inconvenient; it is genuinely stressful. And most of what I experienced — confusion, fatigue, and frustration — is something many commuters, especially beginners, go through every day.',
-      'What made it even more meaningful was talking to jeepney and bus drivers and understanding their side as well — their realities, challenges, and the uncertainty they also operate under. That experience deepened my sense of responsibility and service.',
+      'Then I realized this was exactly what we were building.',
+      'That uncertainty is not just inconvenient; it is genuinely stressful. And most of what I experienced, confusion, fatigue, and frustration, is something many commuters, especially beginners, go through every day.',
+      'What made it even more meaningful was talking to jeepney and bus drivers and understanding their side as well, their realities, challenges, and the uncertainty they also operate under. That experience deepened my sense of responsibility and service.',
     ],
     myRole: [''],
     whyItMatters: [
       'Through all of this, I became even more motivated to solve these problems because PARA, at its core, is my response to that need.',
-      'For me, PARA is not just a system — it is a way of bringing clarity to something that is currently uncertain, messy, and difficult to navigate.',
+      'For me, PARA is not just a system, it is a way of bringing clarity to something that is currently uncertain, messy, and difficult to navigate.',
       'It represents structure in a system that often feels unstructured. It represents reliability in an environment where people are often left guessing.',
       'That is what PARA is for me.',
     ],
@@ -385,11 +385,11 @@ const teamMembers = [
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
       'I am currently the Marketing and Business Development Head of the PARA team.',
-      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication — when people are heard, understood, and connected, they\'re also able to help each other better.',
+      'I\'ve always been passionate about connecting with people because I enjoy understanding their experiences and perspectives. And I believe that real impact starts with communication, when people are heard, understood, and connected, they\'re also able to help each other better.',
       'That\'s what drew me to PARA. I wanted to be part of building something that comes from real commuter experiences and turns them into something meaningful. A system that doesn\'t just function, but actually understands the struggles of the people using it.',
     ],
     theProblem: [
-      'One of my worst commute experiences was when what was supposed to be a 10–15 minute ride turned into almost two hours.',
+      'One of my worst commute experiences was when what was supposed to be a 10-15 minute ride turned into almost two hours.',
       'It was rush hour, and I was with friends coming from Iloilo Doctors College, heading to SM City Iloilo for a simple celebratory dinner. But everything became stressful quickly. We were trying to find jeepneys going our way, but most were already packed, and we weren\'t even sure if they were the right ones.',
       'We felt uncomfortable asking around because everyone was also in a rush. So we kept moving from one side of the road to another, waiting and hoping for the right ride. The sun was setting. We were hungry and exhausted.',
       'What should have been a happy celebration turned into frustration and even arguments because of the stress and confusion. We arrived an hour late, and everyone else had already started eating.',
@@ -397,11 +397,11 @@ const teamMembers = [
     ],
     myRole: [''],
     whyItMatters: [
-      'For me, PARA is something that can transform the lives of every commuter — not just locals, but also travelers.',
+      'For me, PARA is something that can transform the lives of every commuter, not just locals, but also travelers.',
       'I hope that as this system grows within Iloilo City and eventually expands across the Philippines, PARA becomes a way to make everyday commuting clearer, more efficient, and less stressful.',
-      'It is built from real experiences — moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
+      'It is built from real experiences, moments of confusion, waiting, and uncertainty that most commuters silently go through. I hope PARA becomes a platform that gives people clarity on where to go, what to ride, and how to get there with less stress.',
       'A system that saves time, reduces stress, and truly works for the people.',
-      'Because Filipinos deserve a system that brings clarity — and I hope PARA can be that for us.',
+      'Because Filipinos deserve a system that brings clarity, and I hope PARA can be that for us.',
     ],
   },
   {
@@ -418,16 +418,16 @@ const teamMembers = [
       'Currently, I serve as the Associate Vice President for Community Relations of the Computer Society of Ateneo, and as a Deputy for Administration of the Ateneo Resident Students Association. In both roles, I\'ve built systems that reduce manual workload and help people focus on more important tasks.',
     ],
     theProblem: [
-      'As a student living away from home in Iloilo and studying in Manila, commuting has become a regular part of my life — but it hasn\'t always been smooth.',
-      'Back when I was still unfamiliar with the routes in Metro Manila, I had to travel from BGC back to ADMU. I took buses, jeepneys, asked people for directions, and even relied on commuting guide apps — but I still couldn\'t find a clear route.',
+      'As a student living away from home in Iloilo and studying in Manila, commuting has become a regular part of my life, but it hasn\'t always been smooth.',
+      'Back when I was still unfamiliar with the routes in Metro Manila, I had to travel from BGC back to ADMU. I took buses, jeepneys, asked people for directions, and even relied on commuting guide apps, but I still couldn\'t find a clear route.',
       'Out of frustration, I ended up walking from Anonas to ADMU in the rain. By the time I arrived, I was completely soaked, exhausted, and had wasted almost two hours on a stressful journey.',
       'Later on, I found out there was actually a bus route from near BGC that could have taken me to ADMU in a little over 30 minutes. If I had known that earlier, it would have saved me so much time, effort, and money.',
-      'Even now, there are still many routes I\'m unfamiliar with — not just in Metro Manila, but also back in Iloilo.',
+      'Even now, there are still many routes I\'m unfamiliar with, not just in Metro Manila, but also back in Iloilo.',
     ],
     myRole: [''],
     whyItMatters: [
       'That\'s why I\'m helping build PARA.',
-      'For me, PARA is a companion that grows with you — helping make your journeys easier and hassle-free. Instead of asking multiple sources or guessing your way through routes, you can rely on one platform that gives you what you need quickly and accurately.',
+      'For me, PARA is a companion that grows with you, helping make your journeys easier and hassle-free. Instead of asking multiple sources or guessing your way through routes, you can rely on one platform that gives you what you need quickly and accurately.',
       'It\'s built for people like me who commute often and just want to get to their destination without unnecessary stress or confusion.',
     ],
   },
@@ -567,7 +567,7 @@ function TeamModal({ member, onClose }: {
               <p className="text-white/70 text-xs mt-0.5">{member.role}</p>
             </div>
             {member.linkedin && (
-              <a
+              
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -633,7 +633,7 @@ function TeamSection() {
               )}
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
               {member.linkedin && (
-                <a
+                
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -717,8 +717,7 @@ export default function Home() {
               </h1>
               <p className="max-w-md mx-auto lg:mx-0 text-lg text-gray-500 mt-4">Your Jeepney Route Companion for the Philippines</p>
               <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3">
-                {/* ── Beta Tester Button ── */}
-                <a
+                
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -758,7 +757,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">Our Mission</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">Making every commute smarter, faster, and less stressful</h2>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day — yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">Millions of Filipinos ride jeepneys every day, yet there&apos;s no simple way to know which one to take. PARA exists to change that. We&apos;re building the most complete, community-powered jeepney route database in the Philippines so you can get from A to B with confidence.</p>
         </div>
       </section>
       {/* ── STATS BAR ── */}
@@ -769,7 +768,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads, not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
@@ -967,12 +966,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-          </div>
-           <div className="flex items-center gap-6">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
-                <a key={l} href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">{l}</a>
-              ))}
-            </div> 
           </div>
         </div>
       </footer>
