@@ -892,7 +892,7 @@ export default function Home() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdyCOFpk6AAOE2sv21-H7t0o6a06UWAnM4wnaM0KSzVD97AFw/viewform?usp=dialog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg active:scale-95 group w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#2563eb] hover:bg-[#1e40af] transition-all text-white font-semibold text-sm sm:text-base px-5 sm:px-7 py-3.5 sm:py-4 rounded-2xl shadow-lg active:scale-95 group w-auto max-w-full"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
                     <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
