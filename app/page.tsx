@@ -446,11 +446,11 @@ const faqs = [
   },
   {
     q: 'How accurate is the route data?',
-    a: 'All routes are field-verified by our team — we physically rode every jeepney line to log stops, timing, and route variations. The data is further maintained by our community of local commuters and drivers who report changes in real time.',
+    a: 'All routes are field-verified by our team and we physically rode every jeepney line to log stops, timing, and route variations. The data is further maintained by our community of local commuters and drivers who report changes in real time.',
   },
   {
     q: 'Can I use PARA without an internet connection?',
-    a: 'Yes. PARA includes an offline mode that lets you download route data in advance. Once downloaded, you can search and navigate routes even with no signal — which matters most when you\'re in areas with weak connectivity.',
+    a: 'Yes. PARA includes an offline mode that lets you download route data in advance. Once downloaded, you can search and navigate routes even with no signal and which matters most when you\'re in areas with weak connectivity.',
   },
   {
     q: 'How do I report a wrong stop or route change?',
@@ -771,7 +771,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Key Features</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">Everything you need to commute smarter</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads — not some idealized transit system.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Designed for the real chaos of Philippine roads and not some idealized transit system.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => {
@@ -790,7 +790,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 relative">
             <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-0.5 bg-blue-100 z-0" />
             {[
-              { step: '01', title: 'Enter your destination', desc: "Type where you're headed — street, landmark, or barangay." },
+              { step: '01', title: 'Enter your destination', desc: "Type where you're headed street, landmark, or barangay." },
               { step: '02', title: 'Get your route', desc: 'PARA shows the best jeepney combinations with fares and stops.' },
               { step: '03', title: 'Ride with confidence', desc: 'Track your ride live and know exactly when to get off.' },
             ].map((s, i) => (
