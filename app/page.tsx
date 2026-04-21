@@ -867,7 +867,7 @@ export default function Home() {
         </div>
       </section>
       {/* ── REVIEWS ── */}
-      <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16">
+      <section id="reviews" className="py-20 px-6 bg-[#f0f7ff] scroll-mt-16 hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-50 text-[#2563eb] text-sm font-semibold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full">Reviews</span>
