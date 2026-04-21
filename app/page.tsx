@@ -968,6 +968,11 @@ export default function Home() {
               </ul>
             </div>
           </div>
+            {/* <div className="flex items-center gap-6">
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(l => (
+                <a key={l} href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">{l}</a>
+              ))}
+            </div> */}
           </div>
         </div>
       </footer>
