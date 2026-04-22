@@ -1129,7 +1129,7 @@ export default function Home() {
 
               <div className="flex gap-2.5">
                 {[
-                  { href: 'https://www.facebook.com/profile.php?id=61573242432747', label: 'Facebook', icon: <FacebookIcon />, hover: 'hover:bg-[#1877F2]' },
+                  { href: 'https://www.facebook.com/profile.php?id=61565286425329', label: 'Facebook', icon: <FacebookIcon />, hover: 'hover:bg-[#1877F2]' },
                   { href: 'https://x.com', label: 'X', icon: <TwitterXIcon />, hover: 'hover:bg-white/10' },
                   { href: 'https://instagram.com', label: 'Instagram', icon: <InstagramIcon />, hover: 'hover:bg-[#E1306C]' },
                   { href: 'https://linkedin.com', label: 'LinkedIn', icon: <LinkedInIcon />, hover: 'hover:bg-[#0A66C2]' },
