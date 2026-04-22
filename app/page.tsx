@@ -227,7 +227,7 @@ function StatsBar() {
             Beta
           </span>
           <span className="text-gray-900 font-bold text-lg mt-1">Early Access</span>
-          <span className="text-gray-400 text-sm leading-snug max-w-[160px]">free to use during beta</span>
+          <span className="text-gray-400 text-sm leading-snug max-w-[160px]">Coming soon to app stores</span>
         </div>
       </div>
     </section>
