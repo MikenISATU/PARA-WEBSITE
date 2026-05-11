@@ -353,7 +353,7 @@ const teamMembers = [
     name: 'Keannu Torre',
     role: 'Project Lead',
     linkedin: 'https://www.linkedin.com/in/keannu-torre/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/2_tx3rwm.png',
+    avatar: '/team/keannu.png',
     gradient: 'from-blue-500 to-blue-700',
     short: 'The founder who turned a bedroom map project into PARA.',
     whyJoined: [
@@ -387,7 +387,7 @@ const teamMembers = [
     name: 'John Eugine Fernandez',
     role: 'Lead Developer',
     linkedin: 'https://www.linkedin.com/in/john-eugine-fernandez-9a99a8331/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/3_vl2yuc.png',
+    avatar: '/team/eugine.png',
     gradient: 'from-indigo-500 to-blue-600',
     short: 'The programmer who built PARA from the ground up.',
     whyJoined: [
@@ -418,7 +418,7 @@ const teamMembers = [
     name: 'Miles Kenneth Napilan',
     role: 'UI/UX & Front-end Developer',
     linkedin: 'https://www.linkedin.com/in/miles-kenneth-napilan-62b1a31b8/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696914/PARA_1_couobe.png',
+    avatar: '/team/miles.png',
     gradient: 'from-blue-400 to-cyan-500',
     short: 'The designer and developer behind how PARA looks and feels.',
     whyJoined: [
@@ -441,7 +441,7 @@ const teamMembers = [
     name: 'MJ Torre',
     role: 'Operations & Compliance',
     linkedin: '',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776703782/MJ_bjoyrr.png',
+    avatar: '/team/mj.png',
     gradient: 'from-cyan-500 to-blue-500',
     short: 'Making sure everything PARA builds is functional, credible, and reliable.',
     whyJoined: [
@@ -470,7 +470,7 @@ const teamMembers = [
     name: 'Alicia Amor',
     role: 'Marketing & Business Development',
     linkedin: 'https://www.linkedin.com/in/aliciaamorc-alisseroma/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776696099/1_jopo8f.png',
+    avatar: '/team/alicia.png',
     gradient: 'from-pink-500 to-rose-600',
     short: 'Connecting PARA to the people and communities who need it most.',
     whyJoined: [
@@ -498,7 +498,7 @@ const teamMembers = [
     name: 'Andre Dorde',
     role: 'Analytics & Back-end Developer',
     linkedin: 'https://www.linkedin.com/in/andre-benedict-dorde/',
-    avatar: 'https://res.cloudinary.com/da4k3yxhu/image/upload/v1776780199/Andre_vchssl.png',
+    avatar: '/team/andre.png',
     gradient: 'from-violet-500 to-indigo-600',
     short: 'Building the data and back-end systems that make PARA reliable.',
     whyJoined: [
