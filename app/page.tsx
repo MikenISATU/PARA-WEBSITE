@@ -334,7 +334,7 @@ function PhoneMockup() {
               <div className="absolute top-2 left-1/2 z-30 h-7 w-32 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_-1px_0_rgba(255,255,255,0.06)]" />
 
               <video autoPlay loop muted playsInline poster="/para-poster.jpg" className="absolute inset-0 h-full w-full object-cover object-center">
-                <source src="https://res.cloudinary.com/da4k3yxhu/video/upload/v1776794770/F2PARA_1_1_hpisfc.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dorxi3vk8/video/upload/v1778515537/para-demo_lkf18t.mp4" type="video/mp4" />
               </video>
 
               <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-white/10" />
